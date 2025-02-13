@@ -38,7 +38,7 @@
             "button_text_color_hover": "#000000",
             "button_background_color_hover": "#ffffff",
             "button_border_color_hover": "#000000",
-            "second_button_text_color": "#FFFFFF",
+            "second_button_text_color": "#ffffff",
             "second_button_text_color_hover": "#000000",
             "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 100%)"
           }
@@ -69,7 +69,7 @@
             "button_text_color_hover": "#000000",
             "button_background_color_hover": "#ffffff",
             "button_border_color_hover": "#000000",
-            "second_button_text_color": "#FFFFFF",
+            "second_button_text_color": "#ffffff",
             "second_button_text_color_hover": "#000000",
             "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 100%)"
           }
@@ -100,7 +100,7 @@
             "button_text_color_hover": "#000000",
             "button_background_color_hover": "#ffffff",
             "button_border_color_hover": "#000000",
-            "second_button_text_color": "#FFFFFF",
+            "second_button_text_color": "#ffffff",
             "second_button_text_color_hover": "#000000",
             "overlay_color": "linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 100%)"
           }
@@ -128,7 +128,7 @@
         "arrows_border_color": "",
         "arrows_background_color_hover": "#4D71F9",
         "arrows_color_hover": "#000000",
-        "arrows_border_color_hover": "#4D71F9",
+        "arrows_border_color_hover": "#4d71f9",
         "container_width": "inherit",
         "height_desktop": 100,
         "height_mobile": 100,
@@ -149,14 +149,14 @@
         "banner_subheading": "Banner subheading",
         "button_label": "Shop Now",
         "button_url": "",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "overlay_color": "rgba(0, 0, 0, 0.4)",
-        "button_color": "#fff",
-        "button_background_color": "transparent",
-        "button_border_color": "#fff",
-        "button_hover_color": "#000",
-        "button_hover_background": "#fff",
-        "button_hover_border": "#fff",
+        "button_color": "#ffffff",
+        "button_background_color": "rgba(0,0,0,0)",
+        "button_border_color": "#ffffff",
+        "button_hover_color": "#000000",
+        "button_hover_background": "#ffffff",
+        "button_hover_border": "#ffffff",
         "container_width": "inherit",
         "offset_top_desktop": 70,
         "offset_bottom_desktop": 50,
@@ -270,11 +270,11 @@
         "blog": "",
         "heading": "Latest articles",
         "small_articles_heading": "Latest News",
-        "big_post_color": "#fff",
-        "big_post_color_secondary": "#9D9D9D",
+        "big_post_color": "#ffffff",
+        "big_post_color_secondary": "#9d9d9d",
         "big_post_background": "rgba(0, 0, 0, 0.4)",
-        "big_post_tag_color": "#000",
-        "big_post_tag_background": "#fff",
+        "big_post_tag_color": "#000000",
+        "big_post_tag_background": "#ffffff",
         "enable_content_glass_effect": true,
         "container_width": "inherit",
         "offset_top_desktop": 60,
@@ -341,8 +341,8 @@
       "settings": {
         "heading": "Collections slider",
         "text_position": "under_image",
-        "image_text_color": "#fff",
-        "overlay_color": "rgba(0, 0, 0, 0.5)",
+        "image_text_color": "#ffffff",
+        "overlay_color": "#000000",
         "container_width": "inherit",
         "offset_top_desktop": 40,
         "offset_bottom_desktop": 40,
@@ -364,8 +364,8 @@
         "button_label": "Subscribe",
         "button_style": "primary",
         "success_message": "Thanks for subscribing",
-        "heading_color": "#fff",
-        "text_color": "#fff",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
         "section_background": "#E9E9E9",
         "content_background": "rgba(0, 0, 0, 0.4)",
         "enable_content_glass_effect": true,
@@ -543,9 +543,9 @@
         "size_guide_drawer_title": "Size guide",
         "size_guide_tab_general_name": "Dimensions",
         "size_guide_tab_model_name": "Model parameters",
-        "ui_button_color": "#000",
-        "ui_button_background_color": "#fff",
-        "ui_button_border_color": "#E9E9E9",
+        "ui_button_color": "#000000",
+        "ui_button_background_color": "#ffffff",
+        "ui_button_border_color": "#e9e9e9",
         "container_width": "100%",
         "offset_top_desktop": 40,
         "offset_bottom_desktop": 40,
@@ -594,7 +594,7 @@
         "cards_per_row": "4",
         "enable_rounded_cards": false,
         "overlay_color": "linear-gradient(180deg, rgba(255, 140, 140, 0) 5%, rgba(255, 140, 140, 0) 52%, rgba(0, 0, 0, 1) 100%)",
-        "image_text": "#fff",
+        "image_text": "#ffffff",
         "container_width": "inherit",
         "offset_top_desktop": 40,
         "offset_bottom_desktop": 40,
@@ -609,34 +609,19 @@
           "type": "tab",
           "settings": {
             "heading": "Best sellers",
-            "product_list": [],
-            "button_label": "See all products",
-            "button_link": ""
-          }
-        },
-        "tab_K6y9eW": {
-          "type": "tab",
-          "settings": {
-            "heading": "New Arrivals",
-            "product_list": [],
-            "button_label": "See all products",
-            "button_link": ""
-          }
-        },
-        "tab_4iVTHi": {
-          "type": "tab",
-          "settings": {
-            "heading": "On sale",
-            "product_list": [],
+            "product_list": [
+              "everlasting-choke-throttle-cable-for-all",
+              "everlasting-front-brake-cable-for-all-with-dual-m6-adjusters",
+              "no-1-hella-tail-light-style-zundapp",
+              "0-30mm-carbon-tech-reeds-for-honda-nu50-urban-express-by-boyesen"
+            ],
             "button_label": "See all products",
             "button_link": ""
           }
         }
       },
       "block_order": [
-        "tab_NjtEzY",
-        "tab_K6y9eW",
-        "tab_4iVTHi"
+        "tab_NjtEzY"
       ],
       "settings": {
         "heading": "Products thumbnails",
