@@ -1,0 +1,117 @@
+{
+  "article": [],
+  "blog": [],
+  "brand": [],
+  "collection": [],
+  "company": [],
+  "company_location": [],
+  "location": [],
+  "market": [],
+  "order": [],
+  "page": [],
+  "product": [
+    {
+      "key": "categoryid",
+      "namespace": "custom",
+      "name": "CategoryId",
+      "description": "Category Id from Volusion",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "vendorpartnumber",
+      "namespace": "custom",
+      "name": "VendorPartNumber",
+      "description": "Vendor Part number from Volusion",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "vendor",
+      "namespace": "custom",
+      "name": "Vendor",
+      "description": "Vendor from table of vendors",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "shortdescription",
+      "namespace": "custom",
+      "name": "ShortDescription",
+      "description": "Short Description from Volusion",
+      "type": {
+        "name": "multi_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "defaultvariant",
+      "namespace": "custom",
+      "name": "DefaultVariant",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "default_variant_search",
+      "namespace": "custom",
+      "name": "Default Variant Search",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    },
+    {
+      "key": "rating",
+      "namespace": "reviews",
+      "name": "Product rating",
+      "description": "Average rating from customers",
+      "type": {
+        "name": "rating",
+        "category": "RATING"
+      }
+    },
+    {
+      "key": "rating_count",
+      "namespace": "reviews",
+      "name": "Product rating count",
+      "description": "Total number of ratings from customers",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    }
+  ],
+  "variant": [
+    {
+      "key": "old_inventory_quantity",
+      "namespace": "custom",
+      "name": "Old Inventory Quantity (Restock Tracker)",
+      "description": "",
+      "type": {
+        "name": "number_integer",
+        "category": "NUMBER"
+      }
+    },
+    {
+      "key": "awaiting_restock",
+      "namespace": "custom",
+      "name": "Awaiting Restock",
+      "description": "",
+      "type": {
+        "name": "single_line_text_field",
+        "category": "TEXT"
+      }
+    }
+  ],
+  "shop": []
+}
