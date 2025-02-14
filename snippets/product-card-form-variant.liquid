@@ -429,12 +429,12 @@
 {%- endcapture -%}
 
 {%- capture classes -%}
-	product-card{% if big_card == true %} product-card--big{% endif %} {% if show_hover_content == false %}product-card--without-hover-content{% endif %} js-product-card
+	product-card product-card-form-variant{% if big_card == true %} product-card--big{% endif %} {% if show_hover_content == false %}product-card--without-hover-content{% endif %} js-product-card
 {%- endcapture -%}
 
 <div
 	class="{{- classes -}}" {%- if product != blank %} data-existing-product{% endif %}>
-	<div class="product-card__main">
+	<div class="product-card__main product-card__main--variant-card">
 		{% assign badge_labels = product.metafields.custom.badge_images %}
 		{% assign is_product_have_labels = false %}
 
@@ -628,13 +628,13 @@
 			-%}
 
 			{%- if quick_view_enabled == true and product.available and settings.product_card_buttons_type == "text" -%}
+			
 				<button
 					class="product-card__quick-view-text-button js-product-card-quick-view-button"
 					data-product-card-handle="{{- product.handle -}}"
 					{%- if product.has_only_default_variant or product.variants.size == 1 -%} data-variant="{{- product.selected_or_first_available_variant.id -}}" {%- endif -%}
 					type="button"
-				>
-					{% render 'icons', icon: 'cart' %}
+				>{{- 'products.product_card.add_to_cart' | t -}}
 				</button>
 			{%- endif -%}
 
@@ -660,7 +660,7 @@
 			</div>
 		{% endif %}
 
-		<input type="hidden" class="js-product-card-min-value" value="{{- product.selected_or_first_available_variant.quantity_rule.min -}}">
+		
 
 		{%- if show_hover_content -%}
 			<div class="product-card__hover-content">

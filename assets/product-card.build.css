@@ -47,6 +47,9 @@
   transition-property: box-shadow;
   transition-duration: var(--timing-base);
 }
+.product-card-form-variant{
+  flex-direction: row !important;
+}
 .product-card .product-card__footer {
   display: flex;
   flex-direction: column;
@@ -137,6 +140,12 @@
 .product-card .product-card__main {
   position: relative;
   display: flex;
+}
+.product-card__main--variant-card{
+  width: 168px;
+  height: 164px;
+  border-radius: 8px;
+
 }
 .product-card .product-card__label {
   padding: 4px 12px;
