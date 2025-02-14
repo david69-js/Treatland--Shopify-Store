@@ -628,14 +628,28 @@
 			-%}
 
 			{%- if quick_view_enabled == true and product.available and settings.product_card_buttons_type == "text" -%}
+
 			
-				<button
-					class="product-card__quick-view-text-button js-product-card-quick-view-button"
-					data-product-card-handle="{{- product.handle -}}"
-					{%- if product.has_only_default_variant or product.variants.size == 1 -%} data-variant="{{- product.selected_or_first_available_variant.id -}}" {%- endif -%}
-					type="button"
-				>{{- 'products.product_card.add_to_cart' | t -}}
-				</button>
+				{% if product.has_only_default_variant %}
+
+					<div class="product-card__price">
+						{% render 'variant-form' product: product%}
+					</div>
+
+
+				{% else %}
+				
+					<button
+						class="product-card__quick-view-text-button js-product-card-quick-view-button"
+						data-product-card-handle="{{- product.handle -}}"
+						{%- if product.has_only_default_variant or product.variants.size == 1 -%} data-variant="{{- product.selected_or_first_available_variant.id -}}" {%- endif -%}
+						type="button"
+						>{{- 'products.product_card.add_to_cart' | t -}}
+					</button>
+
+				{% endif %}
+
+		
 			{%- endif -%}
 
 			{%- if quick_view_enabled == true and settings.product_card_buttons_type == "text" -%}

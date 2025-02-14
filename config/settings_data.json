@@ -40,7 +40,9 @@
     "button_background_color_secondary_with_border_hover": "#3358E3",
     "button_border_color_secondary_with_border_hover": "#3358E3",
     "button_icon_color_social": "#000",
-    "button_icon_color_social_hover": "#3358E3"
+    "button_icon_color_social_hover": "#3358E3",
+    "product_card_buttons_type": "text",
+    "content_for_index": []
   },
   "presets": {
     "Gran & Tech ": {

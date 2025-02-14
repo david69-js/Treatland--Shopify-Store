@@ -480,6 +480,10 @@
   transition-property: background-color;
   transition-duration: var(--timing-base);
 }
+
+.product-card .product-card__quick-view-text-button.dn-i {
+  display: none !important;
+}
 .product-card .product-card__quick-view-text-button .icon {
   width: 16px;
   height: 16px;
