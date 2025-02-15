@@ -68,7 +68,7 @@
 
 									{%- for product in product_list limit: limit -%}
 										{% assign delay_card_step = delay_card_step | plus: 0.25 %}
-										<div class="products-thumbnails__product products-thumbnails__product--{{ section.settings.items_per_row }}"
+										<div class="products-thumbnails__product products-thumbnails__product--variant-card  products-thumbnails__product--{{ section.settings.items_per_row }}"
 											 {% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
 										>
 											{%- render
@@ -82,7 +82,7 @@
 									{%- endfor -%}
 								{%- else -%}
 									{%- for i in (1..4) -%}
-										<div class="products-thumbnails__product products-thumbnails__product--{{ section.settings.items_per_row }}" ">
+										<div class="products-thumbnails__product products-thumbnails__product--variant-card products-thumbnails__product--{{ section.settings.items_per_row }}" ">
 											{%- render 'product-card', product: nil -%}
 										</div>
 									{%- endfor -%}

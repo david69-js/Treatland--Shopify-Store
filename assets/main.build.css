@@ -2643,13 +2643,13 @@ textarea,
   display: none;
 }
 .price.price--on-sale .price__sale {
-  display: initial;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   column-gap: 5px;
 }
 .price.price--on-sale .price__sale .price-item--regular {
-  font-size: calc(var(--body-font-size) * 0.875);
+  font-size: var(--body-font-size);
   text-decoration: line-through;
   color: var(--color-text-thirdly);
 }

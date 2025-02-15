@@ -21,7 +21,6 @@
 {%- assign quick_view_image_fit		= settings.quick_view_image_fit -%}
 {%- assign labels_enabled			= settings.is_labels_enabled -%}
 {%- assign sale_label_enabled	    = settings.is_sale_label_enabled -%}
-{%- assign show_vendor				= settings.is_show_vendor -%}
 {%- assign sku 						= product.selected_or_first_available_variant.sku | strip -%}
 {%- assign sku_text 				= settings.product_card_sku_text | replace: '{SKU}', sku | replace: '{sku}', sku -%}
 {%- assign currency_code_enabled	= settings.is_currency_code_enabled -%}
@@ -32,18 +31,9 @@
 {%- assign swatches					= product.options_by_name[swatch_option].values -%}
 {%- assign extra_properties			= product.metafields.custom.extra_properties -%}
 
-{%- if show_vendor and product.vendor != blank -%}
-	{%- assign show_vendor_block = true -%}
-{%- endif -%}
 
 {%- if sku != blank and sku_text != blank -%}
 	{%- assign show_sku_block = true -%}
-{%- endif -%}
-
-{%- assign show_vendor_and_sku = false -%}
-
-{%- if show_vendor_block or show_sku_block -%}
-	{% assign show_vendor_and_sku = true -%}
 {%- endif -%}
 
 {% assign show_hover_content = false %}
@@ -110,7 +100,7 @@
 				{{- 'products.product_card.product_label' | t -}}:
 			</span>
 
-				-{{ 100 | minus: discount_value | json }}% {{- "products.product.sale" | t | prepend: ' ' -}}
+				 {{- "products.product.sale" | t | prepend: ' ' -}}
 			</li>
 		{% endif %}
 	{% endif %}
@@ -592,7 +582,7 @@
 		</div>
 	</div>
 
-	<div class="product-card__footer">
+	<div class="product-card__footer product-card__footer--variant-card">
 		<a class="focus-visible-outline product-card__title" href="{{ product.url }}">
 			{%- if product != blank -%}
 				{{- product.title -}}
@@ -601,34 +591,17 @@
 			{%- endif -%}
 		</a>
 
-		{%- if show_vendor_and_sku and simplified_view == nil -%}
-			<div class="product-card__vendor-sku">
-				{% if show_vendor_block %}
-					<span class="product-card__vendor">
-						<span class="visually-hidden">
-							{{- 'products.product_card.product_vendor' | t -}}
-						</span>
 
-						{{- product.vendor -}}
-					</span>
-				{% endif %}
-
-				{% if show_sku_block %}
-					<span class="product-card__sku">{{ sku_text }}</span>
-				{% endif %}
-			</div>
-		{%- endif -%}
-
-		<div class="product-card__price">
-			{%- render 'price',
+		<div class="product-card__price  product-card__price--variant-card">
+			{%- render 'price-variant',
 				product: product,
 				show_unit_price: show_unit_price,
 				currency_code_enabled: currency_code_enabled,
 				simplified_view: simplified_view
 			-%}
 
-			{%- if quick_view_enabled == true and product.available and settings.product_card_buttons_type == "text" -%}
-
+			{%- if quick_view_enabled == true  and settings.product_card_buttons_type == "text" -%}
+				
 			
 				{% if product.has_only_default_variant %}
 
