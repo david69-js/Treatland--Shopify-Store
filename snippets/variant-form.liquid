@@ -1,0 +1,41 @@
+{%- assign first_available_variant = product.variants | where: 'available', true | first -%}
+
+
+{% if first_available_variant %}
+        {%- form 'product', product, class: 'product-card__form product-card-form js-product-card-form product-card__form product-card-form--variant-card', novalidate: 'novalidate' -%}
+            <input type="hidden" name="id" value="{{ first_available_variant.id }}">
+
+            <div class="product-card__form-quantity">
+                <button type="button" class="product-card__form-quantity-btn" data-action="decrease">-</button>
+                <input type="number" name="quantity" value="1" min="1" class="product-card__form-quantity-input">
+                <button type="button" class="product-card__form-quantity-btn" data-action="increase">+</button>
+            </div>
+
+                <button
+                    type="submit" class="product-card__form-submit button product-card__quick-view-text-button" id="add-to-cart-btn"
+                    aria-label="{{- 'product_promo.button_aria' | t: product_title: product.title | escape -}}"
+                    {%- unless product.available -%}disabled{%- endunless -%}
+                        >
+                            {%- unless product.available -%}
+                                {{- "product_promo.sold_out" | t -}}
+                            {%- else -%}
+                                {{ 'products.product_card.add_to_cart' | t }}
+                            {%- endunless -%}
+                </button>
+        {%- endform -%}
+
+{% else %}
+    <button
+            type="submit" class="product-card__form-submit button button--primary" id="add-to-cart-btn"
+            aria-label="{{- 'product_promo.button_aria' | t: product_title: product.title | escape -}}"
+            {%- unless product.available -%}disabled{%- endunless -%}
+                >
+                    {%- unless product.available -%}
+                        Email me when available
+                    {%- else -%}
+                        {{ 'products.product_card.add_to_cart' | t }}
+                    {%- endunless -%}
+        </button>
+{% endif %}
+
+
