@@ -297,7 +297,7 @@
 									size: size,
 									tablet_size: tablet_size,
 									mobile_size: mobile_size -%}
-
+								
 								{%- if hover_image != blank and image_on_hover_enabled == true and simplified_view != true -%}
 									{%- if hover_image.value.media_type == 'video' -%}
 										<div class="product-card__image-picture product-card__image-picture--hover">
@@ -598,21 +598,21 @@
 				currency_code_enabled: currency_code_enabled,
 				simplified_view: simplified_view
 			-%}
+			{% if section.settings.show_desciption_card %}
+					<div class="focus-visible-outline product-card__description">
+					{%- if product.description != blank -%}
+						<div class="short-description">
+							{{ product.description | truncate: section.settings.truncate_description_card, "..." }}
+							<span class="read-more-description" onclick="showFullDescription(this)">Read more</span>
+						</div>
 
-				<div class="focus-visible-outline product-card__description">
-				{%- if product.description != blank -%}
-					<div class="short-description">
-						{{ product.description | truncate: 70, "..." }}
-						<span class="read-more-description" onclick="showFullDescription(this)">Read more</span>
-					</div>
-
-					<div class="full-description hidden-description">
-						{{ product.description }}
-						<span class="read-less-description" onclick="hideFullDescription(this)">Read less</span>
-					</div>
-				{%- else -%}
-					{{ 'products.product_card.product_description' | t }}
-				{%- endif -%}
+						<div class="full-description hidden-description">
+							{{ product.description }}
+							<span class="read-less-description" onclick="hideFullDescription(this)">Read less</span>
+						</div>
+					{%- else -%}
+						{{ 'products.product_card.product_description' | t }}
+					{%- endif -%}
 				</div>
 
 				<script>
@@ -620,41 +620,39 @@
 					let parent = element.closest(".focus-visible-outline");
 					parent.querySelector(".short-description").style.display = "none";
 					parent.querySelector(".full-description").classList.remove("hidden-description");
-					}
+				}
 
-					function hideFullDescription(element) {
+				function hideFullDescription(element) {
 					let parent = element.closest(".focus-visible-outline");
 					parent.querySelector(".full-description").classList.add("hidden-description");
 					parent.querySelector(".short-description").style.display = "block";
-					}
-
-
+				}
 				</script>
-
-			{%- if quick_view_enabled == true  and settings.product_card_buttons_type == "text" -%}
-				
+			{% endif %}
 			
-				{% if product.has_only_default_variant %}
 
+			
+				{%- assign first_available_variant = product.variants | where: 'available', true | first -%}
+			
+				{% if first_available_variant %}
 					<div class="product-card__price">
 						{% render 'variant-form' product: product%}
 					</div>
-
-
-				{% else %}
-				
-					<button
-						class="product-card__quick-view-text-button js-product-card-quick-view-button"
-						data-product-card-handle="{{- product.handle -}}"
-						{%- if product.has_only_default_variant or product.variants.size == 1 -%} data-variant="{{- product.selected_or_first_available_variant.id -}}" {%- endif -%}
-						type="button"
-						>{{- 'products.product_card.add_to_cart' | t -}}
-					</button>
-
+					{% else %}
+						<button
+							type="submit" class="product-card__form-submit button button--primary" id="add-to-cart-btn"
+							aria-label="{{- 'product_promo.button_aria' | t: product_title: product.title | escape -}}"
+							{%- unless product.available -%}disabled{%- endunless -%}
+								>
+									{%- unless product.available -%}
+										Email me when available
+									{%- else -%}
+										{{ 'products.product_card.add_to_cart' | t }}
+									{%- endunless -%}
+						</button>
 				{% endif %}
 
-		
-			{%- endif -%}
+
 
 			{%- if quick_view_enabled == true and settings.product_card_buttons_type == "text" -%}
 				<noscript>

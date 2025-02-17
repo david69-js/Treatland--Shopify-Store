@@ -125,13 +125,49 @@
 		},
 		{
 			"type": "header",
-			"content": "Layout"
+			"content": "Card Settings"
+		},
+		{
+			"type": "select",
+			"id": "card_style",
+			"label": "Card Style",
+			"options": [
+			{
+				"value": "minimal-card-style",
+				"label": "Minimal Card"
+			},
+			{
+				"value": "standar-card-style",
+				"label": "Standar Card"
+			},
+			{
+				"value": "full-card-style",
+				"label": "Full Card"
+			}
+		],
+			"default": "minimal-card-style"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_desciption_card",
+			"label": "Show description Card",
+			"default": true
+		},
+		{
+			"type": "number",
+			"id": "truncate_description_card",
+			"label": "Cut the description from the card",
+			"default": 70
 		},
         {
             "type": "product_list",
             "id": "product_list",
             "label": "Products"
         },
+		{
+			"type": "header",
+			"content": "Layout"
+		},
         {
             "type": "text",
             "id": "button_label",
@@ -165,7 +201,7 @@
                     "label": "4 per row"
                 }
         ],
-        "default": "grid-2"
+        	"default": "grid-2"
         },
 		{
 			"type": "select",
