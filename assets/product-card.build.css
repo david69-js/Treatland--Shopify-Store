@@ -47,7 +47,7 @@
   transition-property: box-shadow;
   transition-duration: var(--timing-base);
 }
-.product-card-form-variant{
+.product-card-form-variant--horizontal_card_style{
   flex-direction: row !important;
 }
 .product-card .product-card__footer {
@@ -782,7 +782,7 @@ button.product-card__form-quantity-btn{
     font-size: calc(var(--body-font-size) * 0.875);
   }
   .product-card .product-card__quick-view-text-button {
-    padding: 12px 24px;
+    padding: 12px 0px;
     font-size: var(--body-font-size);
     line-height: 1.5;
   }
@@ -874,4 +874,32 @@ button.product-card__form-quantity-btn{
    font-size: 11px !important;
    line-height: 13px;
 }
+.product-card-form-variant--vertical_card_style .product-card__image-wrapper.product-card__image-wrapper--portrait{
+  padding-top: 0%;
+  height: 100%;
+}
+.product-card-form-variant--vertical_card_style  .product-card__image-wrapper-link{
+  height: 100%;
+}
+.product-card-form-variant--vertical_card_style .product-card__main{
+  align-self: center;
+  width: 100% !important;
+}
+.product-card-form-variant--vertical_card_style .product-card__image,
+.product-card-form-variant--vertical_card_style .product-card__image.product-card__image--hover{
+  height: 155px;
+}
 
+.product-card-form-variant--vertical_card_style button.product-card__form-quantity-btn{
+  padding: 0 10px;
+  color: #515151;
+}
+.product-card-form-variant--vertical_card_style .product-card__form-quantity{
+  gap: 0;
+  font-size: 12px;
+  border: 1px solid #515151;
+}
+.product-card-form-variant--vertical_card_style .product-card__form-submit{
+  font-size: 14px;
+  font-weight: 500;
+}

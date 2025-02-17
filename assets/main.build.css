@@ -901,7 +901,7 @@ label {
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
-  border-radius: 32px;
+  border-radius: 0px;
   text-decoration: none;
   text-transform: none;
   transition-property: opacity, color, border, background-color;

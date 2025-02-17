@@ -65,9 +65,11 @@
 
 {% assign is_banner = false %}
 
-{% if is_button or banner_heading != blank or banner_subheading != blank %}
+{% if banner_image != blank %}
 	{% assign is_banner = true %}
 {% endif %}
+
+{% assign cardType = section.settings.card_style %}
 
 {% capture section_styles %}
 	--container-width: {{ container_width }};
@@ -100,8 +102,8 @@
 				
 				<div class="products-thumbnails__tab js-products-thumbnails-tab" data-index="{{- index -}}" style="{{ section_styles }}" >
 							
-					<div class="featured-products__content-wrapper {% if is_banner and  product_list.count > 0 %}flex-50{% endif %}">
-						{% if is_banner %}
+				{% if is_banner %}
+					<div class="featured-products__content-wrapper {% if is_banner and product_list.count > 0 %}flex-50{% endif %}">
 							<div class="featured-products__banner featured-products__banner--variant need-animate tr-dur-0-75 ">
 								{% if products_in_row == "5" %}
 									{% assign w_1920 = "361x479" %}
@@ -220,7 +222,6 @@
 									{%- endif -%}
 								</div>
 							</div>
-						{% endif %}
 
 					</div>
 					{% style %}
@@ -240,8 +241,9 @@
 					}
 					
 		    		{% endstyle %}
+				{% endif %}
 
-					<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid {% if is_banner and  product_list.count > 0 %}flex-50{% endif %}">
+					<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
 						{%- if product_list.count > 0 -%}
 							{% if forloop.index == 1 %}
 								{% assign delay_card_step = 0.25 %}
@@ -258,6 +260,7 @@
 										size: image_size,
 										tablet_size: image_size_tablet,
 										mobile_size: image_size_mobile,
+										cardType: cardType
 									-%}
 								</div>
 							{%- endfor -%}
@@ -509,19 +512,19 @@
 			"label": "Card Style",
 			"options": [
 			{
-				"value": "minimal-card-style",
-				"label": "Minimal Card"
+				"value": "horizontal_card_style",
+				"label": "Horizontal Card"
 			},
 			{
-				"value": "standar-card-style",
-				"label": "Standar Card"
+				"value": "vertical_card_style",
+				"label": "Vertical Card"
 			},
 			{
-				"value": "full-card-style",
+				"value": "full_card_style",
 				"label": "Full Card"
 			}
 		],
-			"default": "minimal-card-style"
+			"default": "horizontal_card_style",
 		},
 		{
 			"type": "checkbox",

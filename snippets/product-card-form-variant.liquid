@@ -419,7 +419,7 @@
 {%- endcapture -%}
 
 {%- capture classes -%}
-	product-card product-card-form-variant{% if big_card == true %} product-card--big{% endif %} {% if show_hover_content == false %}product-card--without-hover-content{% endif %} js-product-card
+	product-card product-card-form-variant product-card-form-variant--{{ cardType }} {% if big_card == true %} product-card--big{% endif %} {% if show_hover_content == false %}product-card--without-hover-content{% endif %} js-product-card
 {%- endcapture -%}
 
 <div

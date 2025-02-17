@@ -92,6 +92,8 @@
 }
 .products-thumbnails .products-thumbnails__product .product-card {
   padding: 16px;
+  gap: 10px;
+  justify-content: space-between;
 }
 .products-thumbnails .products-thumbnails__title.need-animate {
   opacity: 0;
@@ -192,6 +194,9 @@
 .flex-50 {
   flex-basis: 50%;
   box-sizing: border-box;
+}
+.flex-100{
+  flex-basis: 100%;
 }
 .featured-products__banner--variant{
   position: relative;
