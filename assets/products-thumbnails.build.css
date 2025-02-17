@@ -187,8 +187,16 @@
 .products-thumbnails--variant .products-thumbnails__heading-wrapper{
   flex-direction: column !important;
 }
-.products-thumbnails--variant .products-thumbnails__tab.js-products-thumbnails-tab{
+.products-thumbnails--variant .products-thumbanails__tab--position--banner_left__grid_right{
   flex-direction: row !important;
+  gap: 20px;
+}
+.products-thumbnails--variant .products-thumbanails__tab--position--banner_left__grid_right{
+  flex-direction: row !important;
+  gap: 20px;
+}
+.products-thumbnails--variant .products-thumbanails__tab--position--banner_right__grid_left{
+  flex-direction: row-reverse;
   gap: 20px;
 }
 .flex-50 {

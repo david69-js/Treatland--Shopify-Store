@@ -870,6 +870,15 @@ button.product-card__form-quantity-btn{
 .f14px{
   font-size: 14px !important;
 }
+.f13px{
+  font-size: 13px !important;
+}
+.f12px{
+  font-size: 12px !important;
+}
+.f11px{
+  font-size: 11px !important;
+}
 .focus-visible-outline.product-card__description{
    font-size: 11px !important;
    line-height: 13px;

@@ -100,7 +100,7 @@
 				{%- assign button_link = section.settings.button_link -%}
 
 				
-				<div class="products-thumbnails__tab js-products-thumbnails-tab" data-index="{{- index -}}" style="{{ section_styles }}" >
+				<div class="products-thumbnails__tab js-products-thumbnails-tab products-thumbanails__tab--position--{{ section.settings.banner_grid_position }}" data-index="{{- index -}}" style="{{ section_styles }}" >
 							
 				{% if is_banner %}
 					<div class="featured-products__content-wrapper {% if is_banner and product_list.count > 0 %}flex-50{% endif %}">
@@ -538,10 +538,52 @@
 			"label": "Cut the description from the card",
 			"default": 70
 		},
+		{
+			"type": "checkbox",
+			"id": "truncate_description_card_enable",
+			"label": "Enable description cut",
+			"default": true
+		},
         {
             "type": "product_list",
             "id": "product_list",
             "label": "Products"
+        },
+		{
+            "type": "text",
+            "id": "badgesale",
+            "label": "Sale: Text",
+            "default": "Sale"
+        },
+		{
+            "type": "text",
+            "id": "badgesale_description",
+            "label": "Sale description: Text",
+            "default": "Sale"
+        },
+		{
+            "type": "text",
+            "id": "badgeherenow",
+            "label": "Here Now: Here Now",
+            "default": "Here Now"
+        },
+		{
+            "type": "text",
+            "id": "badgeherenow_description",
+            "label": "Here Now description: Is here now",
+            "default": "Is here now"
+        },
+		{
+            "type": "text",
+            "id": "badgesoldout",
+            "label": "Sold out: Sold Out",
+            "default": "Sold out"
+        },
+		{
+            "type": "text",
+            "id": "badgesoldout_description",
+            "label": "Sold out description: Sold Out",
+            "default": "Sold out"
         },
 		{
 			"type": "header",
@@ -558,6 +600,22 @@
             "id": "button_link",
             "label": "Button link"
         },
+		{
+			"type": "select",
+			"id": "banner_grid_position",
+			"label": "Banner Image & Grid Position",
+			"options": [
+			{
+				"value": "banner_left__grid_right",
+				"label": "Banner Left - Grid Right"
+			},
+			{
+				"value": "banner_right__grid_left",
+				"label": "Banner Right - Grid Left"
+			}
+		],
+			"default": "banner_left__grid_right"
+		},
         {
             "type": "select",
             "id": "items_per_row",
