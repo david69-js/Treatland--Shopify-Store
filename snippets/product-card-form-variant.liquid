@@ -591,7 +591,6 @@
 			{%- endif -%}
 		</a>
 
-
 		<div class="product-card__price  product-card__price--variant-card">
 			{%- render 'price-variant',
 				product: product,
@@ -599,6 +598,38 @@
 				currency_code_enabled: currency_code_enabled,
 				simplified_view: simplified_view
 			-%}
+
+				<div class="focus-visible-outline product-card__description">
+				{%- if product.description != blank -%}
+					<div class="short-description">
+						{{ product.description | truncate: 70, "..." }}
+						<span class="read-more-description" onclick="showFullDescription(this)">Read more</span>
+					</div>
+
+					<div class="full-description hidden-description">
+						{{ product.description }}
+						<span class="read-less-description" onclick="hideFullDescription(this)">Read less</span>
+					</div>
+				{%- else -%}
+					{{ 'products.product_card.product_description' | t }}
+				{%- endif -%}
+				</div>
+
+				<script>
+				function showFullDescription(element) {
+					let parent = element.closest(".focus-visible-outline");
+					parent.querySelector(".short-description").style.display = "none";
+					parent.querySelector(".full-description").classList.remove("hidden-description");
+					}
+
+					function hideFullDescription(element) {
+					let parent = element.closest(".focus-visible-outline");
+					parent.querySelector(".full-description").classList.add("hidden-description");
+					parent.querySelector(".short-description").style.display = "block";
+					}
+
+
+				</script>
 
 			{%- if quick_view_enabled == true  and settings.product_card_buttons_type == "text" -%}
 				

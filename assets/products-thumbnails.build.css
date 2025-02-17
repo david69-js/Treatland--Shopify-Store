@@ -165,7 +165,9 @@
   .products-thumbnails .products-thumbnails__tab.is-loading {
     opacity: 1;
   }
-
+  .products-thumbnails__tab{
+    width: 100%;
+  }
   .products-thumbnails__tab-content--grid  .products-thumbnails__product--grid-1 {
     grid-column: span 12;
   }

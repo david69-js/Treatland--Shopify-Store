@@ -75,7 +75,7 @@
 				</span>
 
 				<span class="price__old">
-					<span class="price-item price-item--regular" data-price-old>
+					<span class="price-item price-item--regular f14px" data-price-old>
 						{%- if currency_code_enabled -%}
 							{{- compare_at_price | money_with_currency -}}
 						{%- else -%}
@@ -85,7 +85,7 @@
 				</span>
 			{%- endunless -%}
 
-            <span class="price-item price-item--sale" data-product-price data-amount="{{ price }}">
+            <span class="price-item price-item--sale f14px" data-product-price data-amount="{{ price }}">
 				{{- money_price -}}
 			</span>
 		</div>
