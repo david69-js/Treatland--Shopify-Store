@@ -32,15 +32,57 @@
 {%- assign image_size_tablet = 382 -%}
 {%- assign image_size_mobile = 240 -%}
 
-
 {%- assign heading 					= section.settings.heading -%}
 
 {%- capture style -%}
 	--container-width: {{ container_width -}};
 {%- endcapture -%}
 
+{%- assign heading = section.settings.heading -%}
+{%- assign products_in_row = section.settings.products_in_row -%}
+{%- assign product_list = section.settings.product_list -%}
+{%- assign container = section.settings.container_width -%}
+{%- assign banner_image = section.settings.banner_image -%}
+{%- assign banner_heading = section.settings.banner_heading -%}
+{%- assign banner_subheading = section.settings.banner_subheading -%}
+{%- assign button_labelB = section.settings.button_labelB -%}
+{%- assign button_url = section.settings.button_url -%}
+{%- assign text_color = section.settings.text_color -%}
+{%- assign button_color = section.settings.button_color -%}
+{%- assign button_background_color = section.settings.button_background_color -%}
+{%- assign button_border_color = section.settings.button_border_color -%}
+{%- assign button_hover_color = section.settings.button_hover_color -%}
+{%- assign button_hover_background = section.settings.button_hover_background -%}
+{%- assign button_hover_border = section.settings.button_hover_border -%}
+{%- assign overlay_color = section.settings.overlay_color -%}
+
+
+{% assign is_button = false %}
+
+{% if button_labelB != blank and button_url != blank %}
+	{% assign is_button = true %}
+{% endif %}
+
+{% assign is_banner = false %}
+
+{% if is_button or banner_heading != blank or banner_subheading != blank %}
+	{% assign is_banner = true %}
+{% endif %}
+
+{% capture section_styles %}
+	--container-width: {{ container_width }};
+	--text-color: {{ text_color }};
+	--button-color: {{ button_color }};
+	--button-background-color: {{ button_background_color }};
+	--button-border-color: {{ button_border_color }};
+	--button-hover-color: {{ button_hover_color }};
+	--button-hover-background: {{ button_hover_background }};
+	--button-hover-border: {{ button_hover_border }};
+	--overlay-color: {{ overlay_color }};
+{% endcapture %}
+
 {%- if has_filled_block -%}
-	<section class="products-thumbnails js-products-thumbnails-section js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}"
+	<section class="products-thumbnails products-thumbnails--variant js-products-thumbnails-section js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}"
 			 style="{{- style -}}"
 	>
 		{%- render 'adastra' with '/src/styles/products-thumbnails.scss' -%}
@@ -55,49 +97,170 @@
 				{%- assign button_label = section.settings.button_label -%}
 				{%- assign button_link = section.settings.button_link -%}
 
+				
+				<div class="products-thumbnails__tab js-products-thumbnails-tab" data-index="{{- index -}}" style="{{ section_styles }}" >
+							
+					<div class="featured-products__content-wrapper {% if is_banner and  product_list.count > 0 %}flex-50{% endif %}">
+						{% if is_banner %}
+							<div class="featured-products__banner featured-products__banner--variant need-animate tr-dur-0-75 ">
+								{% if products_in_row == "5" %}
+									{% assign w_1920 = "361x479" %}
+									{% assign w_1920_2x = "722x958" %}
 
-					<div
-						class="products-thumbnails__tab js-products-thumbnails-tab"
-						data-index="{{- index -}}">
-			
-							<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid">
-								{%- if product_list.count > 0 -%}
-									{% if forloop.index == 1 %}
-										{% assign delay_card_step = 0.25 %}
+									{% assign w_1600 = "300x427" %}
+									{% assign w_1600_2x = "600x854" %}
+								{% elsif products_in_row == "4" %}
+									{% assign w_1920 = "361x536" %}
+									{% assign w_1920_2x = "722x1072" %}
+
+									{% assign w_1600 = "300x472" %}
+									{% assign w_1600_2x = "600x944" %}
+								{% else %}
+									{% assign w_1920 = "361x664" %}
+									{% assign w_1920_2x = "722x1328" %}
+
+									{% assign w_1600 = "300x577" %}
+									{% assign w_1600_2x = "600x1154" %}
+								{% endif %}
+
+								{% if banner_image != blank %}
+									<picture {% if section.index != 1 %}class="lazy"{% endif %}>
+										{% if section.index != 1 %}
+											<source
+												data-srcset="{{ banner_image | img_url: "343x359", crop: "center" }} 1x, {{ banner_image | img_url: "686x718", crop: "center" }} 2x"
+												srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "20x" }} 2x"
+												media="(max-width: 375px)"
+											/>
+
+											<source
+												data-srcset="{{ banner_image | img_url: "735x359", crop: "center" }} 1x, {{ banner_image | img_url: "1470x718", crop: "center" }} 2x"
+												srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "20x" }} 2x"
+												media="(max-width: 767px)"
+											/>
+
+											<source
+												data-srcset="{{ banner_image | img_url: "268x486", crop: "center" }} 1x, {{ banner_image | img_url: "536x972", crop: "center" }} 2x"
+												srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "20x" }} 2x"
+												media="(max-width: 991px)"
+											/>
+
+											<source
+												data-srcset="{{ banner_image | img_url: "268x474", crop: "center" }} 1x, {{ banner_image | img_url: "536x948", crop: "center" }} 2x"
+												srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "20x" }} 2x"
+												media="(max-width: 1200px)"
+											/>
+
+											<source
+												data-srcset="{{ banner_image | img_url: w_1600, crop: "center" }} 1x, {{ banner_image | img_url: w_1600_2x, crop: "center" }} 2x"
+												srcset="{{ banner_image | img_url: "10x" }} 1x, {{ banner_image | img_url: "20x" }} 2x"
+												media="(max-width: 1600px)"
+											/>
+
+											<img class="featured-products__banner-image"
+												srcset="{{- banner_image | img_url: '10x' -}} 1x, {{ banner_image | img_url: '20x' }} 2x"
+												src="{{ banner_image | img_url: w_1920 }}"
+												data-src="{{- banner_image | img_url: w_1920, crop: "center" -}}"
+												data-srcset="{{ banner_image | img_url: w_1920, crop: "center" }} 1x, {{ banner_image | img_url: w_1920_2x, crop: "center" }} 2x"
+												style="object-fit: {{ section.settings.banner_fit }}; object-position: {{ section.settings.banner_position }};"
+												alt="{{ banner_image.alt | escape }}">
+										{% else %}
+											<source
+												srcset="{{ banner_image | img_url: "343x359", crop: "center" }} 1x, {{ banner_image | img_url: "686x718", crop: "center" }} 2x"
+												media="(max-width: 375px)"
+											/>
+
+											<source
+												srcset="{{ banner_image | img_url: "735x359", crop: "center" }} 1x, {{ banner_image | img_url: "1470x718", crop: "center" }} 2x"
+												media="(max-width: 767px)"
+											/>
+
+											<source
+												srcset="{{ banner_image | img_url: "268x486", crop: "center" }} 1x, {{ banner_image | img_url: "536x972", crop: "center" }} 2x"
+												media="(max-width: 991px)"
+											/>
+
+											<source
+												srcset="{{ banner_image | img_url: "268x474", crop: "center" }} 1x, {{ banner_image | img_url: "536x948", crop: "center" }} 2x"
+												media="(max-width: 1200px)"
+											/>
+
+											<source
+												srcset="{{ banner_image | img_url: w_1600, crop: "center" }} 1x, {{ banner_image | img_url: w_1600_2x, crop: "center" }} 2x"
+												media="(max-width: 1600px)"
+											/>
+
+											<img class="featured-products__banner-image"
+												src="{{- banner_image | img_url: w_1920, crop: "center" -}}"
+												srcset="{{ banner_image | img_url: w_1920, crop: "center" }} 1x, {{ banner_image | img_url: w_1920_2x, crop: "center" }} 2x"
+												style="{{ focal_point }}"
+												fetchpriority="high"
+												alt="{{ banner_image.alt | escape }}">
+										{% endif %}
+									</picture>
+								{% else %}
+									{{ "detailed-apparel-1" | placeholder_svg_tag: "featured-products__banner-image" }}
+								{% endif %}
+
+								<div class="featured-products__banner-content featured-products__banner-content--variant">
+									{% if banner_heading != blank %}
+										<h3 class="featured-products__banner-heading need-animate tr-dur-0-5 tr-del-0-25">{{ banner_heading }}</h3>
 									{% endif %}
 
-									{%- for product in product_list limit: limit -%}
-										{% assign delay_card_step = delay_card_step | plus: 0.25 %}
-										<div class="products-thumbnails__product products-thumbnails__product--variant-card  products-thumbnails__product--{{ section.settings.items_per_row }}"
-											 {% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
-										>
-											{%- render
-												'product-card-form-variant',
-												product: product,
-												size: image_size,
-												tablet_size: image_size_tablet,
-												mobile_size: image_size_mobile,
-											-%}
-										</div>
-									{%- endfor -%}
-								{%- else -%}
-									{%- for i in (1..4) -%}
-										<div class="products-thumbnails__product products-thumbnails__product--variant-card products-thumbnails__product--{{ section.settings.items_per_row }}" ">
-											{%- render 'product-card', product: nil -%}
-										</div>
-									{%- endfor -%}
-								{%- endif -%}
-							</div>
-				
+									{% if banner_subheading != blank %}
+										<p class="featured-products__banner-subheading need-animate tr-dur-0-5 tr-del-0-5">{{ banner_subheading }}</p>
+									{% endif %}
 
-						{% if button_link != blank and button_label != blank %}
-							<div class="products-thumbnails__button-wrapper need-animate tr-dur-0-5 tr-del-1-5">
-								<a class="products-thumbnails__button button button--secondary-border"
-								   href="{{ button_link }}">{{ button_label }}</a>
+									{%- if is_button -%}
+										<div class="featured-products__button-wrapper need-animate tr-dur-0-5 tr-del-0-75">
+											<a class="featured-products__button button button--primary-border"
+											href="{{- button_url -}}">
+												{{- button_label -}}
+											</a>
+										</div>
+									{%- endif -%}
+								</div>
 							</div>
 						{% endif %}
+
 					</div>
-			</div>
+
+					<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid {% if is_banner and  product_list.count > 0 %}flex-50{% endif %}">
+						{%- if product_list.count > 0 -%}
+							{% if forloop.index == 1 %}
+								{% assign delay_card_step = 0.25 %}
+							{% endif %}
+
+							{%- for product in product_list limit: limit -%}
+								{% assign delay_card_step = delay_card_step | plus: 0.25 %}
+								<div class="products-thumbnails__product products-thumbnails__product--variant-card  products-thumbnails__product--{{ section.settings.items_per_row }}"
+									{% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
+								>
+									{%- render
+										'product-card-form-variant',
+										product: product,
+										size: image_size,
+										tablet_size: image_size_tablet,
+										mobile_size: image_size_mobile,
+									-%}
+								</div>
+							{%- endfor -%}
+						{%- else -%}
+							{%- for i in (1..4) -%}
+								<div class="products-thumbnails__product products-thumbnails__product--variant-card products-thumbnails__product--{{ section.settings.items_per_row }}" ">
+									{%- render 'product-card', product: nil -%}
+								</div>
+							{%- endfor -%}
+						{%- endif -%}
+					</div>
+
+					{% if button_link != blank and button_label != blank %}
+						<div class="products-thumbnails__button-wrapper need-animate tr-dur-0-5 tr-del-1-5">
+							<a class="products-thumbnails__button button button--secondary-border"
+							href="{{ button_link }}">{{ button_label }}</a>
+						</div>
+					{% endif %}
+				</div>
+		</div>
 
 	
 		</div>
@@ -122,6 +285,142 @@
 			"id": "heading",
 			"label": "Heading",
 			"default": "Grid Products"
+		},
+		{
+			"type": "header",
+			"content": "Banner Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "banner_image",
+			"label": "Image"
+		},
+		{
+			"type": "select",
+			"id": "banner_fit",
+			"label": "Banner Image Fit",
+			"options": [
+			{
+				"value": "contain",
+				"label": "Contain"
+			},
+			{
+				"value": "cover",
+				"label": "Cover"
+			},
+			{
+				"value": "fill",
+				"label": "Fill"
+			},
+			{
+				"value": "none",
+				"label": "None"
+			}
+		],
+			"default": "cover"
+		},
+		{
+			"type": "select",
+			"id": "banner_position",
+			"label": "Banner Image Position",
+			"options": [
+			{
+				"value": "center",
+				"label": "Center"
+			},
+			{
+				"value": "right",
+				"label": "Right"
+			},
+			{
+				"value": "bottom",
+				"label": "Bottom"
+			},
+			{
+				"value": "left",
+				"label": "Left"
+			},
+			{
+				"value": "top",
+				"label": "Top"
+			}
+		],
+			"default": "center"
+		},
+		{
+			"type": "text",
+			"id": "banner_heading",
+			"label": "Heading",
+			"default": "Banner heading"
+		},
+		{
+			"type": "text",
+			"id": "banner_subheading",
+			"label": "Subheading",
+			"default": "Banner subheading"
+		},
+		{
+			"type": "text",
+			"id": "button_labelB",
+			"label": "Button label",
+			"default": "Shop Now"
+		},
+		{
+			"type": "url",
+			"id": "button_url",
+			"label": "Button link"
+		},
+		{
+			"type": "header",
+			"content": "Colors"
+		},
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "Text color",
+			"default": "#fff"
+		},
+		{
+			"type": "color_background",
+			"id": "overlay_color",
+			"label": "Overlay color",
+			"default": "rgba(0, 0, 0, 0.4)"
+		},
+		{
+			"type": "color",
+			"id": "button_color",
+			"label": "Button color",
+			"default": "#fff"
+		},
+		{
+			"type": "color",
+			"id": "button_background_color",
+			"label": "Button background",
+			"default": "transparent"
+		},
+		{
+			"type": "color",
+			"id": "button_border_color",
+			"label": "Button border",
+			"default": "#fff"
+		},
+		{
+			"type": "color",
+			"id": "button_hover_color",
+			"label": "Button color (hover)",
+			"default": "#000"
+		},
+		{
+			"type": "color",
+			"id": "button_hover_background",
+			"label": "Button background (hover)",
+			"default": "#fff"
+		},
+		{
+			"type": "color",
+			"id": "button_hover_border",
+			"label": "Button border (hover)",
+			"default": "#fff"
 		},
 		{
 			"type": "header",
