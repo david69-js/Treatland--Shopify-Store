@@ -80,6 +80,65 @@
 	{%- endif -%}
 {%- endfor -%}
 
+{%- capture labels -%}
+	{%- unless product.available -%}
+		<li	class="product-card__label product-card__label--sold-out">
+			<span class="visually-hidden">
+				{{- 'products.product_card.product_label' | t -}}:
+			</span>
+
+			{{- "products.product.sold_out" | t -}}
+		</li>
+	{%- endunless -%}
+
+	{% if sale_label_enabled %}
+		{% assign discount_value = product.price | times: 100 | divided_by: product.compare_at_price_max %}
+
+		{% if discount_value < 100 %}
+			<li class="product-card__label product-card__label--sale">
+			<span class="visually-hidden">
+				{{- 'products.product_card.product_label' | t -}}:
+			</span>
+
+				 {{- "products.product.sale" | t | prepend: ' ' -}}
+			</li>
+		{% endif %}
+	{% endif %}
+
+	{% if labels_enabled %}
+		{%- assign tag_index = 1 -%}
+
+		{%- for tag in product.tags -%}
+			{%- if tag contains 'label__' -%}
+				{%- assign class = 'product-card__label' -%}
+
+				{%- if tag contains ':primary' -%}
+					{%- assign class = class | append: " product-card__label--primary" | strip -%}
+				{%- elsif tag contains ':secondary' -%}
+					{%- assign class = class | append: " product-card__label--secondary" | strip -%}
+				{%- endif -%}
+
+				{%- assign clipped_tag = tag | remove: 'label__' | remove: ':primary' | remove: ':secondary' -%}
+
+				<li class="{{- class -}}">
+				<span class="visually-hidden">
+					{{- 'products.product_card.product_label' | t -}}:
+				</span>
+
+					{{- clipped_tag -}}
+				</li>
+
+				{%- assign tag_index = tag_index | plus: 1 -%}
+
+				{%- if tag_index > 3 -%}
+					{%- break -%}
+				{%- endif -%}
+			{%- endif -%}
+		{%- endfor -%}
+	{% endif %}
+{%- endcapture -%}
+
+
 {%- capture images -%}
 	{%- assign colors				= '' -%}
 	{%- assign colors_array			= '' -%}
