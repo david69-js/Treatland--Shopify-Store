@@ -70,6 +70,7 @@
 {% endif %}
 
 {% assign cardType = section.settings.card_style %}
+{% assign borderType = section.settings.card_border_style %}
 
 {% capture section_styles %}
 	--container-width: {{ container_width }};
@@ -243,7 +244,7 @@
 		    		{% endstyle %}
 				{% endif %}
 
-					<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
+					<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}" style="gap:{{ section.settings.space_between_cards }}px">
 						{%- if product_list.count > 0 -%}
 							{% if forloop.index == 1 %}
 								{% assign delay_card_step = 0.25 %}
@@ -260,7 +261,9 @@
 										size: image_size,
 										tablet_size: image_size_tablet,
 										mobile_size: image_size_mobile,
-										cardType: cardType
+										cardType: cardType,
+										borderType: borderType,
+
 									-%}
 								</div>
 							{%- endfor -%}
@@ -527,6 +530,26 @@
 			"default": "horizontal_card_style",
 		},
 		{
+			"type": "select",
+			"id": "card_border_style",
+			"label": "Card Border Style",
+			"options": [
+			{
+				"value": "card_all_bordes",
+				"label": "All borders"
+			},
+			{
+				"value": "border_bottom",
+				"label": "Border Bottom",
+			},
+			{
+				"value": "inside_borders",
+				"label": "Inside borders"
+			}
+		],
+			"default": "card_all_bordes",
+		},
+		{
 			"type": "checkbox",
 			"id": "show_desciption_card",
 			"label": "Show description Card",
@@ -548,42 +571,6 @@
             "type": "product_list",
             "id": "product_list",
             "label": "Products"
-        },
-		{
-            "type": "text",
-            "id": "badgesale",
-            "label": "Sale: Text",
-            "default": "Sale"
-        },
-		{
-            "type": "text",
-            "id": "badgesale_description",
-            "label": "Sale description: Text",
-            "default": "Sale"
-        },
-		{
-            "type": "text",
-            "id": "badgeherenow",
-            "label": "Here Now: Here Now",
-            "default": "Here Now"
-        },
-		{
-            "type": "text",
-            "id": "badgeherenow_description",
-            "label": "Here Now description: Is here now",
-            "default": "Is here now"
-        },
-		{
-            "type": "text",
-            "id": "badgesoldout",
-            "label": "Sold out: Sold Out",
-            "default": "Sold out"
-        },
-		{
-            "type": "text",
-            "id": "badgesoldout_description",
-            "label": "Sold out description: Sold Out",
-            "default": "Sold out"
         },
 		{
 			"type": "header",
@@ -640,6 +627,16 @@
         ],
         	"default": "grid-2"
         },
+		{
+			"type": "range",
+			"id": "space_between_cards",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Space between cards",
+			"default": 40
+		},
 		{
 			"type": "select",
 			"id": "container_width",
