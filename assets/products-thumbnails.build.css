@@ -16,6 +16,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 24px;
+}
+.products-thumbnails__heading-wrapper--content{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 .products-thumbnails .products-thumbnails__heading  .products-thumbnails__button-wrapper{
   margin: 0;
