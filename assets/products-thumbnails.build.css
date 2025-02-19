@@ -12,6 +12,14 @@
   flex-direction: column;
   margin-bottom: 24px;
 }
+.products-thumbnails .products-thumbnails__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.products-thumbnails .products-thumbnails__heading  .products-thumbnails__button-wrapper{
+  margin: 0;
+}
 .products-thumbnails .products-thumbnails__button-lists__wrapper {
   overflow-y: scroll;
   margin-top: 24px;

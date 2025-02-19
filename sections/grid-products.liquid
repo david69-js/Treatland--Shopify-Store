@@ -33,12 +33,12 @@
 {%- assign image_size_mobile = 240 -%}
 
 {%- assign heading 					= section.settings.heading -%}
+{%- assign paragraph 				= section.settings.paragraph -%}
 
 {%- capture style -%}
 	--container-width: {{ container_width -}};
 {%- endcapture -%}
 
-{%- assign heading = section.settings.heading -%}
 {%- assign products_in_row = section.settings.products_in_row -%}
 {%- assign product_list = section.settings.product_list -%}
 {%- assign container = section.settings.container_width -%}
@@ -56,7 +56,8 @@
 {%- assign button_hover_border = section.settings.button_hover_border -%}
 {%- assign overlay_color = section.settings.overlay_color -%}
 
-
+{%- assign button_label = section.settings.button_label -%}
+{%- assign button_link = section.settings.button_link -%}
 {% assign is_button = false %}
 
 {% if button_labelB != blank and button_url != blank %}
@@ -92,15 +93,23 @@
 
 		<div class="products-thumbnails__container">
 			<div class="products-thumbnails__heading-wrapper">
-				{%- if heading != blank -%}
-					<h2 class="product-tabs__title need-animate tr-dur-0-5">{{- heading -}}</h2>
-				{%- endif -%}
+				<div class="products-thumbnails__heading">
+					<div class="products-thumbnails__heading-wrapper--content">
+						{%- if heading != blank -%}
+							<h2 class="product-tabs__title need-animate tr-dur-0-5">{{- heading -}}</h2>
+						{%- endif -%}
+						{%- if paragraph != blank -%}
+							<div class="need-animate tr-dur-0-5">{{- paragraph -}}</div>
+						{%- endif -%}			
+					</div>
 
-				{%- assign product_list = section.settings.product_list -%}
-				{%- assign button_label = section.settings.button_label -%}
-				{%- assign button_link = section.settings.button_link -%}
+					{% if section.settings.button_position == "top-right"%}
+						{% if button_link != blank and button_label != blank %}
+							<a class="products-thumbnails__button	"href="{{ button_link }}">{{ button_label }}</a>
+						{% endif %}
+					{% endif %}
+				</div>
 
-				
 				<div class="products-thumbnails__tab js-products-thumbnails-tab products-thumbanails__tab--position--{{ section.settings.banner_grid_position }}" data-index="{{- index -}}" style="{{ section_styles }}" >
 							
 				{% if is_banner %}
@@ -275,14 +284,15 @@
 							{%- endfor -%}
 						{%- endif -%}
 					</div>
-
-					{% if button_link != blank and button_label != blank %}
-						<div class="products-thumbnails__button-wrapper need-animate tr-dur-0-5 tr-del-1-5">
-							<a class="products-thumbnails__button button button--secondary-border"
-							href="{{ button_link }}">{{ button_label }}</a>
-						</div>
-					{% endif %}
 				</div>
+				{% if section.settings.button_position == "bottom-center"%}
+					{% if button_link != blank and button_label != blank %}
+							<div class="products-thumbnails__button-wrapper need-animate tr-dur-0-5 tr-del-1-5">
+								<a class="products-thumbnails__button button button--secondary-border"
+								href="{{ button_link }}">{{ button_label }}</a>
+							</div>
+						{% endif %}
+				{% endif %}
 		</div>
 
 	
@@ -308,6 +318,11 @@
 			"id": "heading",
 			"label": "Heading",
 			"default": "Grid Products"
+		},
+		{
+			"type": "richtext",
+			"id": "paragraph",
+			"label": "Paragraph"
 		},
 		{
 			"type": "header",
@@ -586,6 +601,22 @@
             "type": "url",
             "id": "button_link",
             "label": "Button link"
+        },
+		{
+            "type": "select",
+            "id": "button_position",
+            "label": "Button Position",
+            "options": [
+                {
+                    "value": "top-right",
+                    "label": "Top Right"
+                },
+                {
+                    "value": "bottom-center",
+                    "label": "Bottom Center"
+                }
+        ],
+        	"default": "bottom-center"
         },
 		{
 			"type": "select",
