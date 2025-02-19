@@ -61,7 +61,7 @@
 }
 .product-card .product-card__footer--variant-card{
   width: 100%;
-  height: auto;
+  height: 100%;
   justify-content: space-between;
   margin-top: 0px !important;
   gap: 10px;
@@ -911,4 +911,25 @@ button.product-card__form-quantity-btn{
 .product-card-form-variant--vertical_card_style .product-card__form-submit{
   font-size: 14px;
   font-weight: 500;
+}
+
+.product-card__content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-card__content .product-card__content-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card__content .product-card__content-info .product-card__title{
+  min-height: 50px;
+}
+
+.product-card-form-variant--horizontal_card_style .product-card__content .product-card__content-info .product-card__title{
+  min-height: 30px;
 }

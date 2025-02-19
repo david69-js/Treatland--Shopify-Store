@@ -525,15 +525,15 @@
 	</div>
 
 	<div class="product-card__footer product-card__footer--variant-card">
-		<a class="focus-visible-outline product-card__title" href="{{ product.url }}">
-			{%- if product != blank -%}
-				{{- product.title -}}
-			{%- else -%}
-				{{- 'products.product_card.product_title' | t -}}
-			{%- endif -%}
-		</a>
-
-		<div class="product-card__price  product-card__price--variant-card">
+	<div class="product-card__content">
+		<div class="product-card__content-info">
+			<a class="focus-visible-outline product-card__title" href="{{ product.url }}">
+				{%- if product != blank -%}
+					{{- product.title -}}
+				{%- else -%}
+					{{- 'products.product_card.product_title' | t -}}
+				{%- endif -%}
+			</a>
 			{%- render 'price-variant',
 				product: product,
 				show_unit_price: show_unit_price,
@@ -558,14 +558,14 @@
 								<script>
 									function showFullDescription(element) {
 										let parent = element.closest(".focus-visible-outline");
-										parent.querySelector(".short-description").style.display = "none";
+										parent.querySelector(".read-more-description").style.display = "none";
 										parent.querySelector(".full-description").classList.remove("hidden-description");
 									}
 
 									function hideFullDescription(element) {
 										let parent = element.closest(".focus-visible-outline");
 										parent.querySelector(".full-description").classList.add("hidden-description");
-										parent.querySelector(".short-description").style.display = "block";
+										parent.querySelector(".read-more-description").style.display = "block";
 									}
 								</script>
 							{% else %}
@@ -582,6 +582,9 @@
 
 				</div>
 			{% endif %}
+		</div>
+			<div class="product-card__price  product-card__price--variant-card">
+			
 			
 
 			
@@ -622,6 +625,7 @@
 				</noscript>
 			{%- endif -%}
 		</div>
+	</div>
 
 		{% if product.quantity_price_breaks_configured? %}
 			<div class="product-card__volume-pricing-note">
