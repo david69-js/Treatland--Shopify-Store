@@ -137,8 +137,8 @@
 }
 .product-card .product-card__labels {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 0px;
+  left: 0px;
   z-index: var(--layer-raised);
   display: flex;
   flex-direction: column;
@@ -858,12 +858,15 @@ button.product-card__form-quantity-btn{
 }
 
 .read-more-description, .read-less-description {
-  color: #007bff;
+  color: #000;
   cursor: pointer;
   font-weight: bold;
   margin-left: 5px;
 }
-
+.read-less-description {
+  margin-left: 0px;
+  margin-top: 7px;
+}
 .read-more-description:hover, .read-less-description:hover {
   text-decoration: underline;
 }

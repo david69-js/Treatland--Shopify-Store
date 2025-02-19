@@ -21,6 +21,12 @@
 {%- assign quick_view_image_fit		= settings.quick_view_image_fit -%}
 {%- assign labels_enabled			= settings.is_labels_enabled -%}
 {%- assign sale_label_enabled	    = settings.is_sale_label_enabled -%}
+{%- assign color_sale_aditional_text	    = settings.color_sale_aditional_text -%}
+{%- assign sale_aditional_text	    = settings.sale_aditional_text -%}
+{%- assign custom_tag_enabled	    = settings.is_custom_tag_label_enabled -%}
+{%- assign custom_tag_text	    	= settings.custom_tag_label_text -%}
+{%- assign custom_tag_aditional_text	    = settings.custom_tag_label_additional_text -%}
+{% assign  custom_aditional_text_color = settings.color_custom_tag_label_additional_text %}
 {%- assign sku 						= product.selected_or_first_available_variant.sku | strip -%}
 {%- assign sku_text 				= settings.product_card_sku_text | replace: '{SKU}', sku | replace: '{sku}', sku -%}
 {%- assign currency_code_enabled	= settings.is_currency_code_enabled -%}
@@ -105,32 +111,25 @@
 		{% endif %}
 	{% endif %}
 
-	{% if labels_enabled %}
-		{%- assign tag_index = 1 -%}
+	{% if custom_tag_enabled %}
+		{%- assign tag_index = 0 -%}
+		{% assign tagFound = false %}
 
 		{%- for tag in product.tags -%}
-			{%- if tag contains 'label__' -%}
-				{%- assign class = 'product-card__label' -%}
-
-				{%- if tag contains ':primary' -%}
-					{%- assign class = class | append: " product-card__label--primary" | strip -%}
-				{%- elsif tag contains ':secondary' -%}
-					{%- assign class = class | append: " product-card__label--secondary" | strip -%}
-				{%- endif -%}
-
-				{%- assign clipped_tag = tag | remove: 'label__' | remove: ':primary' | remove: ':secondary' -%}
+			{%- if tag contains 'badgecustom' -%}
+				{%- assign class = 'product-card__label product-card__label--secondary' -%}
 
 				<li class="{{- class -}}">
 				<span class="visually-hidden">
-					{{- 'products.product_card.product_label' | t -}}:
+					{{ custom_tag_text }}
 				</span>
-
-					{{- clipped_tag -}}
+					{{- custom_tag_text -}}
 				</li>
 
 				{%- assign tag_index = tag_index | plus: 1 -%}
-
-				{%- if tag_index > 3 -%}
+				{% assign tagFound = true %}
+				
+				{%- if tag_index > 1 and tagFound -%}
 					{%- break -%}
 				{%- endif -%}
 			{%- endif -%}
@@ -597,6 +596,11 @@
 				product: product,
 				show_unit_price: show_unit_price,
 				currency_code_enabled: currency_code_enabled,
+				cmAditionalText: custom_tag_aditional_text,
+				cmColorAditionalText: custom_aditional_text_color,
+				sale_aditional_text: sale_aditional_text,
+				color_sale_aditional_text: color_sale_aditional_text,
+				tagfound: tagFound,
 				simplified_view: simplified_view
 			-%}
 

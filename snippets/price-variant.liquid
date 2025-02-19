@@ -87,7 +87,13 @@
 
             <span class="price-item price-item--sale f14px" data-product-price data-amount="{{ price }}">
 				{{- money_price -}}
+				
 			</span>
+			{% if settings.is_sale_label_enabled %}	
+				<span class="price-item f14px" style="color: {{ color_sale_aditional_text }}">
+					{{- sale_aditional_text -}}
+				</span>
+			{% endif %}
 		</div>
 
 		<div class="price__regular">
@@ -120,6 +126,12 @@
 
 				<span class="price-item price-item--regular f14px" data-product-price>
 					{{- money_price -}}
+				</span>
+			{% endif %}
+			
+			{% if settings.is_custom_tag_label_enabled and tagfound %}
+				<span class="price-item f14px" style="color: {{ cmColorAditionalText }}">
+					{{- cmAditionalText -}}
 				</span>
 			{% endif %}
 		</div>

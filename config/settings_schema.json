@@ -706,9 +706,45 @@
 			},
 			{
 				"type": "checkbox",
+				"id": "is_custom_tag_label_enabled",
+				"label": "Enable custom tag",
+				"info": "Add a tag, e.g. badgecustom to the Product in Admin Panel",
+				"default": true
+			},
+			{
+				"type": "text",
+				"id": "custom_tag_label_text",
+				"label": "Custom label",
+				"info":"Custom label matches secondary styles"
+			},
+			{
+				"type": "text",
+				"id": "custom_tag_label_additional_text",
+				"label": "Custom aditional text",
+				"info":"Now here aditional text"
+			},
+			{
+				"type": "color",
+				"id": "color_custom_tag_label_additional_text",
+				"label": "Custom additional text color",
+				"default": "#FFFFFF"
+			},
+			{
+				"type": "checkbox",
 				"id": "is_sale_label_enabled",
 				"label": "Enable Sale % label",
 				"default": false
+			},
+			{
+				"type": "text",
+				"id": "sale_aditional_text",
+				"label": "Sale aditional text"
+			},
+			{
+				"type": "color",
+				"id": "color_sale_aditional_text",
+				"label": "Sale additional text color",
+				"default": "#FFFFFF"
 			},
 			{
 				"type": "header",
