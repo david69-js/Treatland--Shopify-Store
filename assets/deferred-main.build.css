@@ -979,6 +979,8 @@ html.no-js .product-variants {
 }
 .quick-view-form__quantity-variant{
   display: flex;
+  width: 100%;
+  gap: 10px;
 }
 .quick-view-form__product-details h4{
   margin-bottom: 14px;
@@ -1006,6 +1008,16 @@ html.no-js .product-variants {
 .quick-view-form .quick-view-form__button {
   display: inline-block;
   width: 100%;
+  height: 46px;
+  padding: 0;
+}
+.quick-view-form__wishlist{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.quick-view-form__wishlist svg{
+  height: 20px;
 }
 .quick-view-form .quick-view-form__button.quick-view-form__button--transparent {
   display: inline-flex;
@@ -1256,17 +1268,14 @@ html.no-js .product-variants {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 25px;
+  height: 44px;
   padding: 0;
-  border-radius: 50%;
-  border: 1px solid var(--color-border-secondary);
-  background-color: var(--color-background);
-  color: var(--button-text-color-primary);
+  color: #000;
 }
 .product-quantity .product-quantity__button .icon {
-  width: 24px;
-  height: 24px;
+  width: 15px;
+  height: 15px;
 }
 .product-quantity .product-quantity__button.disabled, .product-quantity .product-quantity__button[disabled] {
   pointer-events: none;
@@ -1282,7 +1291,7 @@ html.no-js .product-variants {
   padding: 8px 5px;
   border: 0;
   border-radius: 0;
-  background-color: transparent;
+  background-color: #fff;
   line-height: 1.375;
   text-align: center;
   -moz-appearance: textfield;
@@ -1326,9 +1335,7 @@ html.no-js .product-variants {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  background-color: var(--color-background-secondary);
-  border-radius: calc(var(--global-border-radius) * 8);
+  border: 1px solid #515151;
 }
 .product-volume-pricing {
   width: 100%;

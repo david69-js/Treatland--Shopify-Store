@@ -263,15 +263,6 @@
 
 					{% render 'icons', icon: 'arrow-right' %}
 				</a>
-				<button
-					class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link"
-				>
-					{%- render 'icons', icon: 'wishlist' -%}
-					<span>
-						Save for later
-					</span>
-
-				</button>
 			</div>
 		</div>
 
@@ -298,3 +289,12 @@
 		</div>
 	</div>
 {%- endform -%}
+<button
+	class="quick-view-form__button quick-view-form__wishlist  quick-view-form__button--transparent"
+	>
+		{%- render 'icons', icon: 'wishlist' -%}
+		<span>
+			Save for later
+		</span>
+
+</button>
