@@ -2349,9 +2349,10 @@ const ProductCard = () => {
     const button = getClosestQuickViewButton(event.target);
     const productCard = getClosestProductCard(event.target);
     const productHandle = getProductHandle(button);
+    const productType = event.target.getAttribute("data-product-card-type");
     const variantId = getVariantId(getClosestProductCard(button));
     let isPromoBannerCard = !!button.closest("#promotion-products-popup");
-    variantId ? emitQuickViewClickEvent(productHandle, variantId, isPromoBannerCard) : emitCartEvent(getVariantId(button), getMinQuantity(productCard));
+    variantId || productType == "open-quick-view" ? emitQuickViewClickEvent(productHandle, variantId, isPromoBannerCard) : emitCartEvent(getVariantId(button), getMinQuantity(productCard));
   }
   function productCardVideoPlay(video) {
     if (!video) {

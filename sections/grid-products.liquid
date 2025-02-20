@@ -3,7 +3,9 @@
 	Section: Grid Products
 ------------------------------------------------------------------------------
 {%- endcomment -%}
-
+{%- if section.settings.enable_slider_mobile -%}
+	{{ 'swiper.css' | asset_url | stylesheet_tag }}
+{% endif %}
 {%- style -%}
 	#shopify-section-{{- section.id -}} {
 		padding-top: {{- section.settings.offset_top_mobile -}}px;
@@ -253,36 +255,32 @@
 		    		{% endstyle %}
 				{% endif %}
 
-					<div class="products-thumbnails__tab-content products-thumbnails__tab-content--grid {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}" style="gap:{{ section.settings.space_between_cards }}px">
-						{%- if product_list.count > 0 -%}
-							{% if forloop.index == 1 %}
-								{% assign delay_card_step = 0.25 %}
-							{% endif %}
+					<div class="swiper--{{ section.id }} swiper {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
+						<div class="products-thumbnails__tab-content swiper-wrapper products--content--grid " style="gap:{{ section.settings.space_between_cards }}px">
+							{%- if product_list.count > 0 -%}
+								{% if forloop.index == 1 %}
+									{% assign delay_card_step = 0.25 %}
+								{% endif %}
 
-							{%- for product in product_list limit: limit -%}
-								{% assign delay_card_step = delay_card_step | plus: 0.25 %}
-								<div class="products-thumbnails__product products-thumbnails__product--variant-card  products-thumbnails__product--{{ section.settings.items_per_row }}"
-									{% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
-								>
-									{%- render
-										'product-card-form-variant',
-										product: product,
-										size: image_size,
-										tablet_size: image_size_tablet,
-										mobile_size: image_size_mobile,
-										cardType: cardType,
-										borderType: borderType,
+								{%- for product in product_list limit: limit -%}
+									{% assign delay_card_step = delay_card_step | plus: 0.25 %}
+									<div class="products-thumbnails__product swiper-slide products-thumbnails__product--variant-card  products-card-variants__product--{{ section.settings.items_per_row }}"
+										{% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
+									>
+										{%- render
+											'product-card-form-variant',
+											product: product,
+											size: image_size,
+											tablet_size: image_size_tablet,
+											mobile_size: image_size_mobile,
+											cardType: cardType,
+											borderType: borderType,
 
-									-%}
-								</div>
-							{%- endfor -%}
-						{%- else -%}
-							{%- for i in (1..4) -%}
-								<div class="products-thumbnails__product products-thumbnails__product--variant-card products-thumbnails__product--{{ section.settings.items_per_row }}" ">
-									{%- render 'product-card', product: nil -%}
-								</div>
-							{%- endfor -%}
-						{%- endif -%}
+										-%}
+									</div>
+								{%- endfor -%}
+							{%- endif -%}
+						</div>
 					</div>
 				</div>
 				{% if section.settings.button_position == "bottom-center"%}
@@ -295,12 +293,51 @@
 				{% endif %}
 		</div>
 
+		<script src="{{ 'add-to-cart-grid.js' | asset_url }}" type="module" crossorigin="anonymous"></script>
 	
 		</div>
 
-		<script src="{{ 'add-to-cart-grid.js' | asset_url }}" type="module" crossorigin="anonymous"></script>
 	</section>
 {%- endif -%}
+
+{%- if section.settings.enable_slider_mobile -%}
+	<script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+	<script>
+	  document.addEventListener("DOMContentLoaded", function() {
+		var swiperInstance = null; 
+
+		function initSwiper() {
+			if (window.innerWidth <= 768 && typeof Swiper !== "undefined") {
+				if (!swiperInstance) { 
+					swiperInstance = new Swiper(".swiper--{{ section.id }}", {
+						slidesPerView: 1,
+						spaceBetween: 1,
+						pagination: {
+							el: ".swiper-pagination",
+							clickable: true,
+						},
+					});
+					console.log("Swiper inicializado en mobile");
+				}
+			} else {
+				if (swiperInstance) {
+					swiperInstance.destroy(true, true);
+					swiperInstance = null;
+					console.log("Swiper destruido en desktop");
+				}
+			}
+		}
+		
+		initSwiper();
+
+		window.addEventListener("resize", function() {
+			initSwiper();
+		});
+	  });
+	</script>
+{%- endif -%}
+
+
 
 
 {%- schema -%}
@@ -587,6 +624,49 @@
             "id": "product_list",
             "label": "Products"
         },
+		{
+			"type": "header",
+			"content": "Card Mobile Settings",
+		},
+		{
+			"type": "checkbox",
+			"id": "enable_slider_mobile",
+			"label": "Enable Slider Mobile",
+			"default": true
+		},
+		{
+			"type": "select",
+			"id": "items_per_slide",
+			"label": "Items per slide mobile",
+			"options": [
+			{
+				"value": "one_items_per_slide",
+				"label": "One Items per slide",
+			},
+			{
+				"value": "two_items_per_slide",
+				"label": "Tow items per slide",
+			}
+		],
+			"default": "one_items_per_slide",
+		},
+		{
+			"type": "select",
+			"id": "items_per_row_mobile",
+			"label": "Items per row mobile",
+			"info": "Only works if the slider is disabled",
+			"options": [
+			{
+				"value": "one_items_per_row",
+				"label": "One Items per row",
+			},
+			{
+				"value": "two_items_per_row",
+				"label": "Tow items per slide",
+			}
+		],
+			"default": "one_items_per_row",
+		},
 		{
 			"type": "header",
 			"content": "Layout"

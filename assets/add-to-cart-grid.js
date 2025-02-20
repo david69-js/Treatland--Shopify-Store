@@ -25,7 +25,25 @@ function initProductCardForms() {
             }
         });
 
-        form.addEventListener("submit", function (event) {
+        async function emitCartEvent(variantId, quantity) {
+            try {
+              await window.themeCore.CartApi.makeRequest(window.themeCore.CartApi.actions.ADD_TO_CART, {
+                id: variantId,
+                quantity: quantity
+              });
+              await window.themeCore.CartApi.makeRequest(window.themeCore.CartApi.actions.GET_CART);
+            } catch (error) {
+              onQuantityError(error);
+              
+            }
+          }
+        function onQuantityError(error) {
+            const CartNotificationError = window.themeCore.CartNotificationError;
+            CartNotificationError.addNotification(error.description);
+            CartNotificationError.open();
+        }
+        
+        form.addEventListener("submit", async function (event) {
             event.preventDefault(); 
             
 
@@ -34,29 +52,8 @@ function initProductCardForms() {
 
                 const formData = new FormData(form);
                 formData.append("quantity", parseInt(quantityInput.value)); 
-
-                fetch("/cart/add.js", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        id: form.querySelector("input[name='id']").value,
-                        quantity: parseInt(quantityInput.value),
-                    }),
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        window.themeCore.CartApi.makeRequest(window.themeCore.CartApi.actions.GET_CART, { noOpen: true });
-                        window.themeCore.EventBus.emit("cart:drawer:open");
-                    })
-                    .catch(error => {
-                       console.error("Error to addding prooduct", error);
-                    })
-                    .finally(() => {
-                       
-                        
-                    });
+                
+                await emitCartEvent(form.querySelector("input[name='id']").value, quantityInput.value);
                   
             }
         });
@@ -64,5 +61,4 @@ function initProductCardForms() {
     });
 }
 
-// Ejecutar la función cuando el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", initProductCardForms);
