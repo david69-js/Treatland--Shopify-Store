@@ -398,7 +398,7 @@
   gap: 8px;
 }
 .quick-view .quick-view__heading {
-  font-size: calc(var(--heading-font-size) * 1.75);
+  font-size: 20px;
   margin-bottom: 12px;
   text-align: left;
   color: var(--color-text-primary);
@@ -962,14 +962,23 @@ html.no-js .product-variants {
   font-size: 14px;
   line-height: 16px;
 }
-.price-variant-modal.price.price--on-sale .price__sale {
+.price-variant-modal .price.price--on-sale .price__sale {
   flex-wrap: nowrap !important;
 }
-.price-variant-modal.price.price--on-sale .price__sale .price__old{
+.price-variant-modal .price.price--on-sale .price__sale .price__old{
   width: auto !important;
 }
-.price-variant-modal.price.price--on-sale .price__sale .price-item{
+.price-variant-modal .price.price--on-sale .price__sale .price-item{
   font-size: 20px !important;
+}
+.price-variant-modal .price-item{
+  font-size: 20px !important;
+}
+.price-variant-modal .price__discount{
+  display: none;
+}
+.quick-view-form__quantity-variant{
+  display: flex;
 }
 .quick-view-form__product-details h4{
   margin-bottom: 14px;

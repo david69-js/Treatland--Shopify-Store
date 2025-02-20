@@ -216,8 +216,64 @@
 				<p>{{- product.description  -}}</p>
 			</div>
 		</div>
+		
+		<div class="quick-view-form__price">
+			<div class="quick-view-form__buttons" style="{{- button_buy_it_type_styles -}}">
+				<div class="quick-view-form__quantity-variant">
+					{%- render 'product-quantity' -%}
+					<button
+						class="button button--{{ button_type }} quick-view-form__button js-quick-submit-button"
+						data-add-to-card="{{- "products.product.add_to_cart" | t -}}"
+						data-sold-out="{{- "products.product.sold_out" | t -}}"
+						data-unavailable="{{- "products.product.unavailable" | t -}}"
+						{% if product.template_suffix == 'pre-order' %}
+							data-preorder
+						{% endif %}
+						type="submit"
+						{%- if product.selected_or_first_available_variant.available == false -%}
+							disabled
+						{%- endif -%}
+					>
+					{%- if product.selected_or_first_available_variant.available  -%}
+						{% if product.template_suffix == 'pre-order' %}
+							{{- 'products.product.pre_order' | t -}}
+						{% else %}
+							{{- 'products.product.add_to_cart' | t -}}
+						{% endif %}
+					{%- else -%}
+						{{- "products.product.sold_out" | t -}}
+					{%- endif -%}
+				</button>
+				</div>
 
-		{%- render 'product-quantity' -%}
+				{%- if quick_view_enable_buy_it_now -%}
+					<div class="additional-checkout-buttons">
+						{{- form | payment_button  -}}
+					</div>
+				{%- endif -%}
+				
+				<a
+					class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link dn-i"
+					href="{{- product.url -}}/?variant={{- product.selected_or_first_available_variant.id -}}"
+					style="display: none"
+				>
+					<span>
+						{{- "products.quick_view.visit_product_page" | t -}}
+					</span>
+
+					{% render 'icons', icon: 'arrow-right' %}
+				</a>
+				<button
+					class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link"
+				>
+					{%- render 'icons', icon: 'wishlist' -%}
+					<span>
+						Save for later
+					</span>
+
+				</button>
+			</div>
+		</div>
 
 		<select
 			name="id"
@@ -240,58 +296,5 @@
 		<div class="quick-view-form__error" id="QuickViewError-{{- product.id -}}" role="alert">
 			<small class="quick-view-form__error js-quick-view-error"></small>
 		</div>
-	</div>
-
-	<div class="quick-view-form__buttons" style="{{- button_buy_it_type_styles -}}">
-		<button
-			class="button button--{{ button_type }} quick-view-form__button js-quick-submit-button"
-			data-add-to-card="{{- "products.product.add_to_cart" | t -}}"
-			data-sold-out="{{- "products.product.sold_out" | t -}}"
-			data-unavailable="{{- "products.product.unavailable" | t -}}"
-			{% if product.template_suffix == 'pre-order' %}
-				data-preorder
-			{% endif %}
-			type="submit"
-			{%- if product.selected_or_first_available_variant.available == false -%}
-				disabled
-			{%- endif -%}
-		>
-			{%- if product.selected_or_first_available_variant.available  -%}
-				{% if product.template_suffix == 'pre-order' %}
-					{{- 'products.product.pre_order' | t -}}
-				{% else %}
-					{{- 'products.product.add_to_cart' | t -}}
-				{% endif %}
-			{%- else -%}
-				{{- "products.product.sold_out" | t -}}
-			{%- endif -%}
-		</button>
-
-		{%- if quick_view_enable_buy_it_now -%}
-			<div class="additional-checkout-buttons">
-				{{- form | payment_button  -}}
-			</div>
-		{%- endif -%}
-		
-		<a
-			class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link dn-i"
-			href="{{- product.url -}}/?variant={{- product.selected_or_first_available_variant.id -}}"
-			style="display: none"
-		>
-			<span>
-				{{- "products.quick_view.visit_product_page" | t -}}
-			</span>
-
-			{% render 'icons', icon: 'arrow-right' %}
-		</a>
-		<button
-			class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link"
-		>
-			{%- render 'icons', icon: 'wishlist' -%}
-			<span>
-				Save for later
-			</span>
-
-		</button>
 	</div>
 {%- endform -%}

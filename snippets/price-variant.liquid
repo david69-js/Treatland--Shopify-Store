@@ -40,9 +40,6 @@
 	{%- assign money_price_max		= product.price_max | money_with_currency -%}
 {%- endif -%}
 
-{%- if target == product and product.price_varies and hide_from_price != true -%}
-	{%- assign money_price = 'products.product.price.from_price_html' | t: price: money_price -%}
-{%- endif -%}
 
 {%- if block -%}
 	{%- capture styles -%}
@@ -54,7 +51,7 @@
 {%- endif -%}
 
 <div
-	class="{% if quick_view_modal %} price-variant-modal{% endif %} price{% if price_class %} {{ price_class }}{% endif %}{% if compare_at_price > price %} price--on-sale{% endif %} js-price"
+	class=" price{% if price_class %} {{ price_class }}{% endif %}{% if compare_at_price > price %} price--on-sale{% endif %} js-price"
 	{% if styles %}
 		style="{{ styles }}"
 	{% endif %}
@@ -75,7 +72,7 @@
 				</span>
 
 				<span class="price__old">
-					<span class="price-item price-item--regular f14px" data-price-old>
+					<span class="price-item price-item--regular {% if quick_view_modal %} f20px {% else %}f14px{% endif %}" data-price-old>
 						{%- if currency_code_enabled -%}
 							{{- compare_at_price | money_with_currency -}}
 						{%- else -%}
@@ -85,7 +82,7 @@
 				</span>
 			{%- endunless -%}
 
-            <span class="price-item price-item--sale f14px" data-product-price data-amount="{{ price }}">
+            <span class="price-item price-item--sale {% if quick_view_modal %} f20px {% else %}f14px{% endif %}" data-product-price data-amount="{{ price }}">
 				{{- money_price -}}
 				
 			</span>
@@ -96,7 +93,7 @@
 			{% endif %}
 		</div>
 
-		<div class="price__regular">
+		<div class="price__regular {% if quick_view_modal %} f20px{% endif %}">
 			{% if product.quantity_price_breaks_configured? %}
 				{%- if product.compare_at_price -%}
 					{%- unless product.price_varies == false and product.compare_at_price_varies %}
@@ -124,7 +121,7 @@
 					{{- 'products.product.price.regular_price' | t -}}
 				</span>
 
-				<span class="price-item price-item--regular f14px" data-product-price>
+				<span class="price-item price-item--regular {% if quick_view_modal %} f20px {% else %}f14px{% endif %}" data-product-price>
 					{{- money_price -}}
 				</span>
 			{% endif %}

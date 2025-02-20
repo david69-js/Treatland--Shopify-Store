@@ -282,7 +282,7 @@ button.product-card__form-quantity-btn{
   padding: 0 15px;
 }
 .product-card .product-card__price .price-item {
-  font-size: calc(var(--body-font-size) * 0.875);
+  font-size: 20px;
   line-height: 1.5;
   font-weight: 600;
 }
@@ -872,6 +872,9 @@ button.product-card__form-quantity-btn{
 }
 .read-more-description:hover, .read-less-description:hover {
   text-decoration: underline;
+}
+.f20px{
+  font-size: 20px !important;
 }
 .f14px{
   font-size: 14px !important;
