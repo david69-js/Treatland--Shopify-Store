@@ -953,7 +953,26 @@ html.no-js .product-variants {
 .quick-view-form .quick-view-form__option {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px !important;
+  margin-bottom: 10px;
+}
+.quick-view-form__product-details{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 16px;
+}
+.price-variant-modal.price.price--on-sale .price__sale {
+  flex-wrap: nowrap !important;
+}
+.price-variant-modal.price.price--on-sale .price__sale .price__old{
+  width: auto !important;
+}
+.price-variant-modal.price.price--on-sale .price__sale .price-item{
+  font-size: 20px !important;
+}
+.quick-view-form__product-details h4{
+  margin-bottom: 14px;
 }
 .quick-view-form .quick-view-form__name {
   width: 100%;
@@ -1116,7 +1135,7 @@ html.no-js .product-variants {
     width: 100%;
   }
   .quick-view-form .quick-view-form__options-wrapper {
-    gap: 24px;
+    gap: 0px;
     margin-bottom: 32px;
   }
   .quick-view-form .quick-view-form__option {

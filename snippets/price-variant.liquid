@@ -54,14 +54,14 @@
 {%- endif -%}
 
 <div
-	class="price{% if price_class %} {{ price_class }}{% endif %}{% if compare_at_price > price %} price--on-sale{% endif %} js-price"
+	class="{% if quick_view_modal %} price-variant-modal{% endif %} price{% if price_class %} {{ price_class }}{% endif %}{% if compare_at_price > price %} price--on-sale{% endif %} js-price"
 	{% if styles %}
 		style="{{ styles }}"
 	{% endif %}
 	{% if currency_code_enabled %}
 		data-currency-code-enabled
 	{% endif %}
->
+>	
 	<div class="price__container price__container--variant price__sale--variant">
 		<div class="price__sale ">
 			<span class="visually-hidden">

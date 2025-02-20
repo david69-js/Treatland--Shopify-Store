@@ -211,15 +211,25 @@
 				{% endif %}
 				</fieldset>
 			{%- endfor -%}
+			<div class="quick-view-form__product-details">
+				<h4>Description</h4>
+				<p>{{- product.description  -}}</p>
+			</div>
 		</div>
 
 		<div class="quick-view-form__price">
 			<div class="js-quick-view-price">
-				{%- render 'price',
+				{%- render 'price-variant',
 					product: product,
 					show_unit_price: show_unit_price,
 					currency_code_enabled: currency_code_enabled,
-					use_variant: true
+					cmAditionalText: custom_tag_aditional_text,
+					cmColorAditionalText: custom_aditional_text_color,
+					sale_aditional_text: sale_aditional_text,
+					color_sale_aditional_text: color_sale_aditional_text,
+					tagfound: tagFound,
+					simplified_view: simplified_view
+					quick_view_modal: true
 				-%}
 			</div>
 
@@ -289,15 +299,14 @@
 			</div>
 		{%- endif -%}
 
-		<a
+		<button
 			class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link"
-			href="{{- product.url -}}/?variant={{- product.selected_or_first_available_variant.id -}}"
 		>
+			{%- render 'icons', icon: 'wishlist' -%}
 			<span>
-				{{- "products.quick_view.visit_product_page" | t -}}
+				Save for later
 			</span>
 
-			{% render 'icons', icon: 'arrow-right' %}
-		</a>
+		</button>
 	</div>
 {%- endform -%}
