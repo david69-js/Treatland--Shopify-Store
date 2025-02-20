@@ -217,32 +217,6 @@
 			</div>
 		</div>
 
-		<div class="quick-view-form__price">
-			<div class="js-quick-view-price">
-				{%- render 'price-variant',
-					product: product,
-					show_unit_price: show_unit_price,
-					currency_code_enabled: currency_code_enabled,
-					cmAditionalText: custom_tag_aditional_text,
-					cmColorAditionalText: custom_aditional_text_color,
-					sale_aditional_text: sale_aditional_text,
-					color_sale_aditional_text: color_sale_aditional_text,
-					tagfound: tagFound,
-					simplified_view: simplified_view
-					quick_view_modal: true
-				-%}
-			</div>
-
-			{% if cart.taxes_included and show_taxes_included %}
-				<div class="quick-view-form__tax-included">
-					{{- 'products.product.price.taxes_included' | t -}}
-					{% if shop.shipping_policy.body != blank %}
-						{{- 'products.product.price.shipping_policy_html' | t: link: shop.shipping_policy.url -}}
-					{% endif %}
-				</div>
-			{% endif %}
-		</div>
-
 		{%- render 'product-quantity' -%}
 
 		<select
@@ -298,7 +272,18 @@
 				{{- form | payment_button  -}}
 			</div>
 		{%- endif -%}
+		
+		<a
+			class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link dn-i"
+			href="{{- product.url -}}/?variant={{- product.selected_or_first_available_variant.id -}}"
+			style="display: none"
+		>
+			<span>
+				{{- "products.quick_view.visit_product_page" | t -}}
+			</span>
 
+			{% render 'icons', icon: 'arrow-right' %}
+		</a>
 		<button
 			class="quick-view-form__button quick-view-form__button--transparent js-quick-view-link"
 		>
