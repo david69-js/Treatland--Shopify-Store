@@ -1,3 +1,4 @@
+
  {
   "current": {
     "base_font": "inter_n4",
@@ -47,8 +48,8 @@
     "product_card_button_background_color_hover": "#cdcdcd",
     "quick_view_enable_buy_it_now": false,
     "quick_view_show_taxes_included": false,
-    "quick_view_button_type": "primary",
-    "quick_view_button_buy_it_type": "primary",
+    "quick_view_button_type": "secondary",
+    "quick_view_button_buy_it_type": "secondary",
     "sale_label_text": "Alternate Reality Price",
     "content_for_index": []
   },
