@@ -186,7 +186,7 @@
           "used-batavustrac-laura-m56-engine"
         ],
         "button_label": "See all products",
-        "button_link": "",
+        "button_link": "shopify://collections",
         "button_position": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
         "items_per_row": "grid-4",
