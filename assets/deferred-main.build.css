@@ -1322,3 +1322,6 @@ html.no-js .product-variants {
 .product-volume-pricing .product-volume-pricing__show-more {
   margin-top: 7px;
 }
+.dn-i{
+  display: none;
+}

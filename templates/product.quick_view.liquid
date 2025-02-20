@@ -88,24 +88,6 @@
 	<h2 class="quick-view__heading">
 		{{- product.title -}}
 	</h2>
-
-	{% if is_sku or show_vendor %}
-		<div class="quick-view__vendor-sku-wrapper">
-			{%- if show_vendor and make_vendor_link -%}
-				<a href="{{ product.vendor | url_for_vendor }}"
-				   class="quick-view__vendor focus-visible-outline">
-					{{- product.vendor -}}
-				</a>
-			{%- elsif show_vendor and make_vendor_link == false -%}
-				<span class="quick-view__vendor">{{ product.vendor }}</span>
-			{%- endif -%}
-
-			{% if sku != blank and show_sku and sku_text != blank %}
-				<span class="quick-view__sku js-sku-text"
-					  data-sku-text="{{ settings.quick_view_sku_text }}">{{ sku_text }}</span>
-			{% endif %}
-		</div>
-	{% endif %}
 {% endcapture %}
 
 <div

@@ -63,7 +63,7 @@
 				{% endif %}
 
 				<legend class="fieldset__legend legend quick-view-form__name">
-					{{- option.name -}}:
+					
 
 					{% if use_color_swatch %}
 						<span class="product-options__swatch-value js-swatch-label-name"
@@ -164,7 +164,7 @@
 							{%- assign option_value_available = false -%}
 						{%- endif -%}
 
-						<div class="{{- container_classes -}}">
+						<div class="{{- container_classes -}} {% if product.variants.size < 2 %} dn-i{% endif %}">
 							<input
 								id="quick-view-{{- value | handle -}}-{{ option_name_handle }}"
 								type="radio"

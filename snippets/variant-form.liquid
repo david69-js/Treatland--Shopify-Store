@@ -12,7 +12,7 @@
             </div>
 
                 <button
-                    type="submit" class="product-card__form-submit button product-card__quick-view-text-button" id="add-to-cart-btn"
+                    type="submit" class="product-card__form-submit button button--secondary" id="add-to-cart-btn"
                     aria-label="{{- 'product_promo.button_aria' | t: product_title: product.title | escape -}}"
                     {%- unless product.available -%}disabled{%- endunless -%}
                         >
