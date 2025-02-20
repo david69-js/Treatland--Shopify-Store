@@ -14,7 +14,7 @@
 }
 .products-thumbnails .products-thumbnails__heading {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 24px;
 }
@@ -208,6 +208,9 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 48px;
+  }
+  .products-thumbnails__heading-wrapper--variant{
+    flex-direction: column !important;
   }
   .products-thumbnails .products-thumbnails__button-lists__wrapper {
     margin-top: 0;

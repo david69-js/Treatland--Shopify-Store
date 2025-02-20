@@ -557,6 +557,14 @@
 							{%- render 'icons', icon: 'quick-view-variant' -%}
 							
 						</button>
+						<button
+							class="product-card__quick-view-button"
+							aria-label="Wishlist for {{- product.title -}}"
+							type="button"
+						>
+							{%- render 'icons', icon: 'wishlist' -%}
+							
+						</button>
 					{%- endif -%}
 				{%- endif -%}
 			{%- endif -%}

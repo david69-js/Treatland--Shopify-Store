@@ -821,14 +821,15 @@ button.product-card__form-quantity-btn{
     left: 0px;
   }
   .product-card .product-card__additional-buttons {
-    top: 16px;
-    right: 16px;
-    gap: 8px;
+    top: 0;
+    right: 5px;
+    gap: 5px;
   }
   .product-card .product-card__quick-view-button,
   .product-card .product-card__compare-products-button {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
   }
   .product-card .product-card__quick-view-button svg,
   .product-card .product-card__compare-products-button svg {
