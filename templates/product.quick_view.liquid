@@ -241,16 +241,6 @@
 							{%- endcase -%}
 						{% endfor %}
 					</div>
-
-					<button class="swiper-button-prev {% unless show_arrows_on_mobile %} desktop-only {% endunless %} js-quick-view-slider-prev-btn">
-						{%- render "icons", icon: "arrow-left" -%}
-					</button>
-
-					<button class="swiper-button-next {% unless show_arrows_on_mobile %} desktop-only {% endunless %} js-quick-view-slider-next-btn">
-						{%- render "icons", icon: "arrow-right" -%}
-					</button>
-
-					<div class="quick-view__pagination js-quick-view-slider-pagination"></div>
 				</div>
 
 				<div class="quick-view__slider-thumbnails swiper js-quick-view-slider-thumbnails">
@@ -272,6 +262,15 @@
 							</button>
 						{% endfor %}
 					</div>
+					<button class="swiper-button-prev {% unless show_arrows_on_mobile %} desktop-only {% endunless %} js-quick-view-slider-prev-btn">
+						{%- render "icons", icon: "arrow-left" -%}
+					</button>
+
+					<button class="swiper-button-next {% unless show_arrows_on_mobile %} desktop-only {% endunless %} js-quick-view-slider-next-btn">
+						{%- render "icons", icon: "arrow-right" -%}
+					</button>
+
+					<div class="quick-view__pagination js-quick-view-slider-pagination"></div>
 				</div>
 			{% elsif product.images.size < 2 or default_image != blank %}
 				<div class="quick-view__image-wrapper {{ quick_view_image_fit }}" style="{{- style_one_image -}}">

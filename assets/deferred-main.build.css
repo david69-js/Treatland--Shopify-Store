@@ -722,7 +722,9 @@
   .quick-view .quick-view__meta {
     flex-shrink: 1;
     width: 100%;
-    padding: 24px 32px 0;
+    padding: 0px 32px 0;
+    display: flex;
+    flex-direction: column;
   }
   .quick-view .quick-view__vendor-sku-wrapper {
     margin-bottom: 32px;
@@ -913,7 +915,6 @@ html.no-js .product-variants {
   gap: 12px;
 }
 .quick-view-form .quick-view-form__price {
-  margin-bottom: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
@@ -1015,6 +1016,7 @@ html.no-js .product-variants {
   display: flex;
   gap: 8px;
   align-items: center;
+  padding: 0;
 }
 .quick-view-form__wishlist svg{
   height: 20px;
@@ -1161,9 +1163,6 @@ html.no-js .product-variants {
   }
   .quick-view-form .quick-view-form__option {
     gap: 12px;
-  }
-  .quick-view-form .quick-view-form__price {
-    margin-bottom: 32px;
   }
   .quick-view-form .quick-view-form__price .price-item {
     font-size: calc(var(--body-font-size) * 1.75);
@@ -1318,7 +1317,9 @@ html.no-js .product-variants {
 }
 .product-quantity .product-quantity__price-each {
   margin-top: 12px;
+  display: none
 }
+
 @media (max-width: 350px) {
   .product-quantity .product-quantity__wrapper {
     gap: 20px;
