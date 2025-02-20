@@ -86,6 +86,8 @@
 	--button-hover-border: {{ button_hover_border }};
 	--overlay-color: {{ overlay_color }};
 {% endcapture %}
+{% assign slideItemsRow = section.settings.items_per_slide %}
+{% assign enableSlide = section.settings.enable_slider_mobile %}
 
 {%- if has_filled_block -%}
 	<section class="section--{{ section.id }} products-thumbnails products-thumbnails--variant js-products-thumbnails-section js-animate {% if request.visual_preview_mode or section.index == 1 %}animated{% endif %}"
@@ -107,7 +109,7 @@
 
 					{% if section.settings.button_position == "top-right"%}
 						{% if button_link != blank and button_label != blank %}
-							<a class="products-thumbnails__button	"href="{{ button_link }}">{{ button_label }}</a>
+							<a class="products-thumbnails__button dn-i-mobile"href="{{ button_link }}">{{ button_label }}</a>
 						{% endif %}
 					{% endif %}
 				</div>
@@ -254,9 +256,9 @@
 					
 		    		{% endstyle %}
 				{% endif %}
-
-					<div class="swiper--{{ section.id }} swiper {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
-						<div class="products-thumbnails__tab-content swiper-wrapper products--content--grid " style="gap:{{ section.settings.space_between_cards }}px">
+					
+					<div class="{% if enableSlide %}swiper--{{ section.id }} swiper{% endif %} {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
+						<div class="products-thumbnails__tab-content products--content--grid {% if enableSlide %}swiper-wrapper products--content--grid--swiper {% if slideItemsRow ==  'two_items_per_slide' %}swiper-grid swiper-grid-column{% endif %}{% endif %}" style="gap:{{ section.settings.space_between_cards }}px">
 							{%- if product_list.count > 0 -%}
 								{% if forloop.index == 1 %}
 									{% assign delay_card_step = 0.25 %}
@@ -264,7 +266,7 @@
 
 								{%- for product in product_list limit: limit -%}
 									{% assign delay_card_step = delay_card_step | plus: 0.25 %}
-									<div class="products-thumbnails__product swiper-slide products-thumbnails__product--variant-card  products-card-variants__product--{{ section.settings.items_per_row }}"
+									<div class="products-thumbnails__product {% if enableSlide %}swiper-slide{% endif %} products-thumbnails__product--variant-card  products-card-variants__product--{{ section.settings.items_per_row }}"
 										{% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
 									>
 										{%- render
@@ -281,8 +283,19 @@
 								{%- endfor -%}
 							{%- endif -%}
 						</div>
+						{% if enableSlide %}
+							<div class="swiper-pagination swiper-pagination-card-variants"></div>
+						{% endif %}
+						
 					</div>
 				</div>
+
+				{% if section.settings.button_position == "top-right"%}
+						{% if button_link != blank and button_label != blank %}
+							<a class="button button--primary-border dn-i-desktop"href="{{ button_link }}">{{ button_label }}</a>
+						{% endif %}
+					{% endif %}
+
 				{% if section.settings.button_position == "bottom-center"%}
 					{% if button_link != blank and button_label != blank %}
 							<div class="products-thumbnails__button-wrapper need-animate tr-dur-0-5 tr-del-1-5">
@@ -311,19 +324,23 @@
 				if (!swiperInstance) { 
 					swiperInstance = new Swiper(".swiper--{{ section.id }}", {
 						slidesPerView: 1,
+						{% if slideItemsRow ==  "two_items_per_slide"%}
+						grid: {
+							rows: 2,
+						},
+						{% endif %}
 						spaceBetween: 1,
 						pagination: {
 							el: ".swiper-pagination",
 							clickable: true,
 						},
 					});
-					console.log("Swiper inicializado en mobile");
 				}
 			} else {
 				if (swiperInstance) {
 					swiperInstance.destroy(true, true);
 					swiperInstance = null;
-					console.log("Swiper destruido en desktop");
+			
 				}
 			}
 		}

@@ -4,7 +4,7 @@
 :root {
   --timing-micro: 0.1s;
   --timing-short: 0.2s;
-  --timing-base: 0.4s;
+  --timing-base: 0.1s;
   --timing-long: 0.7s;
   --timing-second: 1s;
   --animate-time: 0.7s;
@@ -47,10 +47,12 @@
   transition-property: box-shadow;
   transition-duration: var(--timing-base);
 }
-.product-card-form-variant--horizontal_card_style{
-  flex-direction: row !important;
+@media (min-width: 768px) { 
+  .product-card-form-variant--horizontal_card_style{
+    flex-direction: row !important;
+  }
 }
-.product-card .product-card__footer {
+  .product-card .product-card__footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

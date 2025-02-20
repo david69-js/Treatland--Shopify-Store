@@ -983,24 +983,15 @@ label {
   color: var(--button-text-color-primary-with-border);
   border: 2px solid var(--button-border-color-primary-with-border);
 }
-.button.button--primary-border::before {
-  background-color: var(--button-background-color-primary-with-border);
-}
-.button.button--primary-border::after {
-  background-color: var(--button-background-color-primary-with-border-hover);
-}
 .button.button--primary-border:focus-visible {
   outline: 2px solid var(--button-border-color-primary-with-border-hover);
   outline-offset: 2px;
 }
 @media (-moz-touch-enabled: 0), (hover: hover), (pointer: fine) {
   .button.button--primary-border:hover {
-    background-color: var(--button-background-color-primary-with-border-hover);
+    background: var(--button-background-color-primary-with-border-hover);
     color: var(--button-text-color-primary-with-border-hover);
     border: 2px solid var(--button-border-color-primary-with-border-hover);
-  }
-  .button.button--primary-border:hover::after {
-    width: 130%;
   }
 }
 .button.button--secondary-border {
@@ -5004,3 +4995,13 @@ textarea,
 }
 /* Some additional styles for different templates */
 /*================ Layout ================*/
+@media (min-width: 768px) {
+  .dn-i-desktop {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .dn-i-mobile {
+    display: none;
+  }
+}
