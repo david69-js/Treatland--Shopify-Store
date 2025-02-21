@@ -11,7 +11,11 @@
 		padding-top: {{- section.settings.offset_top_mobile -}}px;
 		padding-bottom: {{- section.settings.offset_bottom_mobile -}}px;
 	}
-
+	.section--{{ section.id }}{
+		{% if section.settings.enable_border_bottom %}
+			border-bottom: 1px solid #E8E8E8;
+		{% endif %}
+	}
 	@media screen and (min-width: 768px) {
 	#shopify-section-{{- section.id -}} {
 			padding-top: {{- section.settings.offset_top_desktop -}}px;
@@ -789,6 +793,12 @@
 			],
 			"default": "inherit",
 			"info": "if you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
+		},
+		{
+			"type": "checkbox",
+			"id": "enable_border_bottom",
+			"label": "Enable border bottom",
+			"default": true
 		},
 		{
 			"type": "range",
