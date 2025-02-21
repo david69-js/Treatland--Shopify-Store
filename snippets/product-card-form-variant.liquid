@@ -594,9 +594,11 @@
 			-%}
 
 			{% assign enable_truncate = section.settings.truncate_description_card_enable %}
+			{% assign enableDescriptionMobile = section.settings.enable_description_mobile %}
+			{% assign enableDescription = section.settings.show_desciption_card %}
 
-			{% if section.settings.show_desciption_card %}
-					<div class="focus-visible-outline  {% if enable_truncate and cardType == "horizontal_card_style"%}f11px {% else %} f12px{% endif %}">
+			{% if enableDescription or enableDescription %}
+					<div class="focus-visible-outline product__description {% if enableDescription == false %} dn-i-desktop{% endif %} {% if enableDescriptionMobile == false %} dn-i-mobile{% endif %}  {% if enable_truncate and cardType == "horizontal_card_style"%}f11px {% else %} f12px{% endif %}">
 					{%- if product.description != blank -%}
 						<div class="description">
 						
