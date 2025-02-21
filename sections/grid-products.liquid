@@ -258,11 +258,10 @@
 							font-size: {{ section.settings.subheading_fontsize_mobile }}px;
 						}
 					}
-					
 		    		{% endstyle %}
 				{% endif %}
 					
-					<div class="{% if enableSlide %}swiper--{{ section.id }} swiper{% endif %} {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
+					<div class="{% if enableSlide %}swiper--{{ section.id }} swiper swiper--container{% endif %} {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
 						<div class="products-thumbnails__tab-content products--content--grid {% if enableSlide %}swiper-wrapper products--content--grid--swiper {% if slideItemsRow ==  'two_items_per_slide' %}swiper-grid swiper-grid-column{% endif %}{% endif %}" style="gap:{{ section.settings.space_between_cards }}px">
 							{%- if product_list.count > 0 -%}
 								{% if forloop.index == 1 %}

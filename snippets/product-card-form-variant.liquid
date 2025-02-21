@@ -602,7 +602,7 @@
 						
 						{% if enable_truncate %}
 							<div class="short-description">
-								{{ product.description | truncate: section.settings.truncate_description_card, "..." }}
+								{{ product.description | replace: '<br>', ' ' | replace: '<br/>', ' ' | truncate: section.settings.truncate_description_card, "..." }}
 							</div>
 							<span class="read-more-description" onclick="showFullDescription(this)">Read more</span>
 							<div class="full-description hidden-description">

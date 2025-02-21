@@ -177,6 +177,17 @@
   border-bottom: none !important;
 }
 
+.swiper--container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.swiper--container .swiper-pagination-fraction, 
+.swiper--container .swiper-pagination-custom, 
+.swiper--container .swiper-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  position: relative;
+}
 .products-thumbnails .products-thumbnails__title.need-animate {
   opacity: 0;
   transform: scale(1.25);

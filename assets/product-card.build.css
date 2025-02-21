@@ -156,6 +156,19 @@
   border-radius: 8px;
 
 }
+@media (max-width: 768px) {
+  .product-card__main--variant-card{
+    width: 100%;
+    height: 155px; 
+  }
+  .product-card .product-card__image-wrapper-link{
+    height: 100%;
+  }
+  .product-card .product-card__image-wrapper.product-card__image-wrapper--square{
+    padding-top: 50%;
+    height: 100%;
+  }
+}
 .product-card .product-card__label {
   padding: 4px 12px;
   border-radius: calc(var(--global-border-radius) / 2);
