@@ -1,10 +1,18 @@
-
- {
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
   "sections": {
     "grid_products_zwQNNq": {
       "type": "grid-products",
       "settings": {
-        "heading": "Grid Products",
+        "heading": "New Items",
         "paragraph": "<p>Discover underrated picks and stand out from the crowd.</p>",
         "banner_fit": "fill",
         "banner_position": "center",
@@ -56,72 +64,21 @@
         "offset_bottom_mobile": 25
       }
     },
-    "grid_products_9k9Yfe": {
-      "type": "grid-products",
-      "settings": {
-        "heading": "Grid Products",
-        "paragraph": "",
-        "banner_fit": "fill",
-        "banner_position": "center",
-        "banner_heading": "Banner heading",
-        "heading_fontsize": 50,
-        "heading_fontsize_mobile": 24,
-        "banner_subheading": "Banner subheading",
-        "subheading_fontsize": 15,
-        "subheading_fontsize_mobile": 18,
-        "button_labelB": "Shop Now",
-        "button_url": "shopify://collections",
-        "banner_content_position": "flex-end",
-        "text_color": "#ffffff",
-        "overlay_color": "rgba(0, 0, 0, 0.6)",
-        "button_color": "#ffffff",
-        "button_background_color": "#000000",
-        "button_border_color": "#000000",
-        "button_hover_color": "#000000",
-        "button_hover_background": "#ffffff",
-        "button_hover_border": "#ffffff",
-        "card_style": "vertical_card_style",
-        "card_border_style": "card_all_bordes",
-        "show_desciption_card": true,
-        "truncate_description_card": 70,
-        "truncate_description_card_enable": true,
-        "product_list": [
-          "everlasting-front-brake-cable-for-all",
-          "everlasting-front-brake-cable-for-all-with-dual-m6-adjusters",
-          "derbi-italkit-competition-4-petal-reed-block-pwk",
-          "used-batavustrac-laura-m56-engine"
-        ],
-        "enable_slider_mobile": true,
-        "items_per_slide": "one_items_per_slide",
-        "items_per_row_mobile": "two_items_per_row",
-        "button_label": "See all products",
-        "button_link": "shopify://collections",
-        "button_position": "bottom-center",
-        "banner_grid_position": "banner_left__grid_right",
-        "items_per_row": "grid-4",
-        "space_between_cards": 14,
-        "container_width": "inherit",
-        "offset_top_desktop": 40,
-        "offset_bottom_desktop": 40,
-        "offset_top_mobile": 25,
-        "offset_bottom_mobile": 25
-      }
-    },
     "grid_products_gxHNFU": {
       "type": "grid-products",
       "settings": {
-        "heading": "Grid Products",
+        "heading": "",
         "paragraph": "",
         "banner_image": "shopify://shop_images/joshua-tsu-OdYEAuB8BrQ-unsplash.jpg",
-        "banner_fit": "fill",
+        "banner_fit": "cover",
         "banner_position": "center",
-        "banner_heading": "Banner heading",
+        "banner_heading": "New!",
         "heading_fontsize": 50,
         "heading_fontsize_mobile": 24,
-        "banner_subheading": "Banner subheading",
+        "banner_subheading": "Fresh finds just arrived!",
         "subheading_fontsize": 15,
         "subheading_fontsize_mobile": 18,
-        "button_labelB": "Shop Now",
+        "button_labelB": "",
         "button_url": "shopify://collections",
         "banner_content_position": "flex-end",
         "text_color": "#ffffff",
@@ -151,7 +108,7 @@
         "button_position": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
         "items_per_row": "grid-1",
-        "space_between_cards": 40,
+        "space_between_cards": 11,
         "container_width": "inherit",
         "offset_top_desktop": 40,
         "offset_bottom_desktop": 40,
@@ -165,6 +122,110 @@
         "heading": "Grid Products",
         "paragraph": "",
         "banner_image": "shopify://shop_images/joshua-tsu-OdYEAuB8BrQ-unsplash.jpg",
+        "banner_fit": "cover",
+        "banner_position": "center",
+        "banner_heading": "Hidden Treasures",
+        "heading_fontsize": 50,
+        "heading_fontsize_mobile": 24,
+        "banner_subheading": "Discover underrated picks and stand out from the crowd.",
+        "subheading_fontsize": 15,
+        "subheading_fontsize_mobile": 18,
+        "button_labelB": "",
+        "button_url": "shopify://collections",
+        "banner_content_position": "flex-end",
+        "text_color": "#ffffff",
+        "overlay_color": "rgba(0, 0, 0, 0.6)",
+        "button_color": "#ffffff",
+        "button_background_color": "#000000",
+        "button_border_color": "#000000",
+        "button_hover_color": "#000000",
+        "button_hover_background": "#ffffff",
+        "button_hover_border": "#ffffff",
+        "card_style": "vertical_card_style",
+        "card_border_style": "inside_borders",
+        "show_desciption_card": true,
+        "truncate_description_card": 70,
+        "truncate_description_card_enable": true,
+        "product_list": [
+          "everlasting-front-brake-cable-for-all",
+          "everlasting-front-brake-cable-for-all-with-dual-m6-adjusters",
+          "derbi-italkit-competition-4-petal-reed-block-pwk",
+          "used-batavustrac-laura-m56-engine"
+        ],
+        "enable_slider_mobile": true,
+        "items_per_slide": "one_items_per_slide",
+        "items_per_row_mobile": "one_items_per_row",
+        "button_label": "See all products",
+        "button_link": "",
+        "button_position": "bottom-center",
+        "banner_grid_position": "banner_right__grid_left",
+        "items_per_row": "grid-2",
+        "space_between_cards": 0,
+        "container_width": "inherit",
+        "offset_top_desktop": 40,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "grid_products_9k9Yfe": {
+      "type": "grid-products",
+      "settings": {
+        "heading": "Sale",
+        "paragraph": "<p>Discover underrated picks and stand out from the crowd.</p>",
+        "banner_fit": "fill",
+        "banner_position": "center",
+        "banner_heading": "Banner heading",
+        "heading_fontsize": 50,
+        "heading_fontsize_mobile": 24,
+        "banner_subheading": "Banner subheading",
+        "subheading_fontsize": 15,
+        "subheading_fontsize_mobile": 18,
+        "button_labelB": "Shop Now",
+        "button_url": "shopify://collections",
+        "banner_content_position": "flex-end",
+        "text_color": "#ffffff",
+        "overlay_color": "rgba(0, 0, 0, 0.6)",
+        "button_color": "#ffffff",
+        "button_background_color": "#000000",
+        "button_border_color": "#000000",
+        "button_hover_color": "#000000",
+        "button_hover_background": "#ffffff",
+        "button_hover_border": "#ffffff",
+        "card_style": "horizontal_card_style",
+        "card_border_style": "card_all_bordes",
+        "show_desciption_card": true,
+        "truncate_description_card": 72,
+        "truncate_description_card_enable": true,
+        "product_list": [
+          "everlasting-front-brake-cable-for-all",
+          "everlasting-front-brake-cable-for-all-with-dual-m6-adjusters",
+          "derbi-italkit-competition-4-petal-reed-block-pwk",
+          "used-batavustrac-laura-m56-engine",
+          "everlasting-gear-cable-with-knarp-for-all",
+          "everlasting-inch-gear-cable-with-knarp-for-all"
+        ],
+        "enable_slider_mobile": true,
+        "items_per_slide": "one_items_per_slide",
+        "items_per_row_mobile": "two_items_per_row",
+        "button_label": "",
+        "button_link": "shopify://collections",
+        "button_position": "bottom-center",
+        "banner_grid_position": "banner_left__grid_right",
+        "items_per_row": "grid-2",
+        "space_between_cards": 10,
+        "container_width": "inherit",
+        "offset_top_desktop": 40,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "grid_products_jPeX7K": {
+      "type": "grid-products",
+      "settings": {
+        "heading": "RESTOCKED ITEMS",
+        "paragraph": "<p>Discover underrated picks and stand out from the crowd.</p>",
         "banner_fit": "fill",
         "banner_position": "center",
         "banner_heading": "Banner heading",
@@ -185,9 +246,9 @@
         "button_hover_background": "#ffffff",
         "button_hover_border": "#ffffff",
         "card_style": "vertical_card_style",
-        "card_border_style": "card_all_bordes",
+        "card_border_style": "inside_borders",
         "show_desciption_card": true,
-        "truncate_description_card": 70,
+        "truncate_description_card": 72,
         "truncate_description_card_enable": true,
         "product_list": [
           "everlasting-front-brake-cable-for-all",
@@ -197,62 +258,13 @@
         ],
         "enable_slider_mobile": true,
         "items_per_slide": "one_items_per_slide",
-        "items_per_row_mobile": "one_items_per_row",
+        "items_per_row_mobile": "two_items_per_row",
         "button_label": "See all products",
-        "button_link": "",
+        "button_link": "shopify://collections",
         "button_position": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
-        "items_per_row": "grid-2",
-        "space_between_cards": 40,
-        "container_width": "inherit",
-        "offset_top_desktop": 40,
-        "offset_bottom_desktop": 40,
-        "offset_top_mobile": 25,
-        "offset_bottom_mobile": 25
-      }
-    },
-    "collection_list_Phe9cc": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_qPBpy4": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "collection_zKTnxH": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "collection_LN8bg4": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "collection_Mf3fU7": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_qPBpy4",
-        "collection_zKTnxH",
-        "collection_LN8bg4",
-        "collection_Mf3fU7"
-      ],
-      "settings": {
-        "heading": "Collection list",
-        "text_alignment": "center",
-        "aspect_ratio": "portrait",
-        "cards_per_row": "4",
-        "enable_rounded_cards": false,
-        "overlay_color": "linear-gradient(180deg, rgba(255, 140, 140, 0) 5%, rgba(255, 140, 140, 0) 52%, rgba(0, 0, 0, 1) 100%)",
-        "image_text": "#ffffff",
+        "items_per_row": "grid-4",
+        "space_between_cards": 0,
         "container_width": "inherit",
         "offset_top_desktop": 40,
         "offset_bottom_desktop": 40,
@@ -263,9 +275,9 @@
   },
   "order": [
     "grid_products_zwQNNq",
-    "grid_products_9k9Yfe",
     "grid_products_gxHNFU",
     "grid_products_aARFtc",
-    "collection_list_Phe9cc"
+    "grid_products_9k9Yfe",
+    "grid_products_jPeX7K"
   ]
 }
