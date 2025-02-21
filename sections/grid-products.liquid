@@ -119,7 +119,7 @@
 				</div>
 			{% endif %}
 
-				<div class="products-thumbnails__tab js-products-thumbnails-tab products-thumbanails__tab--position--{{ section.settings.banner_grid_position }}" data-index="{{- index -}}" style="{{ section_styles }}" >
+				<div class="products-thumbnails__tab js-products-thumbnails-tab t {% if is_banner %}c products-thumbanails__tab--position--{{ section.settings.banner_grid_position }} {% else %}c products-thumbanails__tab--position--regular-grid {% endif %} " data-index="{{- index -}}" style="{{ section_styles }}" >
 							
 				{% if is_banner %}
 					<div class="featured-products__content-wrapper {% if is_banner and product_list.count > 0 %}flex-50{% endif %}">
@@ -683,7 +683,7 @@
 			},
 			{
 				"value": "two_items_per_row",
-				"label": "Tow items per slide",
+				"label": "Tow items per row",
 			}
 		],
 			"default": "one_items_per_row",

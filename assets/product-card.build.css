@@ -165,7 +165,7 @@
     height: 100%;
   }
   .product-card .product-card__image-wrapper.product-card__image-wrapper--square{
-    padding-top: 50%;
+    padding-top: unset;
     height: 100%;
   }
 }

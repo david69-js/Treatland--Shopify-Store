@@ -1,4 +1,5 @@
-{
+
+ {
   "sections": {
     "grid_products_zwQNNq": {
       "type": "grid-products",
@@ -40,7 +41,7 @@
           "everlasting-rear-brake-cable-with-adjustable-rod-spring"
         ],
         "enable_slider_mobile": true,
-        "items_per_slide": "two_items_per_slide",
+        "items_per_slide": "one_items_per_slide",
         "items_per_row_mobile": "one_items_per_row",
         "button_label": "View All",
         "button_link": "shopify://collections",
@@ -92,9 +93,9 @@
           "derbi-italkit-competition-4-petal-reed-block-pwk",
           "used-batavustrac-laura-m56-engine"
         ],
-        "enable_slider_mobile": true,
-        "items_per_slide": "one_items_per_slide",
-        "items_per_row_mobile": "one_items_per_row",
+        "enable_slider_mobile": false,
+        "items_per_slide": "two_items_per_slide",
+        "items_per_row_mobile": "two_items_per_row",
         "button_label": "See all products",
         "button_link": "",
         "button_position": "bottom-center",
@@ -145,9 +146,9 @@
           "derbi-italkit-competition-4-petal-reed-block-pwk",
           "used-batavustrac-laura-m56-engine"
         ],
-        "enable_slider_mobile": true,
+        "enable_slider_mobile": false,
         "items_per_slide": "one_items_per_slide",
-        "items_per_row_mobile": "one_items_per_row",
+        "items_per_row_mobile": "two_items_per_row",
         "button_label": "See all products",
         "button_link": "",
         "button_position": "bottom-center",
@@ -200,7 +201,7 @@
           "everlasting-inch-gear-cable-with-knarp-for-all"
         ],
         "enable_slider_mobile": true,
-        "items_per_slide": "one_items_per_slide",
+        "items_per_slide": "two_items_per_slide",
         "items_per_row_mobile": "two_items_per_row",
         "button_label": "",
         "button_link": "shopify://collections",
@@ -251,7 +252,7 @@
           "derbi-italkit-competition-4-petal-reed-block-pwk",
           "used-batavustrac-laura-m56-engine"
         ],
-        "enable_slider_mobile": true,
+        "enable_slider_mobile": false,
         "items_per_slide": "one_items_per_slide",
         "items_per_row_mobile": "two_items_per_row",
         "button_label": "See all products",
