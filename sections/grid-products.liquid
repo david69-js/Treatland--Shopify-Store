@@ -97,9 +97,10 @@
 			 style="{{- style -}}"
 	>
 		{%- render 'adastra' with '/src/styles/products-thumbnails.scss' -%}
-
+	
 		<div class="products-thumbnails__container">
 			<div class=" products-thumbnails__heading-wrapper  products-thumbnails__heading-wrapper--variant">
+			{% if heading != blank or paragraph != blank or button_link != blank and button_label != blank %}
 				<div class="products-thumbnails__heading">
 					<div class="products-thumbnails__heading-wrapper--content">
 						{%- if heading != blank -%}
@@ -116,6 +117,7 @@
 						{% endif %}
 					{% endif %}
 				</div>
+			{% endif %}
 
 				<div class="products-thumbnails__tab js-products-thumbnails-tab products-thumbanails__tab--position--{{ section.settings.banner_grid_position }}" data-index="{{- index -}}" style="{{ section_styles }}" >
 							
