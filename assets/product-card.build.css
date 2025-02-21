@@ -152,7 +152,7 @@
 }
 .product-card__main--variant-card{
   width: 168px;
-  height: 164px;
+  height: 132px;
   border-radius: 8px;
 
 }
@@ -928,6 +928,7 @@ button.product-card__form-quantity-btn{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
 }
 .product-card__content .product-card__content-info{
   display: flex;

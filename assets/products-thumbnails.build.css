@@ -167,6 +167,7 @@
 .products--content--grid .products-card-variants__product--grid-3 .product-card-form-variant-border__inside_borders,
 .products--content--grid .products-card-variants__product--grid-4 .product-card-form-variant-border__inside_borders {
   border-bottom: 1px solid #E8E8E8 !important;
+  padding: 25px;
 }
 
 .products--content--grid .products-card-variants__product--grid-1:nth-last-child(-n+1) .product-card-form-variant-border__inside_borders,
@@ -268,7 +269,6 @@
   }
   .products--content--grid  .products-card-variants__product--grid-4 {
     grid-column: span 3;
-    padding: 0 20px;
   }
 }
 @media (max-width: 768px) {
