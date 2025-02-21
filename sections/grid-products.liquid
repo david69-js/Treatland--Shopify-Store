@@ -4,16 +4,19 @@
 ------------------------------------------------------------------------------
 {%- endcomment -%}
 {%- if section.settings.enable_slider_mobile -%}
-	{{ 'swiper.css' | asset_url | stylesheet_tag }}
+	{{ 'swiper.css' | asset_url | stylesheet_tag: preload: preload  }}
+	{{ 'general-card.css' | asset_url | stylesheet_tag: preload: preload }}
+
 {% endif %}
 {%- style -%}
 
 	.section--{{ section.id }}{
 		{% if section.settings.enable_border_bottom %}
-			border-bottom: 1px solid #E8E8E8;
+			border-bottom: 1px solid #E8E8E8 !important;
 		{% endif %}
 		padding-top: {{- section.settings.offset_top_mobile -}}px;
 		padding-bottom: {{- section.settings.offset_bottom_mobile -}}px;
+		margin-bottom: {{- section.settings.offset_bottom_mobile -}}px;
 	}
 	@media screen and (min-width: 768px) {
 	.section--{{ section.id }}{
@@ -285,7 +288,7 @@
 				{% endif %}
 					
 					<div class="{% if enableSlide %}swiper--{{ section.id }} swiper swiper--container{% endif %} {% if is_banner and product_list.count > 0 %}flex-50 {% else %}flex-100 {% endif %}">
-						<div class="products-thumbnails__tab-content products--content--grid {% if enableSlide %}swiper-wrapper products--content--grid--swiper {% if ItemsPerSlide ==  'two_items_per_slide' %}swiper-grid swiper-grid-column{% endif %} {% else %} products--content--grid-wrap  {% endif %}" style="gap:{{ section.settings.space_between_cards }}px">
+						<div class="products-thumbnails__tab-content products--content--grid {% if enableSlide %}swiper-wrapper products--content--grid--swiper {% if ItemsPerSlide ==  'two_items_per_slide' %}{{ ItemsPerSlide }} swiper-grid swiper-grid-column {% else %} {{ ItemsPerSlide }}{% endif %} {% else %} products--content--grid-wrap  {% endif %}" style="gap:{{ section.settings.space_between_cards }}px">
 							{%- if product_list.count > 0 -%}
 								{% if forloop.index == 1 %}
 									{% assign delay_card_step = 0.25 %}
@@ -293,7 +296,7 @@
 
 								{%- for product in product_list limit: limit -%}
 									{% assign delay_card_step = delay_card_step | plus: 0.25 %}
-									<div class="products-thumbnails__product {% if enableSlide %}swiper-slide {% else %}{% if itemsPerRow == 'two_items_per_row'  %}  flex-50 {% else %} flex-100{% endif %}{% endif %} products-thumbnails__product--variant-card  products-card-variants__product--{{ section.settings.items_per_row }}"
+									<div class="products-thumbnails__product {% if enableSlide %}swiper-slide {% else %}{% if itemsPerRow == 'two_items_per_row'  %} two_items_per_row flex-50 {% else %} flex-100{% endif %}{% endif %} products-thumbnails__product--variant-card  products-card-variants__product--{{ section.settings.items_per_row }}"
 										{% if forloop.parentloop.index == 1 %}style="--card-delay: {{ delay_card_step | append: 's' }};"{% endif %}
 									>
 										{%- render

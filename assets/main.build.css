@@ -4988,3 +4988,25 @@ textarea,
     display: none;
   }
 }
+.f20px{
+  font-size: 20px !important;
+}
+.f14px{
+  font-size: 14px !important;
+}
+.f13px{
+  font-size: 13px !important;
+}
+.f12px{
+  font-size: 12px !important;
+}
+.f11px{
+  font-size: 11px !important;
+}
+.flex-50 {
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+.flex-100{
+  flex-basis: 100%;
+}
