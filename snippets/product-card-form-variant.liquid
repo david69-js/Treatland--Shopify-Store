@@ -652,7 +652,7 @@
 					</div>
 					{% else %}
 						<button
-							type="submit" class="product-card__form-submit button button--primary" id="add-to-cart-btn"
+							type="submit" class="product-card__form-submit button t {%- unless product.available -%}c button--secondary-border{%- else -%} button--primary{%- endunless -%}" id="add-to-cart-btn"
 							aria-label="{{- 'product_promo.button_aria' | t: product_title: product.title | escape -}}"
 							{%- unless product.available -%}disabled{%- endunless -%}
 								>

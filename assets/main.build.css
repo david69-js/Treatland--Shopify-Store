@@ -997,7 +997,10 @@ label {
   .button.button--secondary-border:hover {
     background-color: var(--button-background-color-secondary-with-border-hover);
     color: var(--button-text-color-secondary-with-border-hover);
-    border: 2px solid var(--button-border-color-secondary-with-border-hover);
+    border: 1px solid var(--button-border-color-secondary-with-border-hover);
+  }
+  button[disabled].button.button--secondary-border:hover {
+    opacity: 1;
   }
 }
 .button.button--with-icon {
@@ -1022,9 +1025,8 @@ label {
   width: 100%;
 }
 .button.disabled, .button[disabled] {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: default;
-  pointer-events: none;
 }
 .button.disabled::after, .button[disabled]::after {
   display: none;

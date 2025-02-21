@@ -1,5 +1,4 @@
-
- {
+{
   "sections": {
     "grid_products_zwQNNq": {
       "type": "grid-products",
@@ -189,9 +188,9 @@
         "button_hover_border": "#ffffff",
         "card_style": "horizontal_card_style",
         "card_border_style": "card_all_bordes",
-        "show_desciption_card": true,
+        "show_desciption_card": false,
         "truncate_description_card": 72,
-        "truncate_description_card_enable": true,
+        "truncate_description_card_enable": false,
         "product_list": [
           "everlasting-front-brake-cable-for-all",
           "everlasting-front-brake-cable-for-all-with-dual-m6-adjusters",
