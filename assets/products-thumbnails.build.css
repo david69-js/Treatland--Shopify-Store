@@ -86,6 +86,7 @@
   .products-thumbnails .products-thumbnails__tab .products--content--grid {
     display: flex !important;
     gap: 0px !important;
+    padding: 20px 0;
   }
   .products-thumbnails .products-thumbnails__tab .products--content--grid--swiper {
     flex-direction: row;
@@ -94,7 +95,14 @@
     height: auto !important;
   }
 }
-
+@media (min-width: 768px) {
+  .products-thumbnails--variant .products-thumbanails__tab--position--banner_left__grid_right{
+    flex-direction: row !important;
+  }
+  .products-thumbnails--variant .products-thumbanails__tab--position--banner_right__grid_left{
+    flex-direction: row-reverse;
+  }
+}
 .products-thumbnails .products-thumbnails__tab.is-loading {
   animation: none;
   opacity: 0;

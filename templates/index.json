@@ -1,4 +1,3 @@
-
  {
   "sections": {
     "grid_products_zwQNNq": {
@@ -28,6 +27,7 @@
         "card_style": "horizontal_card_style",
         "card_border_style": "border_bottom",
         "show_desciption_card": true,
+        "enable_description_mobile": true,
         "truncate_description_card": 70,
         "truncate_description_card_enable": true,
         "product_list": [
@@ -46,7 +46,10 @@
         "button_label": "View All",
         "button_link": "shopify://collections",
         "button_position": "top-right",
+        "button_position_mobile": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
+        "enable_button": true,
+        "enable_button_mobile": true,
         "items_per_row": "grid-2",
         "space_between_cards": 14,
         "container_width": "inherit",
@@ -85,6 +88,7 @@
         "card_style": "horizontal_card_style",
         "card_border_style": "inside_borders",
         "show_desciption_card": true,
+        "enable_description_mobile": false,
         "truncate_description_card": 70,
         "truncate_description_card_enable": true,
         "product_list": [
@@ -99,7 +103,10 @@
         "button_label": "See all products",
         "button_link": "",
         "button_position": "bottom-center",
+        "button_position_mobile": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
+        "enable_button": true,
+        "enable_button_mobile": true,
         "items_per_row": "grid-1",
         "space_between_cards": 11,
         "container_width": "inherit",
@@ -138,6 +145,7 @@
         "card_style": "vertical_card_style",
         "card_border_style": "inside_borders",
         "show_desciption_card": true,
+        "enable_description_mobile": true,
         "truncate_description_card": 100,
         "truncate_description_card_enable": true,
         "product_list": [
@@ -152,7 +160,10 @@
         "button_label": "See all products",
         "button_link": "",
         "button_position": "bottom-center",
+        "button_position_mobile": "bottom-center",
         "banner_grid_position": "banner_right__grid_left",
+        "enable_button": true,
+        "enable_button_mobile": true,
         "items_per_row": "grid-2",
         "space_between_cards": 0,
         "container_width": "inherit",
@@ -190,6 +201,7 @@
         "card_style": "horizontal_card_style",
         "card_border_style": "card_all_bordes",
         "show_desciption_card": false,
+        "enable_description_mobile": true,
         "truncate_description_card": 72,
         "truncate_description_card_enable": false,
         "product_list": [
@@ -206,7 +218,10 @@
         "button_label": "",
         "button_link": "shopify://collections",
         "button_position": "bottom-center",
+        "button_position_mobile": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
+        "enable_button": true,
+        "enable_button_mobile": true,
         "items_per_row": "grid-2",
         "space_between_cards": 10,
         "container_width": "inherit",
@@ -244,6 +259,7 @@
         "card_style": "vertical_card_style",
         "card_border_style": "inside_borders",
         "show_desciption_card": true,
+        "enable_description_mobile": true,
         "truncate_description_card": 72,
         "truncate_description_card_enable": false,
         "product_list": [
@@ -258,7 +274,10 @@
         "button_label": "See all products",
         "button_link": "shopify://collections",
         "button_position": "bottom-center",
+        "button_position_mobile": "bottom-center",
         "banner_grid_position": "banner_left__grid_right",
+        "enable_button": true,
+        "enable_button_mobile": true,
         "items_per_row": "grid-4",
         "space_between_cards": 0,
         "container_width": "inherit",
