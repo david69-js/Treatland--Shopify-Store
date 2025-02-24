@@ -20,17 +20,13 @@
 	}
 {%- endstyle -%}
 
-{%- assign heading                   = section.settings.heading -%}
-{%- assign heading_font_size_desktop = section.settings.heading_font_size_desktop | append: "px" -%}
-{%- assign description                = section.settings.description -%}
-{%- assign heading_color             = section.settings.heading_color -%}
-{%- assign heading_outline           = section.settings.heading_outline -%}
-{%- assign heading_background        = section.settings.heading_background -%}
 {%- assign description_color          = section.settings.description_color -%}
 {%- assign text_color 		         = section.settings.text_color -%}
 {%- assign container                 = section.settings.container_width -%}
 {%- assign container_color           = section.settings.container_color -%}
 {%- assign text_align                 = section.settings.text_align -%}
+
+{%- assign enable_marque              = section.settings.enable_marque -%}
 
 {%- assign is_lazy 					 = false -%}
 
@@ -65,6 +61,27 @@
 				</div>
 			{%- endif -%}
 		</div>
+
+        <div class="marquee__container">
+            <div class="marquee__track">
+              {% assign total_items = section.blocks.size %}
+              {% assign repeat_count = total_items | times: total_items | ceil %}
+  
+              {% for i in (1..repeat_count) %}
+                {% for block in section.blocks %}
+                  <div class="marquee__slide">
+                    {% if block.settings.logo != blank %}
+                      {% assign logo_max_size = block.settings.logo.width | divided_by: 2 | at_most: 200 %}
+                      {% capture logo_style %}width: {{ logo_max_size }}px{% endcapture %}
+                      {{ block.settings.logo | image_url: width: block.settings.logo.width | image_tag: loading: 'lazy', style: logo_style, class: 'slide-image' }}
+                    {% else %}
+                      {{ 'image' | placeholder_svg_tag: 'slide slide--placeholder' }}
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
 	{%- endif -%}
 </section>
 
@@ -72,10 +89,17 @@
 {
 	"name": "Marquee Text",
 	"settings": [
-		{
-			"type": "richtext",
-			"id": "description",
-			"label": "description",
+        {
+			"type": "number",
+			"id": "duplicate_marquee_text",
+			"label": "Duplicate Marquee Text",
+			"info": "Number of times to duplicate text"
+		},
+        {
+			"type": "checkbox",
+			"id": "enable_marquee_text",
+			"label": "Enable Marquee Text",
+			"default": false
 		},
 		{
 			"type": "header",
@@ -85,18 +109,18 @@
 			"type": "color",
 			"id": "container_color",
 			"label": "Container Background Color",
-			"default": "#000"
+			"default": "#000000"
 		},
 		{
 			"type": "color",
 			"id": "description_color",
-			"label": "description",
+			"label": "Description Color",
 			"default": "#000000"
 		},
 		{
 			"type": "color",
 			"id": "text_color",
-			"label": "Text",
+			"label": "Text Color",
 			"default": "#535353"
 		},
 		{
@@ -106,7 +130,7 @@
 		{
 			"type": "select",
 			"id": "container_width",
-			"label": "Container width",
+			"label": "Container Width",
 			"options": [
 				{
 					"value": "1432px",
@@ -118,15 +142,15 @@
 				},
 				{
 					"value": "100%",
-					"label": "Full width"
+					"label": "Full Width"
 				},
 				{
 					"value": "inherit",
-					"label": "Inherit of general setting"
+					"label": "Inherit from General Settings"
 				}
 			],
 			"default": "inherit",
-			"info": "if you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
+			"info": "If you select 'Inherit from General Settings', then the container width will be used from the Theme settings/Layout."
 		},
 		{
 			"type": "range",
@@ -135,7 +159,7 @@
 			"max": 100,
 			"step": 1,
 			"unit": "px",
-			"label": "Desktop offset top",
+			"label": "Desktop Offset Top",
 			"default": 40
 		},
 		{
@@ -145,7 +169,7 @@
 			"max": 100,
 			"step": 1,
 			"unit": "px",
-			"label": "Desktop offset bottom",
+			"label": "Desktop Offset Bottom",
 			"default": 40
 		},
 		{
@@ -155,7 +179,7 @@
 			"max": 100,
 			"step": 1,
 			"unit": "px",
-			"label": "Mobile offset top",
+			"label": "Mobile Offset Top",
 			"default": 25
 		},
 		{
@@ -165,10 +189,23 @@
 			"max": 100,
 			"step": 1,
 			"unit": "px",
-			"label": "Mobile offset bottom",
+			"label": "Mobile Offset Bottom",
 			"default": 25
 		}
 	],
+    "blocks": [
+        {
+            "type": "text",
+            "name": "Marquee Text",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                }
+            ]
+        }
+    ],
 	"presets": [
 		{
 			"name": "Marquee Text",
@@ -177,4 +214,6 @@
 	]
 }
 {%- endschema -%}
+
+
 
