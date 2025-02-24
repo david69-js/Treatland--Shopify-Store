@@ -7,34 +7,96 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
 	"type": "footer",
 	"name": "Footer group",
 	"sections": {
-		"footer": {
-			"type": "footer",
-			"blocks": {
-				"text": {
-					"type": "text",
-					"settings": {
-					}
-				},
-				"menu": {
-					"type": "menu",
-					"settings": {
-						"menu": "footer"
-					}
-				}
-			},
-			"block_order": [
-				"text",
-				"menu"
-			],
+	  "footer": {
+		"type": "footer",
+		"blocks": {
+		  "text": {
+			"type": "text",
 			"settings": {
+			  "logo_image": "shopify://shop_images/Frame_146_1.png",
+			  "logo_image_width": 140,
+			  "text_content": "<p>Welcome to Treatland, the worlds greatest worst moped discount super disco. the people of Treatland would like to welcome you to our online superstore, look around, explore, adventure, and have fun. </p>",
+			  "show_media_links": true,
+			  "enable_follow_on_shop": true
 			}
+		  },
+		  "menu": {
+			"type": "menu",
+			"settings": {
+			  "menu_heading": "Shop",
+			  "menu": "footer"
+			}
+		  },
+		  "menu_4pKVDd": {
+			"type": "menu",
+			"settings": {
+			  "menu_heading": "Resources",
+			  "menu": "footer"
+			}
+		  },
+		  "menu_3YbqWD": {
+			"type": "menu",
+			"settings": {
+			  "menu_heading": "Help",
+			  "menu": "footer"
+			}
+		  }
+		},
+		"block_order": [
+		  "text",
+		  "menu",
+		  "menu_4pKVDd",
+		  "menu_3YbqWD"
+		],
+		"settings": {
+		  "copyright_text": "Copyright © %date% Treats hq inc all rights reserved",
+		  "show_back_to_top_button": false,
+		  "enable_rounded_footer": false,
+		  "is_show_country_selector": false,
+		  "is_show_language_selector": false,
+		  "is_show_payment_methods": false,
+		  "enable_newsletter": true,
+		  "newsletter_icon": "shopify://shop_images/Icon.svg",
+		  "newsletter_heading": "Newsletter heading",
+		  "newsletter_text_content": "<p>Newsletter text</p>",
+		  "newsletter_placeholder_text": "Enter email",
+		  "newsletter_button_text": "Subscribe",
+		  "newsletter_success_message": "Thanks for subscribing",
+		  "section_background": "#000000",
+		  "menu_headings_color": "#FFFFFF",
+		  "text_color": "#FFFFFF",
+		  "copyright_text_color": "#9D9D9D",
+		  "link_color": "#FFFFFF",
+		  "link_hover_color": "#4D71F9",
+		  "button_icon_color_social": "#FFFFFF",
+		  "button_icon_color_social_hover": "#4D71F9",
+		  "newsletter_background": "#1a1a1a",
+		  "newsletter_icon_background": "#404661",
+		  "newsletter_heading_color": "#FFFFFF",
+		  "newsletter_text_color": "#9D9D9D",
+		  "newsletter_input_color": "#FFFFFF",
+		  "newsletter_input_placeholder_color": "#9D9D9D",
+		  "newsletter_input_background": "#272F4C",
+		  "newsletter_button_color": "#000000",
+		  "newsletter_button_background": "#FFFFFF",
+		  "newsletter_button_color_hover": "#FFFFFF",
+		  "newsletter_button_background_hover": "#4D71F9",
+		  "bottom_footer_border_color": "#282f4c",
+		  "button_top_color": "#000000",
+		  "button_top_background": "#FFFFFF",
+		  "button_top_border": "#E9E9E9",
+		  "button_top_color_hover": "#FFFFFF",
+		  "button_top_background_hover": "#4D71F9",
+		  "button_top_border_hover": "#4D71F9"
 		}
+	  }
 	},
 	"order": [
-		"footer"
+	  "footer"
 	]
-}
+  }
+  

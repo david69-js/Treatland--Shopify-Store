@@ -49,6 +49,8 @@
     "quick_view_show_taxes_included": false,
     "quick_view_button_type": "secondary",
     "quick_view_button_buy_it_type": "secondary",
+    "social_facebook_link": "/#fb",
+    "social_instagram_link": "/#ig",
     "sale_label_text": "Alternate Reality Price",
     "content_for_index": []
   },
