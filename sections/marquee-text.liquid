@@ -1,0 +1,180 @@
+{%- comment -%}
+	------------------------------------------------------------------------------
+	Section: Image with text(animations)
+	------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- render 'adastra' with '/src/styles/image-with-text-animations.scss' -%}
+
+{%- style -%}
+	#shopify-section-{{- section.id -}} {
+		padding-top: {{- section.settings.offset_top_mobile -}}px;
+		padding-bottom: {{- section.settings.offset_bottom_mobile -}}px;
+	}
+
+	@media screen and (min-width: 768px) {
+		#shopify-section-{{- section.id -}} {
+			padding-top: {{- section.settings.offset_top_desktop -}}px;
+			padding-bottom: {{- section.settings.offset_bottom_desktop -}}px;
+		}
+	}
+{%- endstyle -%}
+
+{%- assign heading                   = section.settings.heading -%}
+{%- assign heading_font_size_desktop = section.settings.heading_font_size_desktop | append: "px" -%}
+{%- assign description                = section.settings.description -%}
+{%- assign heading_color             = section.settings.heading_color -%}
+{%- assign heading_outline           = section.settings.heading_outline -%}
+{%- assign heading_background        = section.settings.heading_background -%}
+{%- assign description_color          = section.settings.description_color -%}
+{%- assign text_color 		         = section.settings.text_color -%}
+{%- assign container                 = section.settings.container_width -%}
+{%- assign container_color           = section.settings.container_color -%}
+{%- assign text_align                 = section.settings.text_align -%}
+
+{%- assign is_lazy 					 = false -%}
+
+{% if container == 'inherit' %}
+	{% assign container_width = settings.container_width %}
+{% else %}
+	{% assign container_width = container %}
+{% endif %}
+
+{%- if section.index > 1 -%}
+	{%- assign is_lazy = true -%}
+{%- endif -%}
+
+{%- capture styles -%}
+	--container-width: {{ container_width }}; {{-  -}}
+    --container-color: {{ container_color }}; {{-  -}}
+	--description-color: {{- description_color -}}; {{-  -}}
+	--text-color: {{- text_color -}};
+    --text-align: {{- text_align -}};
+{%- endcapture -%}
+
+<section
+	class="image-with-text-animations {% if section.index > 1 %}image-with-text-animations--delay{% endif %} {% if request.visual_preview_mode or section.index == 1 %} animated{% endif %} js-animate"
+	style="{{- styles -}}"
+>
+
+	{%- if description != blank -%}
+		<div class="image-with-text-animations__content">
+			{%- if description != blank -%}
+				<div class="image-with-text-animations__description">
+					{{- description -}}
+				</div>
+			{%- endif -%}
+		</div>
+	{%- endif -%}
+</section>
+
+{%- schema -%}
+{
+	"name": "Marquee Text",
+	"settings": [
+		{
+			"type": "richtext",
+			"id": "description",
+			"label": "description",
+		},
+		{
+			"type": "header",
+			"content": "Colors"
+		},
+		{
+			"type": "color",
+			"id": "container_color",
+			"label": "Container Background Color",
+			"default": "#000"
+		},
+		{
+			"type": "color",
+			"id": "description_color",
+			"label": "description",
+			"default": "#000000"
+		},
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "Text",
+			"default": "#535353"
+		},
+		{
+			"type": "header",
+			"content": "Layout"
+		},
+		{
+			"type": "select",
+			"id": "container_width",
+			"label": "Container width",
+			"options": [
+				{
+					"value": "1432px",
+					"label": "Default - 1400px"
+				},
+				{
+					"value": "1952px",
+					"label": "Large - 1920px"
+				},
+				{
+					"value": "100%",
+					"label": "Full width"
+				},
+				{
+					"value": "inherit",
+					"label": "Inherit of general setting"
+				}
+			],
+			"default": "inherit",
+			"info": "if you select 'Inherit of general setting', then container width will be used from the Theme settings/Layout"
+		},
+		{
+			"type": "range",
+			"id": "offset_top_desktop",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Desktop offset top",
+			"default": 40
+		},
+		{
+			"type": "range",
+			"id": "offset_bottom_desktop",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Desktop offset bottom",
+			"default": 40
+		},
+		{
+			"type": "range",
+			"id": "offset_top_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Mobile offset top",
+			"default": 25
+		},
+		{
+			"type": "range",
+			"id": "offset_bottom_mobile",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "px",
+			"label": "Mobile offset bottom",
+			"default": 25
+		}
+	],
+	"presets": [
+		{
+			"name": "Marquee Text",
+			"settings": {}
+		}
+	]
+}
+{%- endschema -%}
+
