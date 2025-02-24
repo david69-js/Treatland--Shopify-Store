@@ -177,7 +177,7 @@
 							{%- case media.media_type -%}
 								{%- when 'image' -%}
 									<div
-										class="js-product-gallery-slide-variant-{{ section.id }}"
+										class="js-product-gallery-slide-variant-{{ section.id }} js-product-gallery-slide-variant--media "
 										data-variant-id="{% for variant_id in variant_ids %}{{- variant_id | strip -}}{% unless forloop.index == forloop.last %},{% endunless %}{% endfor %}"
 									>
 										{%- render "product-gallery-image",

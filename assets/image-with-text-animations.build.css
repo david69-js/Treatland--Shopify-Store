@@ -37,13 +37,15 @@
 }
 .image-with-text-animations {
   opacity: 0;
-  max-width: var(--container-width);
   background-color: var(--container-color);
-  margin-left: auto;
-  margin-right: auto;
   padding: 0 16px;
   text-align: center;
   min-height: 40px;
+}
+.image-with-text-animations--container{
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 .image-with-text-animations .image-with-text-animations__main {
   text-align: var(--text-align);
@@ -158,26 +160,17 @@ html.no-js .image-with-text-animations .image-with-text-animations__image-contai
   }
 }
 @media (min-width: 481px) {
-  .image-with-text-animations .image-with-text-animations__heading {
-    font-size: 65px;
-  }
   .image-with-text-animations .image-with-text-animations__image-container {
     padding-top: 39%;
   }
 }
 @media (min-width: 576px) {
-  .image-with-text-animations .image-with-text-animations__heading {
-    font-size: 85px;
-  }
   .image-with-text-animations .image-with-text-animations__image-container {
     padding-top: 33%;
     max-width: 300px;
   }
 }
 @media (min-width: 768px) {
-  .image-with-text-animations .image-with-text-animations__heading {
-    font-size: 115px;
-  }
   .image-with-text-animations .image-with-text-animations__image-container {
     max-width: 580px;
     padding-top: 44%;
@@ -188,14 +181,11 @@ html.no-js .image-with-text-animations .image-with-text-animations__image-contai
     padding-top: 37%;
   }
 }
-@media (min-width: 1200px) {
   .image-with-text-animations .image-with-text-animations__heading {
     font-size: var(--heading-desktop-font-size);
   }
-  .image-with-text-animations .image-with-text-animations__image-container {
-    padding-top: 34%;
-  }
-}
+  
+
 .marquee--text{
   padding: 0 !important;
   overflow: hidden;

@@ -84,19 +84,12 @@
 .product-card .product-card__header-content .unit-price {
   display: flex;
 }
-.product-card .product-card__image-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: none;
-}
-.product-card .product-card__image-wrapper.product-card__image-wrapper--square {
-  padding-top: 100%;
-}
-.product-card .product-card__image-wrapper.product-card__image-wrapper--portrait {
-  padding-top: 125%;
+.product-card .product-card__header-content .unit-price .price-item {
+  font-size: 0.85em;
 }
 .product-card .product-card__image-wrapper.is-active {
   display: block;
+  height: 155px;
 }
 .product-card .product-card__image-picture {
   transition-property: opacity;

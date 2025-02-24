@@ -60,27 +60,29 @@
 	class="image-with-text-animations {% if section.index > 1 %}image-with-text-animations--delay{% endif %} {% if request.visual_preview_mode or section.index == 1 %} animated{% endif %}{% if heading != blank and image != blank %} js-image-with-text-animations{% endif %} js-animate"
 	style="{{- styles -}}"
 >
-	{%- if heading != blank -%}
-		<div class="image-with-text-animations__main">
-			{%- if heading != blank -%}
-				<div class="image-with-text-animations__heading-wrapper">
-					<h2 class="image-with-text-animations__heading">
-						{{- heading -}}
-					</h2>
-				</div>
-			{%- endif -%}
-		</div>
-	{%- endif -%}
-
-	{%- if description != blank -%}
-		<div class="image-with-text-animations__content">
-			{%- if description != blank -%}
-				<div class="image-with-text-animations__description">
-					{{- description -}}
-				</div>
-			{%- endif -%}
-		</div>
-	{%- endif -%}
+	<div class="image-with-text-animations--container">
+		{%- if heading != blank -%}
+			<div class="image-with-text-animations__main">
+				{%- if heading != blank -%}
+					<div class="image-with-text-animations__heading-wrapper">
+						<h2 class="image-with-text-animations__heading">
+							{{- heading -}}
+						</h2>
+					</div>
+				{%- endif -%}
+			</div>
+		{%- endif -%}
+	
+		{%- if description != blank -%}
+			<div class="image-with-text-animations__content">
+				{%- if description != blank -%}
+					<div class="image-with-text-animations__description">
+						{{- description -}}
+					</div>
+				{%- endif -%}
+			</div>
+		{%- endif -%}
+	</div>
 </section>
 
 {%- schema -%}

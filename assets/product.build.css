@@ -240,7 +240,7 @@ html.no-js .product {
   transition: border var(--timing-short);
 }
 .product-media .product-media__slider-thumbnails-slide.swiper-slide-thumb-active .product-media__image {
-  border: 1px solid var(--color-border-primary);
+  border: 1px solid #C3C3C3;;
   padding: 2px;
 }
 .product-media .product-media__slider-thumbnails-slide:focus-visible {
@@ -335,6 +335,16 @@ html.no-js .product {
 }
 .product-media .product-media__slider-slide.product-media__slider-slide--zoom {
   cursor: zoom-in;
+}
+.js-product-gallery-slide-variant--media{
+  height: 420px !important;
+  display: flex;
+  justify-content: center;
+}
+.js-product-gallery-slide-variant--media .product-media__image{
+  height: 100%;
+  width: auto !important;
+  border: 1px solid #C3C3C3;
 }
 .product-media .product-media__slider-slide.product-media__slider-slide--square {
   overflow: hidden;
@@ -911,17 +921,14 @@ html.no-js .product {
 .product-title-wrapper .product-title {
   font-size: calc(var(--heading-font-size) * 1.75);
   line-height: 1.21;
+  text-decoration: none;
 }
 .product-title-wrapper .product-title a {
   text-decoration-color: transparent;
   transition-property: text-decoration-color;
   transition-duration: var(--timing-base);
 }
-@media (-moz-touch-enabled: 0), (hover: hover), (pointer: fine) {
-  .product-title-wrapper .product-title a:hover {
-    text-decoration-color: currentColor;
-  }
-}
+
 .product-combination {
   padding-top: var(--offset-top-mobile);
   padding-bottom: var(--offset-bottom-mobile);
@@ -1075,10 +1082,6 @@ html.no-js .product-variants {
   width: 38px;
   height: 38px;
   padding: 0;
-  border-radius: 50%;
-  border: 1px solid var(--color-border-secondary);
-  background-color: var(--color-background);
-  color: var(--button-text-color-primary);
 }
 .product-quantity .product-quantity__button .icon {
   width: 24px;
@@ -1093,7 +1096,7 @@ html.no-js .product-variants {
 }
 .product-quantity .product-quantity__input {
   width: 36px;
-  min-height: auto;
+  min-height: 100%;
   margin: 0 10px;
   padding: 8px 5px;
   border: 0;
@@ -1110,7 +1113,7 @@ html.no-js .product-variants {
   margin: 0;
 }
 .product-quantity .product-quantity__input:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 0px solid var(--color-text-primary);
 }
 @media (-moz-touch-enabled: 0), (hover: hover), (pointer: fine) {
   .product-quantity .product-quantity__input:not(:focus-visible):hover {
@@ -1142,7 +1145,7 @@ html.no-js .product-variants {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  padding: 0px;
   background-color: var(--color-background-secondary);
   border-radius: calc(var(--global-border-radius) * 8);
 }

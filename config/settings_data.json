@@ -1,3 +1,4 @@
+
  {
   "current": {
     "base_font": "inter_n4",
@@ -49,6 +50,7 @@
     "quick_view_show_taxes_included": false,
     "quick_view_button_type": "secondary",
     "quick_view_button_buy_it_type": "secondary",
+    "quick_view_image_fit": "quick-view__image-wrapper--contain",
     "social_facebook_link": "/#fb",
     "social_instagram_link": "/#ig",
     "sale_label_text": "Alternate Reality Price",

@@ -1,4 +1,4 @@
-{
+ {
   "sections": {
     "banner_text_bAgUn3": {
       "type": "banner-text",
@@ -13,7 +13,7 @@
         "description_color": "#ffffff",
         "text_color": "#ffffff",
         "text_align": "left",
-        "container_width": "100%",
+        "container_width": "1432px",
         "offset_top_desktop": 0,
         "offset_bottom_desktop": 0,
         "offset_top_mobile": 25,
@@ -221,6 +221,169 @@
         "offset_bottom_mobile": 25
       }
     },
+    "featured_product_h6HNYt": {
+      "type": "featured-product",
+      "blocks": {
+        "badges_7jewJD": {
+          "type": "badges",
+          "settings": {
+            "position": "third_column",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "title_eGqQVJ": {
+          "type": "title",
+          "settings": {
+            "position": "first_column",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "price_zbTi4G": {
+          "type": "price",
+          "settings": {
+            "position": "third_column",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "vendor_QBMLrG": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {
+            "position": "first_column",
+            "show_sku": true,
+            "sku_text": "Art: {SKU}",
+            "show_vendor": true,
+            "make_vendor_link": true,
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "options_wTyyiK": {
+          "type": "options",
+          "settings": {
+            "variant_picker": "radio",
+            "position": "first_column",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "quantity_AVkG48": {
+          "type": "quantity",
+          "settings": {
+            "position": "third_column",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "add_to_cart_wHBVgF": {
+          "type": "add_to_cart",
+          "settings": {
+            "position": "third_column",
+            "button_type": "secondary",
+            "button_buy_it_type": "secondary-border",
+            "show_additional_buttons": false,
+            "show_gift_card_recipient": true,
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "badge_images_6TYbH3": {
+          "type": "badge_images",
+          "settings": {
+            "position": "third_column",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "drawers_HM97Ny": {
+          "type": "drawers",
+          "settings": {
+            "position": "third_column",
+            "show_description": true,
+            "description_toggle_text": "Description",
+            "description_drawer_title": "Description",
+            "drawer_page_1": "",
+            "drawer_toggle_text_1": "Drawer 1",
+            "drawer_title_1": "Drawer 1",
+            "drawer_page_2": "",
+            "drawer_toggle_text_2": "Drawer 2",
+            "drawer_title_2": "Drawer 2",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        },
+        "complementary_bjyTdB": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "position": "first_column",
+            "heading": "You May Also Like",
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
+          }
+        }
+      },
+      "block_order": [
+        "badges_7jewJD",
+        "title_eGqQVJ",
+        "price_zbTi4G",
+        "vendor_QBMLrG",
+        "options_wTyyiK",
+        "quantity_AVkG48",
+        "add_to_cart_wHBVgF",
+        "badge_images_6TYbH3",
+        "drawers_HM97Ny",
+        "complementary_bjyTdB"
+      ],
+      "settings": {
+        "product": "used-batavustrac-laura-m56-engine",
+        "is_zoom_enabled": true,
+        "show_arrows_mobile": false,
+        "media_layout": "carousel",
+        "thumbnails_position": "bottom",
+        "media_height": "full_size",
+        "stacked_smooth_scroll": false,
+        "product_layout": "two_columns",
+        "show_taxes_included": true,
+        "show_pay_installments": true,
+        "show_size_guide": false,
+        "size_guide_button_text": "Size guide",
+        "size_guide_drawer_title": "Size guide",
+        "size_guide_tab_general_name": "Dimensions",
+        "size_guide_tab_model_name": "Model parameters",
+        "ui_button_color": "#000000",
+        "ui_button_background_color": "#ffffff",
+        "ui_button_border_color": "#e9e9e9",
+        "container_width": "100%",
+        "offset_top_desktop": 40,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
     "grid_products_9k9Yfe": {
       "type": "grid-products",
       "settings": {
@@ -334,167 +497,6 @@
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
       }
-    },
-    "featured_product_h6HNYt": {
-      "type": "featured-product",
-      "blocks": {
-        "badges_7jewJD": {
-          "type": "badges",
-          "settings": {
-            "position": "third_column",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "title_eGqQVJ": {
-          "type": "title",
-          "settings": {
-            "position": "first_column",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "vendor_QBMLrG": {
-          "type": "vendor",
-          "settings": {
-            "position": "first_column",
-            "show_sku": true,
-            "sku_text": "Art: {SKU}",
-            "show_vendor": true,
-            "make_vendor_link": true,
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "options_wTyyiK": {
-          "type": "options",
-          "settings": {
-            "variant_picker": "radio",
-            "position": "first_column",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "price_zbTi4G": {
-          "type": "price",
-          "settings": {
-            "position": "third_column",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "quantity_AVkG48": {
-          "type": "quantity",
-          "settings": {
-            "position": "third_column",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "add_to_cart_wHBVgF": {
-          "type": "add_to_cart",
-          "settings": {
-            "position": "third_column",
-            "button_type": "secondary",
-            "button_buy_it_type": "secondary-border",
-            "show_additional_buttons": false,
-            "show_gift_card_recipient": true,
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "badge_images_6TYbH3": {
-          "type": "badge_images",
-          "settings": {
-            "position": "third_column",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "drawers_HM97Ny": {
-          "type": "drawers",
-          "settings": {
-            "position": "third_column",
-            "show_description": true,
-            "description_toggle_text": "Description",
-            "description_drawer_title": "Description",
-            "drawer_page_1": "",
-            "drawer_toggle_text_1": "Drawer 1",
-            "drawer_title_1": "Drawer 1",
-            "drawer_page_2": "",
-            "drawer_toggle_text_2": "Drawer 2",
-            "drawer_title_2": "Drawer 2",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        },
-        "complementary_bjyTdB": {
-          "type": "complementary",
-          "settings": {
-            "position": "first_column",
-            "heading": "You May Also Like",
-            "offset_top_desktop": 16,
-            "offset_bottom_desktop": 16,
-            "offset_top_mobile": 8,
-            "offset_bottom_mobile": 8
-          }
-        }
-      },
-      "block_order": [
-        "badges_7jewJD",
-        "title_eGqQVJ",
-        "vendor_QBMLrG",
-        "options_wTyyiK",
-        "price_zbTi4G",
-        "quantity_AVkG48",
-        "add_to_cart_wHBVgF",
-        "badge_images_6TYbH3",
-        "drawers_HM97Ny",
-        "complementary_bjyTdB"
-      ],
-      "settings": {
-        "product": "used-batavustrac-laura-m56-engine",
-        "is_zoom_enabled": true,
-        "show_arrows_mobile": true,
-        "media_layout": "carousel",
-        "thumbnails_position": "bottom",
-        "media_height": "full_size",
-        "stacked_smooth_scroll": true,
-        "product_layout": "two_columns",
-        "show_taxes_included": true,
-        "show_pay_installments": true,
-        "show_size_guide": true,
-        "size_guide_button_text": "Size guide",
-        "size_guide_drawer_title": "Size guide",
-        "size_guide_tab_general_name": "Dimensions",
-        "size_guide_tab_model_name": "Model parameters",
-        "ui_button_color": "#000",
-        "ui_button_background_color": "#fff",
-        "ui_button_border_color": "#E9E9E9",
-        "container_width": "100%",
-        "offset_top_desktop": 40,
-        "offset_bottom_desktop": 40,
-        "offset_top_mobile": 25,
-        "offset_bottom_mobile": 25
-      }
     }
   },
   "order": [
@@ -503,8 +505,8 @@
     "grid_products_gxHNFU",
     "grid_products_aARFtc",
     "marquee_text_kkHFpn",
+    "featured_product_h6HNYt",
     "grid_products_9k9Yfe",
-    "grid_products_jPeX7K",
-    "featured_product_h6HNYt"
+    "grid_products_jPeX7K"
   ]
 }
