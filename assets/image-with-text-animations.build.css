@@ -196,3 +196,25 @@ html.no-js .image-with-text-animations .image-with-text-animations__image-contai
     padding-top: 34%;
   }
 }
+.marquee--text{
+  padding: 0 !important;
+  overflow: hidden;
+}
+.marquee--text .marquee__track{
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  color: var(--description-color);
+  background-color: var(--container-color);
+}
+.marquee__slide p{
+  width: max-content;
+}
+@keyframes scroll {
+  from {
+      transform: translateX(0);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}

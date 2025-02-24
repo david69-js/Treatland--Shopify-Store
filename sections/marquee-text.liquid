@@ -21,69 +21,70 @@
 {%- endstyle -%}
 
 {%- assign description_color          = section.settings.description_color -%}
-{%- assign text_color 		         = section.settings.text_color -%}
-{%- assign container                 = section.settings.container_width -%}
 {%- assign container_color           = section.settings.container_color -%}
-{%- assign text_align                 = section.settings.text_align -%}
 
-{%- assign enable_marque              = section.settings.enable_marque -%}
+{%- assign marquee_text_duplicate    = section.settings.duplicate_marquee_text | plus: 1 -%}
+{%- assign space_between_items        = section.settings.space_between_items | append: 'px' -%}
+
+{%- assign marquee_speed            = section.settings.marquee_speed | default: 10 -%}
+{%- assign marquee_enable           = section.settings.enable_marquee_text -%}
 
 {%- assign is_lazy 					 = false -%}
-
-{% if container == 'inherit' %}
-	{% assign container_width = settings.container_width %}
-{% else %}
-	{% assign container_width = container %}
-{% endif %}
 
 {%- if section.index > 1 -%}
 	{%- assign is_lazy = true -%}
 {%- endif -%}
 
 {%- capture styles -%}
-	--container-width: {{ container_width }}; {{-  -}}
     --container-color: {{ container_color }}; {{-  -}}
 	--description-color: {{- description_color -}}; {{-  -}}
-	--text-color: {{- text_color -}};
-    --text-align: {{- text_align -}};
+    --gap: {{- space_between_items -}}
 {%- endcapture -%}
 
+
+{%- if marquee_enable -%}
+    <style>
+    .marquee__track {
+        animation: scroll {{ marquee_speed }}s linear infinite !important;
+        will-change: transform;
+        flex-wrap: nowrap;
+    }        
+    </style>
+{%- endif -%}
+
+{%- if is_lazy -%}
+{% style %}
+    .marquee--text {
+        opacity: 0;
+    }
+    .marquee--text.animated {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }   
+{% endstyle %}
+{%- endif -%}
+
 <section
-	class="image-with-text-animations {% if section.index > 1 %}image-with-text-animations--delay{% endif %} {% if request.visual_preview_mode or section.index == 1 %} animated{% endif %} js-animate"
+	class="marquee--text {% if section.index > 1 %}image-with-text-animations--delay{% endif %} {% if request.visual_preview_mode or section.index == 1 %} animated{% endif %} js-animate"
 	style="{{- styles -}}"
 >
+	<div class="marquee__container">
+		<div class="marquee__track">
+			{% assign total_items = marquee_text_duplicate %}
+			{% assign repeat_count = total_items | times: total_items | ceil %}
 
-	{%- if description != blank -%}
-		<div class="image-with-text-animations__content">
-			{%- if description != blank -%}
-				<div class="image-with-text-animations__description">
-					{{- description -}}
-				</div>
-			{%- endif -%}
+			{% for i in (1..repeat_count) %}
+				{% for block in section.blocks %}
+					<div class="marquee__slide">
+						{{ block.settings.description }}
+					</div>
+				{% endfor %}
+			{% endfor %}
 		</div>
+	</div>
 
-        <div class="marquee__container">
-            <div class="marquee__track">
-              {% assign total_items = section.blocks.size %}
-              {% assign repeat_count = total_items | times: total_items | ceil %}
-  
-              {% for i in (1..repeat_count) %}
-                {% for block in section.blocks %}
-                  <div class="marquee__slide">
-                    {% if block.settings.logo != blank %}
-                      {% assign logo_max_size = block.settings.logo.width | divided_by: 2 | at_most: 200 %}
-                      {% capture logo_style %}width: {{ logo_max_size }}px{% endcapture %}
-                      {{ block.settings.logo | image_url: width: block.settings.logo.width | image_tag: loading: 'lazy', style: logo_style, class: 'slide-image' }}
-                    {% else %}
-                      {{ 'image' | placeholder_svg_tag: 'slide slide--placeholder' }}
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              {% endfor %}
-            </div>
-          </div>
-	{%- endif -%}
 </section>
+
 
 {%- schema -%}
 {
@@ -95,6 +96,18 @@
 			"label": "Duplicate Marquee Text",
 			"info": "Number of times to duplicate text"
 		},
+        {
+            "type": "number",
+            "id": "space_between_items",
+            "label": "Space between Items",
+            "default": 100
+        },
+        {
+            "type": "number",
+            "id": "marquee_speed",
+            "label": "Marque Speed",
+            "default": 90
+        },
         {
 			"type": "checkbox",
 			"id": "enable_marquee_text",
@@ -126,31 +139,6 @@
 		{
 			"type": "header",
 			"content": "Layout"
-		},
-		{
-			"type": "select",
-			"id": "container_width",
-			"label": "Container Width",
-			"options": [
-				{
-					"value": "1432px",
-					"label": "Default - 1400px"
-				},
-				{
-					"value": "1952px",
-					"label": "Large - 1920px"
-				},
-				{
-					"value": "100%",
-					"label": "Full Width"
-				},
-				{
-					"value": "inherit",
-					"label": "Inherit from General Settings"
-				}
-			],
-			"default": "inherit",
-			"info": "If you select 'Inherit from General Settings', then the container width will be used from the Theme settings/Layout."
 		},
 		{
 			"type": "range",
