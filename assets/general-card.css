@@ -100,13 +100,9 @@
  }
  
 .product-card__title{
-   min-height: 50px;
    font-weight: 700 !important;
  }
  
- .product-card-form-variant--horizontal_card_style .product-card__content .product-card__content-info .product-card__title{
-   min-height: 30px;
- }
  @media (max-width: 768px) {
    .product-card-form-variant--horizontal_card_style .product-card__content .product-card__content-info .product-card__title{
     font-size: 14px !important;
