@@ -919,9 +919,13 @@ html.no-js .product {
   }
 }
 .product-title-wrapper .product-title {
-  font-size: calc(var(--heading-font-size) * 1.75);
-  line-height: 1.21;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
   text-decoration: none;
+}
+.product-featured .product-media .swiper-button-next, .product-featured .product-media .swiper-button-prev{
+  display: none;
 }
 .product-title-wrapper .product-title a {
   text-decoration-color: transparent;
@@ -1176,7 +1180,7 @@ html.no-js .product-variants {
   align-items: center;
 }
 .product-price.price.price--on-sale .price__sale .price__old {
-  width: 100%;
+  width:auto;
 }
 .product-price shopify-payment-terms {
   font-family: var(--base-font-family);

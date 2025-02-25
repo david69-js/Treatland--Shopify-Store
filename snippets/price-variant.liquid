@@ -72,7 +72,7 @@
 				</span>
 
 				<span class="price__old">
-					<span class="price-item price-item--regular {% if quick_view_modal %} f20px {% else %}f14px{% endif %}" data-price-old>
+					<span class="price-item price-item--regular {% if quick_view_modal %} f20px {% else %}{{ fontsize }}{% endif %}" data-price-old>
 						{%- if currency_code_enabled -%}
 							{{- compare_at_price | money_with_currency -}}
 						{%- else -%}
@@ -82,12 +82,12 @@
 				</span>
 			{%- endunless -%}
 
-            <span class="price-item price-item--sale {% if quick_view_modal %} f20px {% else %}f14px{% endif %}" data-product-price data-amount="{{ price }}">
+            <span class="price-item price-item--sale {% if quick_view_modal %} f20px {% else %}{{ fontsize }}{% endif %}" data-product-price data-amount="{{ price }}">
 				{{- money_price -}}
 				
 			</span>
 			{% if settings.is_sale_label_enabled %}	
-				<span class="price-item f14px" style="color: {{ color_sale_aditional_text }}">
+				<span class="price-item {{ fontsize }}" style="color: {{ color_sale_aditional_text }}">
 					{{- sale_aditional_text -}}
 				</span>
 			{% endif %}
@@ -121,13 +121,13 @@
 					{{- 'products.product.price.regular_price' | t -}}
 				</span>
 
-				<span class="price-item price-item--regular {% if quick_view_modal %} f20px {% else %}f14px{% endif %}" data-product-price>
+				<span class="price-item price-item--regular {% if quick_view_modal %} f20px {% else %}{{ fontsize }}{% endif %}" data-product-price>
 					{{- money_price -}}
 				</span>
 			{% endif %}
 			
 			{% if settings.is_custom_tag_label_enabled and tagfound %}
-				<span class="price-item f14px" style="color: {{ cmColorAditionalText }}">
+				<span class="price-item {{ fontsize }}" style="color: {{ cmColorAditionalText }}">
 					{{- cmAditionalText -}}
 				</span>
 			{% endif %}

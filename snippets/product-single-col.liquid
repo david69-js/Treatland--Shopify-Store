@@ -47,10 +47,8 @@
 					{% render 'product-combination', block: block, product: product %}
 				{% when 'options' %}
 					{% render 'product-options', section: section, block: block, product: product %}
-				{% when 'quantity' %}
-					{% render 'product-quantity', block: block, product: product, show_label: true %}
 				{% when 'price' %}
-					{%- render 'price',
+					{%- render 'price-variant',
 						product: product,
 						use_variant: use_variant,
 						show_unit_price: settings.is_show_unit_price,
@@ -61,19 +59,28 @@
 						show_pay_installments: section.settings.show_pay_installments,
 						form: form,
 						block: block,
-						show_volume_pricing_info: true
+						show_volume_pricing_info: true,
+						fontsize: "f24px"
 					-%}
-				{% when 'add_to_cart' %}
-					{% render 'product-add-to-cart',
-						form: form,
-						section: section,
-						blocks: blocks,
-						block: block,
-						use_variant: use_variant,
-						show_sticky_add_to_cart: show_sticky_add_to_cart,
-						product: product,
-						enable_history_state: enable_history_state
-					%}
+					{% when "quantity" %}
+						<div class="product-actions">
+							<div class="product-actions__quantity">
+								{% render 'product-quantity', block: block, product: product, show_label: true %}
+							</div>
+					{% when "add_to_cart" %}
+							<div class="product-actions__add-to-cart">
+								{% render 'product-add-to-cart',
+									form: form,
+									section: section,
+									blocks: blocks,
+									block: block,
+									use_variant: use_variant,
+									show_sticky_add_to_cart: show_sticky_add_to_cart,
+									product: product,
+									enable_history_state: enable_history_state
+								%}
+							</div>
+						</div>
 				{% when 'pickup_availability' %}
 					{% render 'product-pickup-availability', product: product, block: block, section_id: section.id %}
 				{% when 'drawers' %}

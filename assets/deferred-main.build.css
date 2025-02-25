@@ -1370,3 +1370,10 @@ html.no-js .product-variants {
 .dn-i{
   display: none;
 }
+.product-actions{
+  display: flex;
+  gap: 15px;
+}
+.product-actions .product-actions__add-to-cart{
+  width: 100%;
+}

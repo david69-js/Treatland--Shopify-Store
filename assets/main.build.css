@@ -2622,7 +2622,7 @@ textarea,
 .price.price--on-sale .price__sale {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   column-gap: 5px;
 }
 .price.price--on-sale .price__sale .price-item--regular {
@@ -4990,6 +4990,9 @@ textarea,
   .dn-i-mobile {
     display: none;
   }
+}
+.f24px{
+  font-size: 24px !important;
 }
 .f20px{
   font-size: 20px !important;
