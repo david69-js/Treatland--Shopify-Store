@@ -62,7 +62,9 @@
 						show_volume_pricing_info: true,
 						fontsize: "f24px"
 					-%}
-					{% when "quantity" %}
+				{% when 'custom_labels' %}
+                    {% render 'custom-tag-and-text', block: block, section_id: section.id, product: product %}
+				{% when "quantity" %}
 						<div class="product-actions">
 							<div class="product-actions__quantity">
 								{% render 'product-quantity', block: block, product: product, show_label: true %}

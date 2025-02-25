@@ -1,0 +1,47 @@
+{%- assign color_sale_aditional_text = settings.color_sale_aditional_text -%}
+{%- assign sale_aditional_text = settings.sale_aditional_text -%}
+{%- assign custom_tag_enabled = settings.is_custom_tag_label_enabled -%}
+{%- assign custom_tag_text = settings.custom_tag_label_text -%}
+{%- assign custom_tag_aditional_text = settings.custom_tag_label_additional_text -%}
+{%- assign custom_aditional_text_color = settings.color_custom_tag_label_additional_text -%}
+{%- assign sale_label_enabled = settings.is_sale_label_enabled -%}
+
+{% assign tagFound = false %}
+
+{% if custom_tag_enabled %}
+    {% for tag in product.tags %}
+        {% if tag contains 'badgecustom' %}
+            {% assign tagFound = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+ 
+{% assign tagsale = false %}
+{% if sale_label_enabled %}
+    {% assign discount_value = product.price | times: 100 | divided_by: product.compare_at_price_max %}
+
+    {% if discount_value < 100 %}
+        {% assign tagsale = true %}
+    {% endif %}
+{% endif %}
+
+<div class="product__labels {{ tagFound }} {{ tagsale }}">
+
+    {% if custom_tag_enabled and tagFound %}
+        <span class="price-item f12px aditional-text" 
+              style="color: {{ custom_aditional_text_color }}; width: 100%; display: block;">
+            {{- custom_tag_aditional_text -}}
+            {% render 'icons' icon: "check-pdp" color: custom_aditional_text_color %}
+            {{- sale_aditional_text -}}
+        </span>
+    {% endif %}
+
+    {% if sale_label_enabled and tagsale %}	
+        <span class="price-item f12px" 
+              style="color: {{ color_sale_aditional_text }}; width: 100%; display: block;">
+                {% render 'icons' icon: "check-pdp" color: color_sale_aditional_text %}
+                {{- sale_aditional_text -}}
+        </span>
+    {% endif %}
+</div>

@@ -138,6 +138,7 @@ html.no-js .product {
 .product-media + .product-form {
   width: calc(50% - 8px);
   max-width: 100%;
+  margin-top: 32px;
 }
 .product-media .product-media__container {
   display: flex;

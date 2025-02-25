@@ -87,7 +87,7 @@
 				
 			</span>
 			{% if settings.is_sale_label_enabled %}	
-				<span class="price-item {{ fontsize }}" style="color: {{ color_sale_aditional_text }}">
+				<span class="price-item {{ fontsize }}" style="color: {{ color_sale_aditional_text }};">
 					{{- sale_aditional_text -}}
 				</span>
 			{% endif %}
@@ -127,7 +127,7 @@
 			{% endif %}
 			
 			{% if settings.is_custom_tag_label_enabled and tagfound %}
-				<span class="price-item {{ fontsize }}" style="color: {{ cmColorAditionalText }}">
+				<span class="price-item {{ fontsize }}" style="color: {{ cmColorAditionalText }};">
 					{{- cmAditionalText -}}
 				</span>
 			{% endif %}
