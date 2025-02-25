@@ -6,7 +6,7 @@
         "heading": "Treats Updates:",
         "heading_font_size_desktop": 19,
         "description": "<p>New moped parts just dropped! Whether you ride a Puch, Peugeot, Motobecane, or Vespa, we’ve got the goods to keep your bike rolling<br/> smooth and looking sharp. Grab ‘em before they’re gone!</p>",
-        "container_color": "#000000",
+        "container_color": "#1a1a19",
         "heading_color": "#ffffff",
         "heading_outline": "#ffffff",
         "heading_background": "",
@@ -400,6 +400,98 @@
         "offset_bottom_mobile": 25
       }
     },
+    "collection_image_grid_3jqVhk": {
+      "type": "collection-image-grid",
+      "settings": {
+        "collection": "airsal",
+        "two_rows": true,
+        "grid_slots": 31,
+        "button_position": "start",
+        "grid_slots_space": 16,
+        "button_text": "See all products",
+        "button_url": "shopify://collections"
+      }
+    },
+    "testimonials_YAxhYY": {
+      "type": "testimonials",
+      "blocks": {
+        "review_7M3Tyk": {
+          "type": "review",
+          "settings": {
+            "review_author_name": "Name of 1st author",
+            "review_heading": "Review",
+            "review_text": "<p>Review text of 1st author</p>",
+            "product": ""
+          }
+        },
+        "review_8gttTL": {
+          "type": "review",
+          "settings": {
+            "review_author_name": "Name of 2nd author",
+            "review_heading": "Review",
+            "review_text": "<p>Review text of 2nd author</p>",
+            "product": ""
+          }
+        },
+        "review_VeFKfj": {
+          "type": "review",
+          "settings": {
+            "review_author_name": "Name of 3rd author",
+            "review_heading": "Review",
+            "review_text": "<p>Review text of 3rd author</p>",
+            "product": ""
+          }
+        },
+        "review_fpJWDN": {
+          "type": "review",
+          "settings": {
+            "review_author_name": "Name of 4th author",
+            "review_heading": "Review",
+            "review_text": "<p>Review text of 4th author</p>",
+            "product": ""
+          }
+        },
+        "review_nCCUMy": {
+          "type": "review",
+          "settings": {
+            "review_author_name": "Name of 5th author",
+            "review_heading": "Review",
+            "review_text": "<p>Review text of 5th author</p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_7M3Tyk",
+        "review_8gttTL",
+        "review_VeFKfj",
+        "review_fpJWDN",
+        "review_nCCUMy"
+      ],
+      "settings": {
+        "layout": "base",
+        "heading": "Reviews",
+        "enable_autoplay": false,
+        "autoplay_speed": 3,
+        "container_width": "inherit",
+        "offset_top_desktop": 40,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "collection_image_grid_cV4n3g": {
+      "type": "collection-image-grid",
+      "settings": {
+        "collection": "airsal",
+        "two_rows": true,
+        "grid_slots": 15,
+        "button_position": "end",
+        "grid_slots_space": 16,
+        "button_text": "See all products",
+        "button_url": "shopify://collections"
+      }
+    },
     "grid_products_jPeX7K": {
       "type": "grid-products",
       "settings": {
@@ -455,6 +547,95 @@
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
       }
+    },
+    "gallery_grid_Vfk3Uf": {
+      "type": "gallery-grid",
+      "blocks": {
+        "block_mC4BQd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_1.png",
+            "url": "",
+            "open_in_new_tab": false
+          }
+        },
+        "block_abrbxM": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_2.png",
+            "url": "",
+            "open_in_new_tab": false
+          }
+        },
+        "block_k47U8x": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_3.png",
+            "url": "",
+            "open_in_new_tab": false
+          }
+        },
+        "block_gy9MLK": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_4.png",
+            "url": "",
+            "open_in_new_tab": false
+          }
+        },
+        "block_3GUm7X": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_5.png",
+            "url": "",
+            "open_in_new_tab": false
+          }
+        },
+        "block_aapa7h": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/image_6.png",
+            "url": "",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "block_mC4BQd",
+        "block_abrbxM",
+        "block_k47U8x",
+        "block_gy9MLK",
+        "block_3GUm7X",
+        "block_aapa7h"
+      ],
+      "settings": {
+        "title": "Tag @treatland for a chance to be featured!",
+        "card_per_row": "6",
+        "card_per_row_mobile": "2",
+        "aspect_ratio": "square",
+        "overlay_color": "rgba(0,0,0,.5)",
+        "container_width": "inherit",
+        "offset_top_desktop": 40,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "ticker_ckK6DD": {
+      "type": "ticker",
+      "settings": {
+        "hide_bullets": true,
+        "text": "<p>Text in the ticke</p>",
+        "desktop_movement_speed": 17,
+        "mobile_movement_speed": 45,
+        "section_background": "#1B1B1B",
+        "text_color": "#ffffff",
+        "inner_indent": 24,
+        "offset_top_desktop": 40,
+        "offset_bottom_desktop": 40,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
     }
   },
   "order": [
@@ -465,6 +646,11 @@
     "marquee_text_kkHFpn",
     "featured_product_h6HNYt",
     "grid_products_9k9Yfe",
-    "grid_products_jPeX7K"
+    "collection_image_grid_3jqVhk",
+    "testimonials_YAxhYY",
+    "collection_image_grid_cV4n3g",
+    "grid_products_jPeX7K",
+    "gallery_grid_Vfk3Uf",
+    "ticker_ckK6DD"
   ]
 }
