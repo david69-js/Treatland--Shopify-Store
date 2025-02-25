@@ -1015,7 +1015,7 @@ label {
   margin-right: 8px;
 }
 .button.button--small {
-  padding: 8px 16px;
+  padding: 4px 16px;
   font-size: calc(var(--body-font-size) * 0.875);
   line-height: 1.285;
 }

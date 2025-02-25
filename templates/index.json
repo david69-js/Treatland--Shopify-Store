@@ -254,6 +254,12 @@
             "offset_bottom_mobile": 0
           }
         },
+        "custom_labels_E3atti": {
+          "type": "custom_labels",
+          "settings": {
+            "show_custom_labels": true
+          }
+        },
         "options_wTyyiK": {
           "type": "options",
           "settings": {
@@ -304,6 +310,7 @@
         "badges_7jewJD",
         "title_eGqQVJ",
         "price_zbTi4G",
+        "custom_labels_E3atti",
         "options_wTyyiK",
         "quantity_XFqFNG",
         "add_to_cart_cxpDWB",

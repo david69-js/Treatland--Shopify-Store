@@ -31,9 +31,8 @@
     {% if custom_tag_enabled and tagFound %}
         <span class="price-item f12px aditional-text" 
               style="color: {{ custom_aditional_text_color }}; width: 100%; display: block;">
-            {{- custom_tag_aditional_text -}}
             {% render 'icons' icon: "check-pdp" color: custom_aditional_text_color %}
-            {{- sale_aditional_text -}}
+            {{- custom_tag_aditional_text -}}
         </span>
     {% endif %}
 
