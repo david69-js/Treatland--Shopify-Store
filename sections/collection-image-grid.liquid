@@ -1,0 +1,173 @@
+<div class="collection-grid">
+  {% if section.settings.collection %}
+    {% assign collection = section.settings.collection %}
+    {% assign products = collection.products | shuffle %}
+
+    {% assign total_slots = section.settings.grid_slots %} <!-- Usa el valor del setting -->
+    {% assign product_count = products.size %}
+    {% assign button_position = total_slots | minus: 3 %} <!-- El botón ocupa 3 espacios -->
+    {% assign button_layout = section.settings.button_position %}
+
+    <div class="grid">
+        {% if button_layout == "start" %}
+            {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+                <div class="grid-item see-all">
+                <a clas="products-thumbnails__button button button--secondary-border grid-item see-all" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+      {% for i in (0..button_position) %}
+        <div class="grid-item">
+          {% if products[i] %}
+            <img src="{{ products[i].featured_image | img_url: 'medium' }}" alt="{{ products[i].title }}">
+          {% else %}
+            {% assign repeated_index = i | modulo: product_count %}
+            <img src="{{ products[repeated_index].featured_image | img_url: 'small' }}" alt="{{ products[repeated_index].title }}">
+          {% endif %}
+        </div>
+      {% endfor %}
+
+        {% if button_layout == "end" %}
+            {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+                <div class="grid-item see-all">
+                <a clas="products-thumbnails__button button button--secondary-border grid-item see-all" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+    </div>
+  {% else %}
+   
+  {% endif %}
+</div>
+
+<style>
+  .collection-grid {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.grid_slots_space }}, 1fr); /* Mantiene 17 columnas */
+    gap: 3px;
+    justify-content: center;    
+  }
+
+  .grid-item {
+    background: white;
+    padding: 5px;
+    border: 1px solid #ddd;
+    max-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   
+  }
+
+  .grid-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .see-all {
+    grid-column: span 3;
+    text-align: center;
+  }
+
+  .see-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: black;
+    background: white;
+    transition: background 0.3s, color 0.3s;
+  }
+    .see-all a {
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .see-all:hover{
+        background: black;
+    }
+    .see-all:hover a{
+        color: white;
+    }
+</style>
+
+
+
+
+{% schema %}
+{
+  "name": "Collection Grid",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "two_rows",
+      "label": "Show two rows?",
+      "default": true
+    },
+    {
+        "type": "range",
+        "id": "grid_slots",
+        "label": "Cantidad de imagenes",
+        "min": 5,
+        "max": 34,
+        "step": 1,
+        "default": 17
+    },
+    {
+        "type": "select",
+        "id": "button_position",
+        "label": "Button Position",
+        "options": [
+        {
+            "value": "start",
+            "label": "Start"
+        },
+        {
+            "value": "end",
+            "label": "End"
+        }
+    ],
+        "default": "end"
+    },
+    {
+        "type": "range",
+        "id": "grid_slots_space",
+        "label": "Cantidad de espacios en el grid",
+        "min": 5,
+        "max": 34,
+        "step": 1,
+        "default": 17
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "See all products"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Grid",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
