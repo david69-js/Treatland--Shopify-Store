@@ -38,12 +38,7 @@
 {% endcapture %}
 
 <div class="product-quantity js-product-quantity" {% unless additional %}style="{{ styles }}"{% endunless %}>
-	<label
-		class="product-options__option-label{% unless show_label %} visually-hidden{% endunless %}"
-		for="Product_{{- product.id -}}-Quantity{%- if additional -%}-additional{%- endif -%}"
-	>
-		{{- 'products.product.quantity' | t -}}: <span class="js-price-breaks-val {% if cart_qty == 0 %}is-hidden{%- endif -%}">{{- 'products.product.quantity_in_cart' | t: quantity: cart_qty -}}</span>
-	</label>
+
 
 	<div class="product-quantity__wrapper">
 		<div class="product-quantity__container">

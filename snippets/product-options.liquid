@@ -61,8 +61,7 @@
 			{%- capture swatch_options -%}
 				<div class="product-options__swatch">
 					<div class="product-options__option-label">
-						{{- option.name -}}:
-
+						
 						<span class="product-options__swatch-value js-swatch-label-name"
 							  data-swatch-name="{{ option.name }}"
 							  data-swatch-position="{{ option.position }}"
@@ -134,9 +133,6 @@
 			{%- endcomment -%}
 			{%- capture other_options -%}
 				<div class="product-options__default">
-					<div class="product-options__option-label">
-						{{- option.name -}}:
-					</div>
 
 					{% if variants_type == "radio" %}
 						{%- for value in option.values  -%}

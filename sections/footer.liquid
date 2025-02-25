@@ -122,7 +122,7 @@
 						>
 							<ul class="footer__navigation-list js-accordion-inner">
 								{%- for link in linklists[menu].links -%}
-									<li class="footer__navigation-list-item">
+									<li class="footer__navigation-list-item" >
 										<a href="{{ link.url }}" class="footer__navigation-list-link">
 											{{ link.title }}
 										</a>
@@ -211,7 +211,7 @@
 			{%- assign menu_heading = block.settings.menu_heading -%}
 
 			{%- if menu != blank -%}
-				<div class="footer__navigation-item">
+				<div class="footer__navigation-item footer__navigation-item--{{ forloop.index0 }}">
 					{%- if menu_heading == blank -%}
 						{%- assign menu_heading = linklists[menu].title -%}
 					{%- endif -%}
@@ -233,6 +233,18 @@
 			{%- endif -%}
 		{% endif %}
 	{%- endfor -%}
+	
+		<div class="footer__navigation-item footer__navigation-item--4">
+			<div class="footer__navigation-content">
+				<div class="social-icons">
+					{% render "icons" icon:"google" %}
+					{% render 'icons' icon:"five-stars" %}
+				</div>
+				<div class="reviews">
+					<p><span>1,131</span> <span>reviews</span> </p>
+				</div>
+			</div>
+		</div>
 {%- endcapture -%}
 
 {%- if desktop_footer_navigation == blank and enable_newsletter == false -%}
@@ -243,20 +255,6 @@
 	{%- if enable_newsletter -%}
 		<div class="footer__top-content">
 			<div class="footer__newsletter-header">
-				{%- if newsletter_icon -%}
-					<div class="footer__newsletter-icon-background">
-						<img
-							class="footer__newsletter-icon"
-							src="{{ newsletter_icon | image_url: width: 24 }}"
-							srcset="{{ newsletter_icon | image_url: width: 24 }} 1x, {{ newsletter_icon | image_url: width: 24 }} 2x"
-							alt="{{ newsletter_icon.alt | escape }}"
-							width="24"
-							height="24"
-							loading="lazy"
-						/>
-					</div>
-				{%- endif -%}
-
 				<div class="footer__newsletter-content">
 					{%- if newsletter_heading != blank -%}
 						<h2 class="footer__newsletter-heading">
@@ -282,7 +280,19 @@
 						<label class="visually-hidden" for="NewsletterForm--{{- section.id -}}">
 							{{- default_label_text -}}
 						</label>
-
+						{%- if newsletter_icon -%}
+							<div class="footer__newsletter-icon-background">
+								<img
+									class="footer__newsletter-icon"
+									src="{{ newsletter_icon | image_url: width: 24 }}"
+									srcset="{{ newsletter_icon | image_url: width: 24 }} 1x, {{ newsletter_icon | image_url: width: 24 }} 2x"
+									alt="{{ newsletter_icon.alt | escape }}"
+									width="24"
+									height="24"
+									loading="lazy"
+								/>
+							</div>
+						{%- endif -%}
 						<input
 							id="NewsletterForm--{{- section.id -}}"
 							type="email"
@@ -385,7 +395,7 @@
 
 		<div class="footer__bottom-right-col">
 			<p class="footer__copyright">
-				{{ copyright_text | replace: "%date%", current_year }} {{ powered_by_link }}
+				{{ copyright_text | replace: "%date%", current_year }}
 			</p>
 
 			{%- if show_back_to_top_button == true -%}
