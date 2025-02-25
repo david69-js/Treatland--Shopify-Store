@@ -1,3 +1,4 @@
+
  {
   "sections": {
     "banner_text_bAgUn3": {
@@ -265,17 +266,17 @@
             "offset_bottom_mobile": 0
           }
         },
-        "quantity_AVkG48": {
+        "quantity_XFqFNG": {
           "type": "quantity",
           "settings": {
             "position": "third_column",
-            "offset_top_desktop": 0,
-            "offset_bottom_desktop": 0,
-            "offset_top_mobile": 0,
-            "offset_bottom_mobile": 0
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
           }
         },
-        "add_to_cart_wHBVgF": {
+        "add_to_cart_cxpDWB": {
           "type": "add_to_cart",
           "settings": {
             "position": "third_column",
@@ -283,10 +284,10 @@
             "button_buy_it_type": "secondary-border",
             "show_additional_buttons": false,
             "show_gift_card_recipient": true,
-            "offset_top_desktop": 0,
-            "offset_bottom_desktop": 0,
-            "offset_top_mobile": 0,
-            "offset_bottom_mobile": 0
+            "offset_top_desktop": 16,
+            "offset_bottom_desktop": 16,
+            "offset_top_mobile": 8,
+            "offset_bottom_mobile": 8
           }
         }
       },
@@ -295,11 +296,11 @@
         "title_eGqQVJ",
         "price_zbTi4G",
         "options_wTyyiK",
-        "quantity_AVkG48",
-        "add_to_cart_wHBVgF"
+        "quantity_XFqFNG",
+        "add_to_cart_cxpDWB"
       ],
       "settings": {
-        "product": "used-batavustrac-laura-m56-engine",
+        "product": "everlasting-front-brake-cable-for-all",
         "is_zoom_enabled": true,
         "show_arrows_mobile": false,
         "media_layout": "carousel",
