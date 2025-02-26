@@ -165,9 +165,6 @@
     padding-top: unset;
     height: 100%;
   }
-  .product__description {
-    min-height: 50px;
-  }
 }
 .product-card .product-card__label {
   padding: 4px 12px;
