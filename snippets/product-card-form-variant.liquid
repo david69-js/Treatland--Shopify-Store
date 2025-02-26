@@ -572,27 +572,29 @@
 	</div>
 
 	<div class="product-card__footer product-card__footer--variant-card">
-	<a class="focus-visible-outline product-card__title" href="{{ product.url }}">
-		{%- if product != blank -%}
-			{{- product.title -}}
-		{%- else -%}
-			{{- 'products.product_card.product_title' | t -}}
-		{%- endif -%}
-	</a>
+	<div class="product-card__footer--price">
+		<a class="focus-visible-outline product-card__title" href="{{ product.url }}">
+			{%- if product != blank -%}
+				{{- product.title -}}
+			{%- else -%}
+				{{- 'products.product_card.product_title' | t -}}
+			{%- endif -%}
+		</a>
+		{%- render 'price-variant',
+			product: product,
+			show_unit_price: show_unit_price,
+			currency_code_enabled: currency_code_enabled,
+			cmAditionalText: custom_tag_aditional_text,
+			cmColorAditionalText: custom_aditional_text_color,
+			sale_aditional_text: sale_aditional_text,
+			color_sale_aditional_text: color_sale_aditional_text,
+			tagfound: tagFound,
+			simplified_view: simplified_view
+			fontsize: "f14px"
+		-%}
+	</div>
 	<div class="product-card__content">
 		<div class="product-card__content-info">
-			{%- render 'price-variant',
-				product: product,
-				show_unit_price: show_unit_price,
-				currency_code_enabled: currency_code_enabled,
-				cmAditionalText: custom_tag_aditional_text,
-				cmColorAditionalText: custom_aditional_text_color,
-				sale_aditional_text: sale_aditional_text,
-				color_sale_aditional_text: color_sale_aditional_text,
-				tagfound: tagFound,
-				simplified_view: simplified_view
-				fontsize: "f14px"
-			-%}
 
 			{% assign enable_truncate = section.settings.truncate_description_card_enable %}
 			{% assign enableDescriptionMobile = section.settings.enable_description_mobile %}
@@ -601,7 +603,7 @@
 			{% if enableDescription or enableDescription %}
 					<div class="focus-visible-outline product__description {% if enableDescription == false %} dn-i-desktop{% endif %} {% if enableDescriptionMobile == false %} dn-i-mobile{% endif %}  {% if enable_truncate and cardType == "horizontal_card_style"%}f11px {% else %} f12px{% endif %}">
 					{%- if product.description != blank -%}
-						<div class="description">
+						<div class="product-card__content--description">
 						
 						{% if enable_truncate %}
 							<div class="short-description">

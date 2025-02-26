@@ -74,7 +74,7 @@
         "space_between_cards": 14,
         "container_width": "inherit",
         "enable_border_bottom": true,
-        "offset_top_desktop": 40,
+        "offset_top_desktop": 32,
         "offset_bottom_desktop": 40,
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
@@ -166,7 +166,7 @@
         "card_border_style": "inside_borders",
         "show_desciption_card": true,
         "enable_description_mobile": true,
-        "truncate_description_card": 100,
+        "truncate_description_card": 90,
         "truncate_description_card_enable": true,
         "product_list": [
           "everlasting-front-brake-cable-for-all",
@@ -215,7 +215,7 @@
         "container_color": "#ffffff",
         "description_color": "#000000",
         "text_color": "#535353",
-        "offset_top_desktop": 45,
+        "offset_top_desktop": 37,
         "offset_bottom_desktop": 0,
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
@@ -337,7 +337,34 @@
         "ui_button_border_color": "#e9e9e9",
         "container_width": "100%",
         "offset_top_desktop": 40,
-        "offset_bottom_desktop": 40,
+        "offset_bottom_desktop": 0,
+        "offset_top_mobile": 25,
+        "offset_bottom_mobile": 25
+      }
+    },
+    "marquee_text_APW9Ga": {
+      "type": "marquee-text",
+      "blocks": {
+        "text_bbY8QV": {
+          "type": "text",
+          "settings": {
+            "description": "<p><strong>FREE SHIPPING </strong>Over $100 in USA (Sorry no HI/AK)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bbY8QV"
+      ],
+      "settings": {
+        "duplicate_marquee_text": 2,
+        "space_between_items": 20,
+        "marquee_speed": 26,
+        "enable_marquee_text": true,
+        "container_color": "#ffffff",
+        "description_color": "#000000",
+        "text_color": "#535353",
+        "offset_top_desktop": 30,
+        "offset_bottom_desktop": 0,
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
       }
@@ -406,7 +433,7 @@
         "collection": "airsal",
         "two_rows": true,
         "grid_slots": 31,
-        "button_position": "start",
+        "button_position": "end",
         "grid_slots_space": 16,
         "button_text": "See all products",
         "button_url": "shopify://collections"
@@ -418,64 +445,54 @@
         "review_7M3Tyk": {
           "type": "review",
           "settings": {
-            "review_author_name": "Name of 1st author",
-            "review_heading": "Review",
-            "review_text": "<p>Review text of 1st author</p>",
+            "review_author_name": "Birdman from Michigan",
+            "review_heading": "Not your mother's maxipad",
+            "review_text": "<p>Fits Puch Maxi with Leleu rims. Once they worn in properly, they were great.Had to lock the front brake auto-adjust thingy in place with a screw. It tends to let the shoes ride the drum too hard.</p>",
             "product": ""
           }
         },
-        "review_8gttTL": {
+        "review_7rddbb": {
           "type": "review",
           "settings": {
-            "review_author_name": "Name of 2nd author",
-            "review_heading": "Review",
-            "review_text": "<p>Review text of 2nd author</p>",
+            "review_author_name": "Birdman from Michigan",
+            "review_heading": "Not your mother's maxipad",
+            "review_text": "<p>Fits Puch Maxi with Leleu rims. Once they worn in properly, they were great.Had to lock the front brake auto-adjust thingy in place with a screw. It tends to let the shoes ride the drum too hard.</p>",
             "product": ""
           }
         },
-        "review_VeFKfj": {
+        "review_FjdY4d": {
           "type": "review",
           "settings": {
-            "review_author_name": "Name of 3rd author",
-            "review_heading": "Review",
-            "review_text": "<p>Review text of 3rd author</p>",
+            "review_author_name": "Birdman from Michigan",
+            "review_heading": "Not your mother's maxipad",
+            "review_text": "<p>Fits Puch Maxi with Leleu rims. Once they worn in properly, they were great.Had to lock the front brake auto-adjust thingy in place with a screw. It tends to let the shoes ride the drum too hard.</p>",
             "product": ""
           }
         },
-        "review_fpJWDN": {
+        "review_MQFWUY": {
           "type": "review",
           "settings": {
-            "review_author_name": "Name of 4th author",
-            "review_heading": "Review",
-            "review_text": "<p>Review text of 4th author</p>",
-            "product": ""
-          }
-        },
-        "review_nCCUMy": {
-          "type": "review",
-          "settings": {
-            "review_author_name": "Name of 5th author",
-            "review_heading": "Review",
-            "review_text": "<p>Review text of 5th author</p>",
+            "review_author_name": "Birdman from Michigan",
+            "review_heading": "Not your mother's maxipad",
+            "review_text": "<p>Fits Puch Maxi with Leleu rims. Once they worn in properly, they were great.Had to lock the front brake auto-adjust thingy in place with a screw. It tends to let the shoes ride the drum too hard.</p>",
             "product": ""
           }
         }
       },
       "block_order": [
         "review_7M3Tyk",
-        "review_8gttTL",
-        "review_VeFKfj",
-        "review_fpJWDN",
-        "review_nCCUMy"
+        "review_7rddbb",
+        "review_FjdY4d",
+        "review_MQFWUY"
       ],
       "settings": {
         "layout": "base",
-        "heading": "Reviews",
+        "heading": "",
         "enable_autoplay": false,
         "autoplay_speed": 3,
         "container_width": "inherit",
-        "offset_top_desktop": 40,
-        "offset_bottom_desktop": 40,
+        "offset_top_desktop": 31,
+        "offset_bottom_desktop": 0,
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
       }
@@ -520,7 +537,7 @@
         "card_border_style": "inside_borders",
         "show_desciption_card": true,
         "enable_description_mobile": true,
-        "truncate_description_card": 72,
+        "truncate_description_card": 50,
         "truncate_description_card_enable": false,
         "product_list": [
           "everlasting-front-brake-cable-for-all",
@@ -542,10 +559,22 @@
         "space_between_cards": 0,
         "container_width": "inherit",
         "enable_border_bottom": true,
-        "offset_top_desktop": 40,
+        "offset_top_desktop": 14,
         "offset_bottom_desktop": 40,
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
+      }
+    },
+    "collection_image_grid_Fkdbhh": {
+      "type": "collection-image-grid",
+      "settings": {
+        "collection": "airsal",
+        "two_rows": true,
+        "grid_slots": 15,
+        "button_position": "start",
+        "grid_slots_space": 16,
+        "button_text": "See all products",
+        "button_url": "shopify://collections"
       }
     },
     "gallery_grid_Vfk3Uf": {
@@ -620,22 +649,6 @@
         "offset_top_mobile": 25,
         "offset_bottom_mobile": 25
       }
-    },
-    "ticker_ckK6DD": {
-      "type": "ticker",
-      "settings": {
-        "hide_bullets": true,
-        "text": "<p>Text in the ticke</p>",
-        "desktop_movement_speed": 17,
-        "mobile_movement_speed": 45,
-        "section_background": "#1B1B1B",
-        "text_color": "#ffffff",
-        "inner_indent": 24,
-        "offset_top_desktop": 40,
-        "offset_bottom_desktop": 40,
-        "offset_top_mobile": 25,
-        "offset_bottom_mobile": 25
-      }
     }
   },
   "order": [
@@ -645,12 +658,13 @@
     "grid_products_aARFtc",
     "marquee_text_kkHFpn",
     "featured_product_h6HNYt",
+    "marquee_text_APW9Ga",
     "grid_products_9k9Yfe",
     "collection_image_grid_3jqVhk",
     "testimonials_YAxhYY",
     "collection_image_grid_cV4n3g",
     "grid_products_jPeX7K",
-    "gallery_grid_Vfk3Uf",
-    "ticker_ckK6DD"
+    "collection_image_grid_Fkdbhh",
+    "gallery_grid_Vfk3Uf"
   ]
 }

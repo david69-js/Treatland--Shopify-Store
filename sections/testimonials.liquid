@@ -47,7 +47,7 @@
 		{%- endif -%}
 
 		<div
-			class="testimonials__items-container swiper js-testimonials-container"
+			class="testimonials__items-container"
 			data-layout="{{ layout }}"
 			data-slides-per-view="{{ slidesPerView }}"
 			data-dynamic-pagination="{{ pagination_dynamic }}"
@@ -55,7 +55,7 @@
 				data-autoplay-speed="{{ autoplay_speed | times: 1000 }}"
 			{%- endif -%}
 		>
-			<div class="testimonials__items-wrapper swiper-wrapper">
+			<div class="testimonials__items-wrapper">
 				{%- for block in section.blocks -%}
 					{%- assign review_heading			= block.settings.review_heading -%}
 					{%- assign review_text				= block.settings.review_text -%}
@@ -106,9 +106,6 @@
 			<div class="swiper-pagination"></div>
 		</div>
 	</section>
-
-	{%- render 'adastra' with '/src/scripts/component-swiper-modules.js' -%}
-	{%- render 'adastra' with '/src/scripts/section-testimonials.js' -%}
 {%- endif -%}
 
 {%- schema -%}
@@ -230,6 +227,7 @@
 		{
 			"name": "Review",
 			"type": "review",
+			"limit": 4,
 			"settings": [
 				{
 					"type": "text",

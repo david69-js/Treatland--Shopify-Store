@@ -43,16 +43,19 @@
   min-height: 40px;
 }
 .image-with-text-animations--container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 10px;
 }
 .image-with-text-animations .image-with-text-animations__main {
   text-align: var(--text-align);
 }
 .image-with-text-animations .image-with-text-animations__heading-wrapper {
   position: relative;
-  padding: 32px 10px 10px 10px;
   background-color: var(--heading-background);
   border-radius: var(--global-border-radius);
   transform: translateY(35px);
@@ -101,7 +104,6 @@
 }
 .image-with-text-animations .image-with-text-animations__content {
   width: 100%;
-  padding: 0px 10px 32px 10px;
   font-size: 14px;
 }
 .image-with-text-animations .image-with-text-animations__description {

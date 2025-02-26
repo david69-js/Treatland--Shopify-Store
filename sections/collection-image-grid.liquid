@@ -11,8 +11,8 @@
     <div class="grid">
         {% if button_layout == "start" %}
             {% if section.settings.button_text != blank and section.settings.button_url != blank %}
-                <div class="grid-item see-all">
-                <a clas="products-thumbnails__button button button--secondary-border grid-item see-all" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+                <div class="grid-item see-all button button--secondary">
+                  <a clas="products-thumbnails__button grid-item see-all" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
                 </div>
             {% endif %}
         {% endif %}
@@ -83,19 +83,21 @@
     padding: 10px 15px;
     border: 1px solid #000;
     text-decoration: none;
-    color: black;
-    background: white;
+    background-color: var(--button-background-color-secondary);
+    color: var(--button-text-color-secondary);
     transition: background 0.3s, color 0.3s;
   }
     .see-all a {
-        text-decoration: none;
-        font-weight: 700;
+      color: var(--button-text-color-secondary);
+      text-decoration: none;
+      font-family: Inter, sans-serif;
+      font-weight: 600;
     }
     .see-all:hover{
-        background: black;
+      background-color: var(--button-background-color-secondary-hover);
     }
     .see-all:hover a{
-        color: white;
+      color: var(--button-text-color-secondary-hover);
     }
 </style>
 

@@ -44,11 +44,15 @@
 
 {%- if marquee_enable -%}
     <style>
+	.marquee__container{
+		padding: 9px 0;
+		border: 1px solid #949494;
+	}
     .marquee__track {
         animation: scroll {{ marquee_speed }}s linear infinite !important;
         will-change: transform;
         flex-wrap: nowrap;
-    }        
+    }         
     </style>
 {%- endif -%}
 
